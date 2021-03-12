@@ -1,0 +1,347 @@
+/* HEADER*/
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	text-align: center;
+	box-shadow: 0px 5px 20px rgba(100, 100, 100, .3);
+	font-size:1.25em;
+	padding: 0.5em 0.5em;
+	transition: 0.5;
+
+	/*background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) -10%, rgba(0,0,0,0) 100%); faire un dégradé*/ 
+}
+
+#logo{
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+#logo img{
+	width: 29%;
+	height: 15%
+}
+
+
+/*Element html*/
+body{
+	font-family: "Verdana";
+}
+
+section{
+
+	display: block;
+	flex:1;
+	padding: 50px;
+}
+
+
+h1{
+	font-size: 2.5em;
+	font-weight: 700;
+}
+
+h2{
+	font-size: 2.2em;
+	font-weight: 500;
+	margin:0.83em;
+	text-align: center;
+}
+
+p{
+	margin:1em;
+
+}
+
+
+
+
+
+/*NAVIGATION*/
+nav ul{
+	list-style: none;
+	display: flex;
+	text-decoration: none;
+	padding: 0;
+}
+
+nav li{
+	margin-right: 15px;
+	display: inline-flex;
+}
+
+nav a{
+	transition: 0.4s;	
+	color : #1E4D6E;
+	font-size: bold;
+	text-decoration: none;
+	text-transform : none;
+	padding-bottom: 5px;
+}
+
+nav a:hover
+{
+	transition: 0.4s;
+	color: #8F0015;
+	border-bottom: 3px solid;
+	text-decoration: none;
+}
+
+
+/*SLIDER - https://www.w3schools.com/howto/howto_js_slideshow.asp*/
+
+	/* Slider container*/
+.slider-container{
+	max-height: 40%;
+	position: relative;
+	margin: auto;
+	display: flex;
+	box-sizing: border-box;
+}
+
+.slider-img{
+	width: 100%;
+	height: auto;
+	max-height: 40vh;
+	display: flex;
+	box-sizing: border-box;
+	overflow: hidden; 
+	object-fit: cover;
+	line-height: 0;
+}
+
+	/* Hide the images by default*/
+.slides{
+	display: none; 
+	overflow: hidden;
+}
+
+
+.text {
+  color: #F2F2F8;
+  text-shadow:5px 0 10px rgba(0, 10, 10, .5);
+  font-size: 150%;
+
+  padding:2% 0;  
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 10vh);
+  top: 10%;
+  left: 0;
+  overflow: hidden;
+  flex:1;
+  object-fit: cover;
+
+
+  align-items: center;
+  text-align: center;
+  display: block;
+  opacity: 0;
+  transition : opacity .0.5s;
+}
+
+
+.text >span{
+	font-size: 0.6em;
+	color: #1E4D6E;
+}
+
+.text:hover{
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+
+.slider img{
+	filter: blur(0px);
+	transition: filter 0.3s ease-in;
+	
+}
+
+.slider img:hover{
+	filter: blur(2px);
+}
+
+
+/*BANDEAU STRESS EN CHIFFRES*/
+.data-element{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	
+	align-items: center;
+	
+}
+
+/*Circle Chart*/
+
+.circle-chart-container{
+	clear: left;
+	float: left;
+	position: relative;
+	max-width: 200px;
+	width: 100%;
+}
+
+.circle-chart{
+	overflow: visible;
+}
+
+
+.circle-chart-circle{
+	animation: circle-chart-fill 1.35s reverse;
+  	-webkit-transform: rotate(-90deg);
+  	-moz-transform: rotate(-90deg);
+  	-o-transform: rotate(-90deg);
+  	-ms-transform: rotate(-90deg);
+  	transform: rotate(-90deg);
+  	transform-origin: center;
+
+}
+
+.circle-chart-two{
+	left: 18.5%;
+	max-width: 63%;
+	position: absolute;
+	top: 10.5%;
+}
+
+
+.circle-chart-percentage {
+
+  font-size: 150%;
+  font-weight: 700;
+  position: absolute;
+  
+}
+
+
+.circle-chart-one-percentage {
+  color: #1F7DBF;
+  left: 45%;
+  top: 30%;
+}
+
+.circle-chart-two-percentage {
+  color: #1E4D6E;
+  left: 40%;
+  top: 20%;
+}
+
+
+
+
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+
+
+/* Article*/
+
+.article {
+    width:150px;
+    margin: 10px 10px 0 0;
+    position: relative;
+    z-index: 2;
+    flex:1;
+    padding: 4em;
+    box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
+    text-align: center;
+    background: #fff;
+}
+
+
+/*mini-text LE STRESS EN QUELQUES CHIFFRES*/
+#mini-text{
+	text-align: center;
+	color: #555;
+	font-family: "Verdana";
+	font-weight: 300;
+	font-size: 33px;
+	
+	overflow: hidden;
+	-webkit-backface-visibility:hidden;
+	-webkit-perspective: 1000;
+	-webkit-transform: translate3d(0,0,0);
+
+	display:inline-block;
+	overflow:hidden;
+	white-space:nowrap;
+
+}
+
+#mini-text:first-of-type {
+	animation: showup 7s 1;
+
+}
+
+#mini-text:last-of-type {
+	animation: reveal 7s 1;
+
+}
+
+#mini-text: span {
+	animation: slidein 7s 1;
+
+}
+
+#mini-text:nth-child(1){
+	display: block;
+
+}
+
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:auto;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

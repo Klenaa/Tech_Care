@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tech Care</title>
+	<link rel="stylesheet" href="style-faq.css"/>
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<img src="images/logo.png" alt="logo-tech-care">
+		</div>
+			<nav class="navigation-bar">				
+				<ul class="menu">
+					<li class="nav-item"><a class="nav-link" href="#">S'inscrire</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Se connecter</a></li>
+				</ul>				
+			</nav>
+	</header>
+	<button type=""button class="collapsible">Qui sommes-nous ?</button>
+	<div class="content">
+		<p>
+			Tech Care est une jeune startup composée de 6 étudiants entrepreneurs. Racontez notre parcours.
+
+		</p>
+		
+	</div>
+	<script type="text/javascript">
+		var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+	</script>
+
+</body>
+
+</html>
