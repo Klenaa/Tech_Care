@@ -30,7 +30,7 @@ input[type=checkbox] {
   width: 10px;
 }
  
-input[type=submit] {
+button {
   width: 150px;
   padding: 10px;
 }
@@ -42,50 +42,18 @@ em {
 }
 
 fieldset {
-  margin-bottom:200px;
   padding-top:1em;
   text-align: center;
-  margin: auto;/*15em*/ 
+  margin: auto;
   background-color: #F2F2F8;
   padding:16px;
   max-width:500px;
-
   border:2px solid;
-  -moz-border-radius:8px;
-  -webkit-border-radius:8px;  
   border-radius:8px;
 }
 
-#gauche{
+.gauche{
   float: left;
   margin-top: 0.1em;
-  margin-left: 10%;
-}
-
-#droit{
-  float: right;
-  margin-top: 1em;
-}
-
-#centre{
-  float: left;
-  margin-left: -5em;
-}
-
-#taille{
-  font-size: 250%;
-}
-
-header{
-  text-decoration: none;
-  color: #1E4D6E;
-  font-size: 90%;
-  text-align: right;
-  padding: 30px 0px 30px 0;
-}
-
-footer{
-  text-align: center;
-  color: #1E4D6E;
-  background-color: #1E4D6E
+  margin-left: 75px;
 }

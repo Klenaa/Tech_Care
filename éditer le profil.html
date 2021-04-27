@@ -8,18 +8,17 @@
 
 	<body>
 		<h1>Profil</h1>
-
 		<form method="post" action=".php">
-			<fieldset id="gauche">
+			<fieldset class="gauche">
 				<div>Modifier son profil</div><br>
-				<label id="d" for="nom">Nom</label>
-			    <input id="nom" name="nom" placeholder="Votre nom" autofocus="" value="" required=""><br>
-			    <label id="d" for="prénom">Prénom</label>
-			    <input id="nom" name="prénom" placeholder="Votre prénom" autofocus="" value="" required=""><br>
-			    <label id="d" for="email">Email <em>*</em></label>		       		
-			    <input id="email" type="email" name="email" value="" readonly ><br>
-				<label id="d" for="text">Date de naissance</label>
-				<input type="text" name="date de naissance" maxlength="10" value=""/> <br>
+				<label>Nom</label>
+			    <input name="nom" placeholder="Votre nom" autofocus="" value="Nom" required=""><br>
+			    <label>Prénom</label>
+			    <input name="prénom" placeholder="Votre prénom" autofocus="Prénom" value="" required=""><br>
+			    <label>Email <em>*</em></label>		       		
+			    <input type="email" name="email" value="nom.prénom@mail.com" readonly ><br>
+				<label>Date de naissance</label>
+				<input type="text" name="date de naissance" maxlength="10" value="jj/mm/aaaa"/> <br>
 				<button type="submit" name="modification">Modifier</button>
 			</fieldset>
 		</form>
@@ -27,11 +26,11 @@
 		<form method="post" action=".php">
 			<fieldset>
 				<div>Modifier le mot de passe</div><br>
-				<label for="password">Ancient mot de passe <em>*</em></label>
+				<label>Ancient mot de passe <em>*</em></label>
 				<input type="password" name="mot de passe" required/>  <br/>
-				<label for="password">Nouveau mot de passe <em>*</em></label>
+				<label>Nouveau mot de passe <em>*</em></label>
 				<input type="password" name="mot de passe" minlength="8" required/>  <br/>
-				<label for="password">Confirmation du nouveau mot de passe <em>*</em></label>
+				<label>Confirmation du nouveau mot de passe <em>*</em></label>
 				<input type="password" name="mot de passe" minlength="8" required/>  <br/>
 				<button type="submit" name="modification">Modifier</button>
 			</fieldset>
