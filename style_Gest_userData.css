@@ -87,9 +87,12 @@ li{
 
 /*SEARCH BOX https://codepen.io/omarsherifs/pen/KGLYYW*/
 .searchBox {
-    position: sticky;
-    
-    /*transform: translate(-50%,50%);*/
+    position: absolute;
+    margin-left: 50%;
+    margin-top: -50px;
+    justify-content: right;
+    align-items: center;
+    transform: translate(-50%,50%);
     background: #F2F2F8;
     height: 45px;
     border-radius: 40px;
@@ -238,5 +241,94 @@ ul li ul li a { transition: all 0.5s ease; }
 }
 
 
+/*MENU DEROULANT*/
+
+#criteria {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.criteria-section {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    /*max-inline-size: 30%;*/
+    
+}
+
+.criteria-section {
+    outline: none;
+}
+ 
+/* Masquer les différents choix */
+.criteria-section ul li{
+    display: none;
+    
+    
+}
+
+    /* Si le checkbox est coché, montrer tous les paragraphes */
+.criteria-section input[type=checkbox]:checked~ul li {
+    display: block;
+    color: black;
+
+    text-overflow:clip;
+    white-space: normal;
+    overflow: visible;
+    
+}
+
+    
+    /* Style des label */
+.criteria-section .label-criteria{
+    cursor: pointer;
+    background-color: #F2F2F8;
+    display: block;
+    /*Largeur des critères
+    width: 110px;*/
+    padding: 10px 10px;
+    font-weight: bold;
+    position: relative;
+    border-left: 3px solid #3CA0E7;
+    transition: all .15s ease-out;
+    border-radius: 30px;
+}
+
+    /* Éviter de sélectionner le texte en cliquant plusieurs fois */    
+.criteria-section label::selection, .criteria-section label:hover{
+    background: none;
+}
 
 
+
+    /* Style du label si le checkbox est coché */
+.criteria-section input[type=checkbox]:checked~label{
+    border-left: 3px solid #8F0015;
+   
+    background: none;
+    box-shadow: 0 0 1px rgba(0,0,0,.4);
+}
+
+
+    /* Flèche du label par défaut */
+.criteria-section .label-criteria::before{
+    content: '';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    margin-top: -6px;
+    border: 6px solid transparent;
+    border-left-color: inherit;
+}
+
+/* Flèche du label sélectionné */
+.criteria-section input[type=checkbox]:checked~label::before{
+    border: 6px solid transparent;
+    border-top-color: inherit;
+    margin-top: -3px;
+    right: 10px;
+}
+
+.criteria-section ul{
+    flex-direction: row;
+}
