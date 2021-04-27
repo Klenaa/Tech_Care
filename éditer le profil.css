@@ -1,0 +1,91 @@
+*{
+  font-family: helvetica, verdana;
+  color: #1E4D6E; 
+} 
+
+h1{
+  text-align: center;
+}
+
+label {
+  width: 220px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 6px;
+}
+ 
+input:focus {
+  background: #eaeaea;
+}
+ 
+input {
+  width: 249px;
+}
+ 
+select {
+  width: 254px;
+}
+ 
+input[type=checkbox] {
+  width: 10px;
+}
+ 
+input[type=submit] {
+  width: 150px;
+  padding: 10px;
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+}
+
+fieldset {
+  margin-bottom:200px;
+  padding-top:1em;
+  text-align: center;
+  margin: auto;/*15em*/ 
+  background-color: #F2F2F8;
+  padding:16px;
+  max-width:500px;
+
+  border:2px solid;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;  
+  border-radius:8px;
+}
+
+#gauche{
+  float: left;
+  margin-top: 0.1em;
+  margin-left: 10%;
+}
+
+#droit{
+  float: right;
+  margin-top: 1em;
+}
+
+#centre{
+  float: left;
+  margin-left: -5em;
+}
+
+#taille{
+  font-size: 250%;
+}
+
+header{
+  text-decoration: none;
+  color: #1E4D6E;
+  font-size: 90%;
+  text-align: right;
+  padding: 30px 0px 30px 0;
+}
+
+footer{
+  text-align: center;
+  color: #1E4D6E;
+  background-color: #1E4D6E
+}
