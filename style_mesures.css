@@ -1,0 +1,357 @@
+/*SLIDER - https://www.w3schools.com/howto/howto_js_slideshow.asp*/
+
+/* Slider container*/
+.slider-container{
+	max-height: 40%;
+	position: relative;
+	
+	display: flex;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.slider-container:hover{
+	background-color: black;
+	opacity:1;
+	transition: 0.2s;
+	
+}
+
+.slider-img{
+	width: 100%;
+	height: auto;
+	max-height: 40vh;
+	display: flex;
+	box-sizing: border-box;
+	overflow: hidden; 
+	object-fit: cover;
+	line-height: 0;
+}
+
+.slider-img:hover{
+	filter: blur(3px);
+}
+
+
+/* Hide the images by default*/
+.slides{
+	display: none; 
+	overflow: hidden;
+}
+	
+.text {
+	color: #F2F2F8;
+	text-shadow:5px 0 10px rgba(0, 10, 10, .5);
+	font-size: 150%;
+  
+	padding:auto;  
+	position: absolute;
+	width: 90%;
+	height: calc(100% - 10vh);
+	top: 10%;
+	left: 0;
+	overflow: hidden;
+	flex:1;
+	object-fit: cover;
+  
+  
+	align-items: center;
+	text-align: center;
+	display: block;
+	opacity: 0;
+	transition : opacity .0.5s;
+  }
+
+
+.text > span{
+	font-size: 1em;
+	color: #1E4D6E;
+	text-shadow:5px 0 10px rgba(255, 255, 255, 0.856);
+	font-style: italic;
+}
+
+.text:hover{
+	opacity: 1;
+	transition: opacity 0.8s;
+	text-shadow: 5px 0 10px rgba(0, 10, 10, 0.8);
+}
+
+
+.slider img{
+	transition: filter 0.3s ease-in;
+}
+
+
+
+/*OVERALL*/
+main{
+	font-family: "Helvetica", "Verdana";
+}
+
+h2{
+	
+	color :#1E4D6E;
+	padding: none;
+	margin: none;
+	text-transform:uppercase;
+}
+
+h3 {
+	color :#1F7DBF;
+	text-transform:uppercase;
+}
+
+h4 {
+	color :black;
+	text-transform:uppercase;
+}
+
+
+p{
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#part1{
+	float :none;
+}
+
+/* TITRE*/
+.mini-text{
+	color: rgb(0, 0, 0);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px 20px;
+
+	/*
+	background-image: url(images/sky\ blue.jpg);
+	background-size: cover;
+	margin: 4% 0%;
+	height: 15vh;*/
+}
+
+.separator{
+	float: none;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 5px;
+	height: 2px;
+	width: 100px;
+	background-color:#1F7DBF;
+}
+
+.bg-overlay {
+    top: 0;
+    left: 0;
+	opacity: 0.8;
+
+}
+
+
+
+/*NOTRE PRODUIT*/
+.info-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	text-align: center;
+	
+	width: 90%;
+	margin-left: 7%;
+}
+
+/*NOS TESTS*/
+
+
+.png {
+	width: 20%;
+	align-items:center;
+}
+
+.png-container{
+	margin-left: 5%;
+}
+
+
+/* Article*/
+article {
+    width:80%;
+    position:sticky;
+    margin: auto;
+    flex:1;
+    padding: 3%;
+    box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
+    text-align: center;
+    background: #fff;
+}
+
+.data-element{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.articleTitle{
+	color: #1F7DBF;
+	font-style: oblique;
+
+}
+
+/*stats bubble*/
+.bubble-number{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin-left: 5%;
+	
+	
+}
+  
+.sub-bubble {
+	flex-direction: row;
+	text-align: center;
+	margin: 2%;
+	max-width: 20%;
+	
+}
+
+
+.sub-bubble > span{
+	color :#1E4D6E;;
+	font-size: 1.4em;
+	font-weight: bold;
+	
+}
+
+
+
+/*Performance du stress*/
+
+#performance{
+	display: flex;
+	flex-direction: row;
+}
+
+#performance >article{
+	max-width: 30%;
+	box-sizing: border-box;
+	min-block-size: 35vh;
+	overflow:auto;
+}
+
+
+/*GALLERY*/
+.gallery-container{
+	display: flex;
+	width: 100%;
+	padding: 4% 2%;
+	box-sizing: border-box;
+	height: 50vh;
+}
+
+.boximg{
+	flex :1;
+	overflow: hidden; 
+	transition: 0.5s;
+	margin: 0 1%;
+	box-shadow: 0 20px 30px rgba(10, 10, 10, .1);
+	line-height: 0;
+}
+
+.boximg > img {
+	width: 100%;
+	height: calc(100% - 10vh);
+	object-fit:cover;
+	transition: .5s;
+}
+
+.boximg > span {
+	font-size: 2vh;
+	display: block;
+	text-align: center;
+	height: 10vh;
+	line-height: 1.7;
+	overflow:-moz-hidden-unscrollable;
+}
+
+
+.boximg:hover{
+	flex: 10%;
+}
+
+
+/*BAIT utilisateur citation quotes*/
+#bait{
+	background-image: url(images/sky\ white.jpg);
+	background-size: cover;
+	margin: 4% 0%;
+	height: 15vh;
+}
+
+#bait blockquote{
+	position: absolute;
+	opacity: 0;
+	width: 90%;
+	text-align: center;
+	animation: rotateCitations 18s ease-in 0s infinite;
+	overflow: hidden;
+	font-size: 2.1em;
+	font-weight: 500;
+	font-style: oblique;
+	color: #1F7DBF ;
+	
+}
+
+
+#bait blockquote:nth-child(2) {
+    animation-delay: 6s;
+}
+
+#bait blockquote:nth-child(3) {
+    animation-delay: 12s;
+}
+
+/*https://blogdummi.fr/tutoriel/tutoriel-creer-transition-automatique-texte/*/
+@keyframes rotateCitations {
+    0%   { opacity: 0; }
+    6%   { opacity: 1; }
+    28%  { opacity: 1; }
+    33%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+
+/*Nos partenaires*/
+.alterimage{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content:center;
+	text-align: center;
+}
+
+.alterimage > div > img{
+	width: 40%;
+	
+}
+
+/*Bandeaux*/
+
+#bandeau1{
+	background-image: url(images/teamworkzoom.jpg);
+	background-size: cover;
+	margin: 4% 0%;
+	height: 40vh;
+}
+
+#bandeau2{
+	background-image: url(images/teamwork3.jpg);
+	background-size: cover;
+	margin: 4% 0%;
+	height: 40vh;
+}
