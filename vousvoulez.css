@@ -1,0 +1,163 @@
+#header{
+  width: 100%;
+  background: white;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2),
+       0px 1px 0px 1px rgba(255, 255, 255, 0.5) inset,
+        0px -3px 0px 1px rgba(0, 0, 0, 0.1) inset;
+  overflow : hidden;
+  height : 50px;
+}
+
+#menu{
+  display: table;
+  margin-right : auto;
+  margin-left : auto;
+  margin-top : 0;
+  padding : 0;
+}
+
+#menu li{
+  display: table-cell;
+  width: 250px; 
+}
+
+#menu a{
+  display: block;
+  font-weight: bold;
+  line-height: 46px;
+  text-align: center;
+  text-decoration : none;
+  color : #1e4d6e;
+}
+
+#menu a:hover{
+  text-decoration: underline;
+}
+
+body {font-family: Helvetica, sans-serif;
+  color: #1e4d6e;
+}
+* {box-sizing: border-box;}
+
+.container{
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.item {
+	opacity: 1;
+	cursor: pointer;
+	border: 4px dashed #1e4d6e;
+	border-radius: 10px;
+	margin: 20px;
+	padding: 20px;
+	color: #1e4d6e;
+	font-size: 20px;
+	text-align: center;
+}
+
+.item2 {
+	opacity: 1;
+	cursor: pointer;
+	border: 5px solid #1e4d6e;
+	border-radius: 10px;
+	margin: 20px;
+	padding: 30px;
+	color: #1e4d6e;
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.vous{
+	font-weight: bold;
+	color: #1e4d6e;
+	font-size: 1.6em;
+	text-decoration: underline;
+
+}
+#footer1{
+  display: table;
+  margin:auto;
+  padding : 0;
+}
+
+#footer1 li{
+  display: table-cell;
+  width: 180px;
+  
+}
+
+#footer1 a{
+  display: block;
+  line-height: 46px;
+  text-align: center;
+  text-decoration : none;
+  color : white; 
+}
+
+#footer1 a:hover{
+  text-decoration: underline;
+}
+
+	footer {
+		margin-top: 40px;
+		border-top: 5px solid #6f6f6f;
+		background-color: #1e4d6e;
+		color: #fff;
+		padding: 30px 100px;;
+	}
+
+	footer h1 {
+		font-family: 'Playfair Display', serif;
+		border-bottom: 1px solid white;
+		width: 20%;
+		padding-bottom: 5px;
+	}
+
+	footer .services {
+		margin-top: -10px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	footer .services .service {
+		margin-right: 30px;
+	}
+
+	footer .services .service p {
+		max-width: 300px;
+	}
+	footer h3 a{
+		color: white;
+	}
+	footer #contact {
+		color: rgb(181, 181, 181);
+	}
+
+	@media screen and (max-width: 680px) {
+		nav .onglets {
+			margin-left: 0px;
+			margin-bottom: 20px;
+		}
+
+		.main .card {
+			margin: 10px;
+		}
+
+		.main .content .card .right img {
+			height: 200px;
+			width: 100%;
+			margin-top: -0px;
+		}
+
+		.main .content .card {
+			display: block;
+		}
+
+		footer {
+			padding: 30px;
+		}
+	}
