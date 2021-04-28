@@ -1,0 +1,76 @@
+main{
+	font-family: "Helvetica", "Verdana", "Sans Serif";
+}
+
+
+/* TITRE*/
+.mini-text{
+	color: rgb(0, 0, 0);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px 20px;
+
+	/*
+	background-image: url(images/sky\ blue.jpg);
+	background-size: cover;
+	margin: 4% 0%;
+	height: 15vh;*/
+}
+h2{
+	
+	color :#1E4D6E;
+	padding: none;
+	margin: none;
+	text-transform:uppercase;
+}
+
+
+h3 {
+	color :#1F7DBF;
+	text-transform:uppercase;
+}
+
+h4 {
+	color :black;
+	text-transform:uppercase;
+    text-align: center;
+}
+
+
+p{
+	justify-content: center;
+	align-items: center;
+	text-align: justify;
+}
+
+.separator{
+	float: none;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 5px;
+	height: 2px;
+	width: 100px;
+	background-color:#1F7DBF;
+}
+
+article {
+    
+    
+    flex:1;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+
+.cgu{
+    box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
+    width:80%;
+    position:sticky;
+    margin: auto;
+}
+
+li{
+    text-align: justify;
+}
