@@ -85,7 +85,7 @@
 
 /*OVERALL*/
 main{
-	font-family: "Helvetica", "Verdana";
+	font-family: "Helvetica", "Verdana", "Sans Serif";
 }
 
 h2{
@@ -354,4 +354,8 @@ article {
 	background-size: cover;
 	margin: 4% 0%;
 	height: 40vh;
+}
+
+caption{
+	font-weight: 600;
 }

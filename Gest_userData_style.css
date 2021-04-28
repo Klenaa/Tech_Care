@@ -11,7 +11,7 @@ body, html {
   }
   
 main{
-	font-family: "Helvetica", "Verdana";
+	font-family: "Helvetica", "Verdana", "sans serif";
 }
 
 h2{
@@ -332,3 +332,57 @@ ul li ul li a { transition: all 0.5s ease; }
 .criteria-section ul{
     flex-direction: row;
 }
+
+
+/*bouton*/
+.validation {
+    display: flex;
+    justify-content: center;
+}
+button{
+	padding: 15px 25px;
+	border-radius: 5px;
+	border:none;
+	font-size: 15px;
+	color: #fff;
+	background-color: #3c9bd1;
+	outline:none;
+	cursor:pointer;
+    
+}
+
+
+/*///// partie visualisation des données*/
+
+/*TABLEAU*/
+.data-graph{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table{
+    width: 300px;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 5px;
+    text-align:center;
+}
+
+th{
+    border-bottom: 2px solid #1E4D6E;
+}
+
+td{
+    border-bottom: 2px solid #F2F2F8;
+
+}
+
+caption{
+	font-weight: 500;
+    text-transform:uppercase;
+}
+
+

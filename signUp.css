@@ -1,4 +1,4 @@
-body {font-family: Helvetica, sans-serif;
+body {font-family: Helvetica, Verdana, sans-serif;
   color: #1e4d6e;
 }
 * {box-sizing: border-box;}
@@ -12,7 +12,6 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: none;
   border-radius: 7px;
-
   background: #f1f1f1;
 }
 
@@ -79,9 +78,9 @@ hr {
 #header{
   width: 100%;
   background: white;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2),
-       0px 1px 0px 1px rgba(255, 255, 255, 0.5) inset,
-        0px -3px 0px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2),
+         1px  1px rgba(255, 255, 255, 0.5) inset,
+        -3px  1px rgba(0, 0, 0, 0.1) inset;
   overflow : hidden;
   height : 50px;
 }
@@ -112,35 +111,53 @@ hr {
   text-decoration: underline;
 }
 
-#footer{
+#footer {
   width: 100%;
   background: #1e4d6e;
-  height : 125px;
+  height : 150px;
 }
 
-
-#footer1{
-  display: table;
-  margin:auto;
-  padding : 0;
-  bottom: 0;
+#scroll, #scroll ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-#footer1 li{
-  display: table-cell;
-  width: 180px;
-  
-}
-
-#footer1 a{
-  display: block;
-  line-height: 125px;
+#scroll {
   text-align: center;
-  text-decoration : none;
-  color : white; 
+  padding : 65px;
 }
 
-#footer1 a:hover{
+#scroll li {
+  /* on place les liens du menu horizontalement */
+  display: inline-block;
+  width: 100px;
+}
+
+#scroll ul li {
+  /* on enlève ce comportement pour les liens du sous menu */
+  display: inherit;
+}
+
+#scroll a {
+  text-decoration: none;
+  display: block;
+  color:white;
+  text-align: center;
+}
+
+#scroll ul {
+  position: absolute;
+  /* on cache les sous menus complètement sur la gauche */
+  left: -999em;
+  z-index: 1000;
+}
+
+#scroll li:hover ul {
+  /* Au survol des li du menu on replace les sous menus */
+  left: auto;
+}
+
+#scroll a:hover{
   text-decoration: underline;
 }
-
