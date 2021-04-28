@@ -355,3 +355,7 @@ article {
 	margin: 4% 0%;
 	height: 40vh;
 }
+
+caption{
+	font-weight: 600;
+}
