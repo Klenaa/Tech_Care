@@ -334,12 +334,31 @@ ul li ul li a { transition: all 0.5s ease; }
 }
 
 
+/*bouton*/
+.validation {
+    display: flex;
+    justify-content: center;
+}
+button{
+	padding: 15px 25px;
+	border-radius: 5px;
+	border:none;
+	font-size: 15px;
+	color: #fff;
+	background-color: #3c9bd1;
+	outline:none;
+	cursor:pointer;
+    
+}
+
+
 /*///// partie visualisation des données*/
 
 /*TABLEAU*/
 .data-graph{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 table{
