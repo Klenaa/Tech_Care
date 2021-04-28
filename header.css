@@ -1,0 +1,50 @@
+header
+{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+img
+{
+    height: 80px;
+    width: 250px;
+}
+
+.navButton
+{
+    position: absolute;
+    background-color: transparent;
+    font-size: large;
+    border: hidden;
+}
+
+.navButton:hover
+{
+    text-decoration: underline;
+}
+
+.option
+{
+    position: absolute;
+    background-color: transparent;
+    font-size: large;
+    border: hidden;
+}
+
+#takeMeasures
+{
+    text-decoration: underline;
+    color: #8f0015;
+
+}
+
+.dropDownMenu
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
