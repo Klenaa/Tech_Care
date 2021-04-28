@@ -1,118 +1,138 @@
-body {font-family: Helvetica, sans-serif;
-  color: #1e4d6e;
+body {
+    font-family: Helvetica, Verdana, sans-serif;
+    color: #1e4d6e;
 }
 
-p
-{
-   width: 500px;
-   border:1px solid black;
-   text-align: justify;
-   padding: 15px;
-   margin: auto; 
+p {
+    width: 500px;
+    border: 1px solid black;
+    text-align: justify;
+    padding: 15px;
+    margin: auto;
 }
 
-
-#header{
-  width: 100%;
-  background: white;
-  box-shadow: 2px 2px rgba(0, 0, 0, 0.2),
-              1px 1px rgba(255, 255, 255, 0.5) inset,
-             -3px 1px rgba(0, 0, 0, 0.1) inset;
-  overflow : hidden;
-  height : 50px;
-  margin-bottom: 90px;
+#header {
+    width: 100%;
+    background: white;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.2),
+    1px 1px rgba(255, 255, 255, 0.5) inset,
+    -3px 1px rgba(0, 0, 0, 0.1) inset;
+    overflow: hidden;
+    height: 50px;
+    margin-bottom: 90px;
 }
 
-#menu{
-  display: table;
-  margin-right : auto;
-  margin-left : auto;
-  margin-top : 0;
-  padding : 0;
+#menu {
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    padding: 0;
 }
 
-#menu li{
-  display: table-cell;
-  width: 250px; 
+#menu li {
+    display: table-cell;
+    width: 250px;
 }
 
-#menu a{
-  display: block;
-  font-weight: bold;
-  line-height: 46px;
-  text-align: center;
-  text-decoration : none;
-  color : #1e4d6e;
+#menu a {
+    display: block;
+    font-weight: bold;
+    line-height: 46px;
+    text-align: center;
+    text-decoration: none;
+    color: #1e4d6e;
 }
 
-#menu a:hover{
-  text-decoration: underline;
-}
-
-#footer{
-  width: 100%;
-  background: #1e4d6e;
-  height : 125px;
-  margin-top: 125px;
-}
-
-
-#footer1{
-  display: table;
-  margin:auto;
-  padding : 0;
-  bottom: 0;
-}
-
-#footer1 li{
-  display: table-cell;
-  width: 180px;
-  
-}
-
-#footer1 a{
-  display: block;
-  line-height: 125px;
-  text-align: center;
-  text-decoration : none;
-  color : white; 
-}
-
-#footer1 a:hover{
-  text-decoration: underline;
+#menu a:hover {
+    text-decoration: underline;
 }
 
 button {
-  background-color: #1f7dbf;
-  color: white;
-  padding: 8px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  width: 125px;  
-  display: table;
-  margin: auto;
+    background-color: #1f7dbf;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 125px;
+    display: table;
+    margin: auto;
 }
 
 button:hover {
-  opacity:0.8;
+    opacity: 0.8;
 }
 
-h1{
-	text-align: center;
+h1 {
+    text-align: center;
 }
 
-h3{
-	text-align: center;
+h3 {
+    text-align: center;
 }
 
-input{
-	display: table;
-	margin: auto;
+input {
+    display: table;
+    margin: auto;
 }
 
+.ask {
+    height: 250px;
+}
 
-.champ{
-	height: 30px;
-	width: 350px;
+.champ {
+    height: 30px;
+    width: 350px;
+}
+
+#footer {
+    width: 100%;
+    background: #1e4d6e;
+    height: 150px;
+}
+
+#scroll, #scroll ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#scroll {
+    text-align: center;
+    padding: 65px;
+}
+
+#scroll li {
+    /* on place les liens du menu horizontalement */
+    display: inline-block;
+    width: 100px;
+}
+
+#scroll ul li {
+    /* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+
+#scroll a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+#scroll ul {
+    position: absolute;
+    /* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    z-index: 1000;
+}
+
+#scroll li:hover ul {
+    /* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
+
+#scroll a:hover {
+    text-decoration: underline;
 }
