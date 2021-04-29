@@ -12,6 +12,9 @@ img
     height: 80px;
     width: 250px;
 }
+.nav{
+    margin-right: 15px;
+}
 
 .navButtonContainer{
     display: flex;
