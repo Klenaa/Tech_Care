@@ -15,19 +15,12 @@ label {
 }
  
 input:focus {
-  background: #eaeaea;
+  background: #ddd;
 }
  
 input {
   width: 249px;
-}
- 
-select {
-  width: 254px;
-}
- 
-input[type=checkbox] {
-  width: 10px;
+  background: #f1f1f1;
 }
  
 button {
