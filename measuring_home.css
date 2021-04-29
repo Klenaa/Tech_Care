@@ -326,18 +326,3 @@ article {
 }
 
 
-/*Bandeaux*/
-
-#bandeau1{
-	background-image: url(images/teamworkzoom.jpg);
-	background-size: cover;
-	margin: 4% 0%;
-	height: 40vh;
-}
-
-#bandeau2{
-	background-image: url(images/teamwork3.jpg);
-	background-size: cover;
-	margin: 4% 0%;
-	height: 40vh;
-}
