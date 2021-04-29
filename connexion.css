@@ -1,13 +1,11 @@
-
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: Helvetica,Verdana sans-serif;
     color: #1e4d6e;
 }
-
 
 .main {
     margin-top: 40px;
@@ -39,7 +37,6 @@ body {
     width: 400px;
     margin-top: 5px;
 }
-
 
 /* PAGE SE CONNECTER
 

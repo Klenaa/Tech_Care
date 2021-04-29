@@ -9,7 +9,9 @@ body {font-family: Helvetica, sans-serif;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin-bottom: 300px;
 }
+
 .item {
 	opacity: 1;
 	cursor: pointer;
@@ -40,5 +42,6 @@ body {font-family: Helvetica, sans-serif;
 	color: #1e4d6e;
 	font-size: 1.6em;
 	text-decoration: underline;
+	margin-top: 100px;
 
 }

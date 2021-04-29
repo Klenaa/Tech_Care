@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Doyouwant.css"/>
+    <link rel="stylesheet" href="header.css"/>
+    <link rel="stylesheet" href="Footer.css"/>
     <title>Présentation</title>
 </head>
-
+<header>
+    <section>
+        <a href="Doyouwant.html">
+            <img src="./images/logoHeader.png" alt=""/>
+        </a>
+    </section>
+    <section class="navButtonContainer">
+        <div class="nav">
+            <button class="navButton" id="takeMeasures"><a href="measuring_home.html">Prendre des mesures</a></button>
+        </div>
+        <div class="nav">
+            <button class="navButton" id="mesurementAnalysis"><a href="Analyse_des_mesures.html">Analyse des résultats</a></button>
+        </div>
+        <div class="nav">
+            <button class="navButton" id="usersData"><a href="Gest_userData.html">Données des utilisateurs</a></button>
+        </div>
+        <div class="nav">
+            <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
+            <div class="dropDownMenu dropAdmin">
+                <a class="downMenu" href="user_management.html">Gérer les utilisateurs</a>
+                <a class="downMenu" href="FAQ.html">Gérer la FAQ</a>
+                <a class="downMenu" href="Forum.html">Gérer le forum</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <button class="option" ><a>Options</a></button>
+        <div class="dropDownMenu dropOption">
+            <a class="downMenu" href="edit_profile.html">Profil</a>
+            <a class="downMenu" href="home.html">Se déconnecter</a>
+        </div>
+    </section>
+</header>
 
 <body>
 
@@ -21,5 +55,22 @@
     </div>
 </div>
 </body>
+
+<div id="footer">
+    <footer>
+        <ul id="scroll">
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Forum.html">Forum</a></li>
+            <li><a href="cgu.html">CGU</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Langues</a>
+                <ul>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Français</a></li>
+                </ul>
+            <li><a href="legal_mentions.html">Mentions légales</a></li>
+        </ul>
+    </footer>
+</div>
 
 </html>
