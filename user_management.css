@@ -4,6 +4,11 @@
   text-align: center;
 } 
 
+h1{
+	margin-left: 180px;
+	width: 400px;
+}
+
 nav{
 	float: left;
 	width: 200px;
