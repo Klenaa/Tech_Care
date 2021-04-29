@@ -40,14 +40,17 @@ fieldset {
   margin-left: 100px ;
   background-color: #F2F2F8;
   padding:16px;
-  max-width:500px;
+  width:500px;
   border:2px solid;
   border-radius:8px;
   margin-bottom: 100px;
 }
 
 .droit{
-  margin-left: 50%;
-  margin-top: -360px
+  margin-left: 1000px;
+  margin-top: -400px
 }
 
+.gauche{
+  margin-left: 400px;
+}
