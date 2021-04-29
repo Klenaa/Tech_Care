@@ -217,8 +217,6 @@ article {
 
 
 
-
-
 /*Bouton*/
 
 .center{
@@ -240,3 +238,151 @@ article {
 
 
 
+/*Footer*/
+#footer {
+    width: 100%;
+    background: #1e4d6e;
+    height : 150px;
+}
+
+#scroll, #scroll ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#scroll {
+    text-align: center;
+    padding : 65px;
+}
+
+#scroll li {
+    /* on place les liens du menu horizontalement */
+    display: inline-block;
+    width: 100px;
+}
+
+#scroll ul li {
+    /* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+
+#scroll a {
+    text-decoration: none;
+    display: block;
+    color:white;
+    text-align: center;
+    white-space:nowrap;
+}
+
+#scroll ul {
+    position: absolute;
+    /* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    z-index: 1000;
+}
+
+#scroll li:hover ul {
+    /* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
+
+#scroll a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/*Header*/
+header
+{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-between;
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+img
+{
+    height: 80px;
+    width: 250px;
+}
+.nav{
+    margin-right: 15px;
+}
+
+.navButtonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navButton
+{
+    margin-top: 40px;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: large;
+    border: hidden;
+    padding-bottom: 20px;
+}
+
+.navButton:hover
+{
+    text-decoration: underline;
+}
+
+.option
+{
+    margin: 40px 25px 0 0;
+    background-color: transparent;
+    font-size: large;
+    border: hidden;
+}
+
+#takeMeasures
+{
+    color: #8f0015;
+}
+
+.dropDownMenu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 8px 0 8px 0;
+}
+
+.option:hover {
+    text-decoration: underline;
+}
+
+.option:hover + .dropOption{
+    display: flex;
+}
+
+.backOfficeAdministrator:hover + .dropAdmin{
+    display: flex;
+}
+
+.dropAdmin{
+    margin-top: -15px;
+}
+
+.dropDownMenu:hover {
+    display:flex;
+}
+
+.downMenu:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration:none;
+    color: #1E4D6E;
+}
