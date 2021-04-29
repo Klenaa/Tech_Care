@@ -1,3 +1,6 @@
+body {font-family: Helvetica,Verdana sans-serif;
+    color: #1e4d6e;
+}
 .container{
     max-width:1170px; margin:auto;
     box-shadow: -1px 2px 5px 1px #1e4d6e;
