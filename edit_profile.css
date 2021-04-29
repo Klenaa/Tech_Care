@@ -43,10 +43,11 @@ fieldset {
   max-width:500px;
   border:2px solid;
   border-radius:8px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .droit{
-  float: right;
+  margin-left: 50%;
   margin-top: -360px
 }
+
