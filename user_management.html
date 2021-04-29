@@ -6,26 +6,75 @@
 		<title>Page gérer les utilisateur</title>
 	</head>
 	<body>
+		<header>
+		    <section>
+		        <a href="Doyouwant.html">
+		        <img src="./images/logoHeader.png" alt=""/>
+		        </a>
+		    </section>
+		    <section class="navButtonContainer">
+		        <div class="nav">
+		            <button class="navButton" id="takeMeasures"><a href="measuring_home.html">Prendre des mesures</a></button>
+		        </div>
+		        <div class="nav">
+		            <button class="navButton" id="mesurementAnalysis"><a href="Analyse_des_mesures.html">Analyse des résultats</a></button>
+		        </div>
+		        <div class="nav">
+		            <button class="navButton" id="usersData"><a href="Gest_userData.html">Données des utilisateurs</a></button>
+		        </div>
+		        <div class="nav">
+		            <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
+		            <div class="dropDownMenu dropAdmin">
+		                <a class="downMenu" href="user_management.html">Gérer les utilisateurs</a>
+		                <a class="downMenu" href="FAQ.html">Gérer la FAQ</a>
+		                <a class="downMenu" href="Forum.html">Gérer le forum</a>
+		            </div>
+		        </div>
+		    </section>
+		    <section>
+		        <button class="option" ><a>Options</a></button>
+		        <div class="dropDownMenu dropOption">
+		            <a class="downMenu" href="edit_profile.html">Profil</a>
+		            <a class="downMenu" href="home.html">Se déconnecter</a>
+		        </div>
+		    </section>
+		</header>
 		<nav>
 			<fieldset>Liste des utilisateur</fieldset>
-			<p> Rodolphe Bernard<br>Léna Cheam<br>Eddy Ngo<br>Salem Khalil<br>Sophie Zhang<br>Gauthier Simon</p>
+			<div class="aligne"> Rodolphe Bernard<br>Léna Cheam<br>Eddy Ngo<br>Salem Khalil<br>Sophie Zhang<br>Gauthier Simon</div>
 		</nav>
 		<article>
 			<h1 style="margin-left: -105px;">Gestion des utilisateurs</h1>
-			<div style="margin-left: 230px;border: 2px solid #1E4D6E;">Nom utilisateur</div><br>
+			<p style="margin-left: 230px;border: 2px solid #1E4D6E;">Nom utilisateur</p><br>
 			<fieldset>
 				<article class="colone">
-					<div>Nom</div><br>
-					<div>Prénom</div><br>
-					<div>Age</div><br>
-					<div>Niveau d'étude</div><br>
-					<div>Domaine d'étude</div><br>
-					<div>Adresse</div><br>
-					<div>Code postale</div><br>
-					<div>Ville</div><br>
-					<p><em>+</em><span>Ajouter l'utilisateur à un groupe</span><br><em>-</em><span>&ensp;Supprimer l'utilisateur</span></p>
+					<p>Nom</p><br>
+					<p>Prénom</p><br>
+					<p>Age</p><br>
+					<p>Niveau d'étude</p><br>
+					<p>Domaine d'étude</p><br>
+					<p>Adresse</p><br>
+					<p>Code postale</p><br>
+					<p>Ville</p><br>
+					<div class="aligne"><em>+</em><span>Ajouter l'utilisateur à un groupe</span><br><em>-</em><span>&ensp;Supprimer l'utilisateur</span></div>
 				</article>
 			</fieldset>
 		</article>
+		<div id="footer">
+		    <footer>
+		        <ul id="scroll">
+		            <li><a href="FAQ.html">FAQ</a></li>
+		            <li><a href="Forum.html">Forum</a></li>
+		            <li><a href="cgu.html">CGU</a></li>
+		            <li><a href="contact.html">Contact</a></li>
+		            <li><a href="#">Langues</a>
+		                <ul>
+		                    <li><a href="#">English</a></li>
+		                    <li><a href="#">Français</a></li>
+		                </ul>
+		            <li><a href="legal_mentions.html">Mentions légales</a></li>
+		        </ul>
+		    </footer>
+		</div>
 	</body>
 </html>
