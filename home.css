@@ -359,3 +359,8 @@ article {
 caption{
 	font-weight: 600;
 }
+
+#image_partenaire {
+	height: 25vh ;
+	width:250px ;
+}

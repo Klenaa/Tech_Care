@@ -385,4 +385,8 @@ caption{
     text-transform:uppercase;
 }
 
+#image_graphique{
+    height: 50vh;
+    width: 600px;
+}
 
