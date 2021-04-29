@@ -1,3 +1,4 @@
+@@ -0,0 +1,357 @@
 /*SLIDER - https://www.w3schools.com/howto/howto_js_slideshow.asp*/
 
 /* Slider container*/
@@ -324,21 +325,6 @@ article {
     100% { opacity: 0; }
 }
 
-
-
-/*Nos partenaires*/
-.alterimage{
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	justify-content:center;
-	text-align: center;
-}
-
-.alterimage > div > img{
-	width: 40%;
-	
-}
 
 /*Bandeaux*/
 
