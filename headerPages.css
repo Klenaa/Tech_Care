@@ -22,6 +22,7 @@ img
 .navButton
 {
     margin-top: 40px;
+    text-decoration: none;
     background-color: transparent;
     font-size: large;
     border: hidden;
@@ -43,7 +44,6 @@ img
 
 #takeMeasures
 {
-    text-decoration: underline;
     color: #8f0015;
 }
 
@@ -78,4 +78,9 @@ img
 
 .downMenu:hover {
     text-decoration: underline;
+}
+
+a {
+    text-decoration:none;
+    color: #1E4D6E;
 }
