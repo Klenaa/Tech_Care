@@ -1,5 +1,58 @@
-body {font-family: Helvetica, Verdana, sans-serif;
+main {
+    font-family: "Helvetica", "Verdana", "Sans Serif";
+}
+
+/* TITRE*/
+.mini-text {
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+h2 {
+    color: #1E4D6E;
+    text-transform: uppercase;
+}
+
+h3 {
+    text-align: center;
+}
+
+strong {
     color: #1e4d6e;
+}
+
+p {
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    height: 30px;
+}
+
+.separator {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    height: 2px;
+    width: 100px;
+    background-color: #1F7DBF;
+}
+
+article {
+    flex: 1;
+    padding: 20px 20px;
+}
+
+.cgu {
+    box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
+    width: 80%;
+    position: sticky;
+    margin: auto;
+    border-radius: 40px;
 }
 
 #footer {
@@ -53,10 +106,3 @@ body {font-family: Helvetica, Verdana, sans-serif;
 #scroll a:hover{
     text-decoration: underline;
 }
-
-
-
-
-
-
-

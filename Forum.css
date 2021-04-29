@@ -119,6 +119,7 @@ input {
     display: block;
     color: white;
     text-align: center;
+    white-space:nowrap;
 }
 
 #scroll ul {
