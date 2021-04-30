@@ -2,20 +2,24 @@ body {font-family: Helvetica, Verdana, sans-serif;
   color: #1e4d6e;
 }
 
+#titre{
+    font-size: 32px;
+}
+
 .box{
    width: 70%;
    margin: 100px auto;
-   background: #a3e0cc;
    border-radius: 7px;
-   box-shadow: 1px 2px 4px rgba(0,0,0,.3);
+    box-shadow: -0.5px 1px 2.5px 0.5px #1e4d6e;
 }
 
 .box .heading{
    background: #1e4d6e;
    border-radius: 7px 7px ;
-   padding: 10px;
+   padding: 35px;
    color: #fff;
    text-align: center;
+
 }
 
 .faqs{
@@ -35,6 +39,7 @@ details{
    font-size: 14px;
    letter-spacing: 1px;
    cursor: pointer;
+    box-shadow: -0.5px 1px 2.5px 0.5px #1e4d6e;
 }
 
 details summary{
