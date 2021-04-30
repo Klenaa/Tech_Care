@@ -15,7 +15,7 @@ body {font-family: Helvetica, sans-serif;
 .item {
 	opacity: 1;
 	cursor: pointer;
-	border: 4px dashed #1e4d6e;
+	border: 4px solid #1f7dbf;
 	border-radius: 10px;
 	margin: 20px;
 	padding: 20px;
