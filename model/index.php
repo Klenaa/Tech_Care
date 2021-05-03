@@ -44,7 +44,15 @@
         ?>
 
 
-        <?php
+        
+
+    <?php
+        $req = $bdd->prepare('SELECT user_name, user_surname FROM user WHERE user_name = :user_name AND user_surname = :user_surname');
+        $req->execute(array('user_name' => $_GET['user_name'], 'user_surname' => $_GET['user_surname']));
+        $req->closeCursor();
+        ?>
+
+<?php
         $req = $bdd->prepare('SELECT user_name FROM user WHERE user_name = ? AND user_surname = ?');
         $req->execute(array($_GET['user_name'], $_GET['user_surname']));
 
@@ -55,15 +63,6 @@
         }
         echo '<ul>';
 
-        $req->closeCursor();
-
-       
-
-        ?>
-
-<?php
-        $req = $bdd->prepare('SELECT nom, prix FROM jeux_video WHERE possesseur = :possesseur AND prix <= :prixmax');
-        $req->execute(array('possesseur' => $_GET['possesseur'], 'prixmax' => $_GET['prix_max']));
         $req->closeCursor();
         ?>
         
