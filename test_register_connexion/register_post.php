@@ -1,45 +1,41 @@
 <?php
     require 'connect.php';
+    include('register_functions.php');
+    
 
-   
-
-
-    if(isset($_POST['register'])){
-        //Hash password
-        $passwordHash = password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
-   
-        //INSERT 
-        $req = $bdd->prepare('INSERT INTO users (email, userName, userSurname, pass) VALUES (:email, :userName, :userSurname, :pass)');
+     
+        if(isset($_POST['register']) && $_POST['pass'] == $_POST['pass2'])
+        {
+            //Hash password
+            $passwordHash = password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
+            $email = trim($_POST['email']);
         
-        //TODO : erreur management (length, type...)
-        // && gettype($_POST['email']===    
+            //INSERT 
+            $req = $bdd->prepare('INSERT INTO users (email, userName, userSurname, pass) VALUES (:email, :userName, :userSurname, :pass)');
+            
+            if (isEmailAlreadyRegistered($bdd, $email)){
 
-        //the email is already registered
-       // $sql = $bdd->prepare('SELECT COUNT(email) as mail FROM users WHERE email = ')
+                //EXECUTE
+                $req->execute(array(
+                    'email' => $_POST['email'],
+                    'userName' => $_POST['userName'],
+                    'userSurname' =>  $_POST['userSurname'],
+                    'pass' =>$passwordHash
 
-        //EXECUTE
-        $req->execute(array(
-            'email' => $_POST['email'],
-            'userName' => $_POST['userName'],
-            'userSurname' =>  $_POST['userSurname'],
-            'pass' =>$passwordHash
-
-
-            /* avec ?, ?, ?, ? dans la requete INSERT
-            $_POST['email'],
-            $_POST['userName'],
-            $_POST['userSurname'],
-            $passwordHash*/
-        ));
-
+                    /* avec ?, ?, ?, ? dans la requete INSERT
+                    $_POST['email'],
+                    $_POST['userName'],
+                    $_POST['userSurname'],
+                    $passwordHash*/
+                ));
+            header('Location: register.php');
+            }          
+        }elseif (isset($_POST['register']) && $_POST['pass'] != $_POST['pass2']){
+                echo 'Vos mots de passe ne correspondent pas.';
+                header('Location: register.php');
+            }
+            
         
-        echo 'email type : ' . gettype($_POST['email']);
-
-        header('Location: register.php');
-
-
-
-    }   
            //retrieve the field values from our registration form
        /*
            email, user_name, user_surname, pass
@@ -91,4 +87,6 @@
        }*/
    
    //}
+
+
 ?>

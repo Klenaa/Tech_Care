@@ -4,7 +4,6 @@
         <meta charset="utf-8">
 	<title>Prise d'une mesure</title>
 	<link rel="stylesheet" href="taking_measurement.css"/>
-	<link rel="stylesheet" href="Footer.css"/>
     <link rel="stylesheet" href="header.css"/>
     </head>
     <main>
@@ -79,25 +78,6 @@
 		<div class="center">	
 			<h4 class="bouton">Démarrage du test</h4>
         </div>
-
-        <div id="footer">
-		    <footer>
-		        <ul id="scroll">
-		            <li><a href="FAQ.html">FAQ</a></li>
-		            <li><a href="Forum.html">Forum</a></li>
-		            <li><a href="cgu.html">CGU</a></li>
-		            <li><a href="contact.html">Contact</a></li>
-		            <li><a href="#">Langues</a>
-		                <ul>
-		                    <li><a href="#">English</a></li>
-		                    <li><a href="#">Français</a></li>
-		                </ul>
-		            <li><a href="legal_mentions.html">Mentions légales</a></li>
-		        </ul>
-		    </footer>
-		</div>
-            
-            
-            
+		<?php include("footer.php"); ?>      
     </main>
 </html>

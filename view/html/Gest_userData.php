@@ -5,7 +5,6 @@
 	<title>Données des utilisateurs</title>
 	<link rel="stylesheet" href="Gest_userData_style.css"/>
         <link rel="stylesheet" href="header.css"/>
-        <link rel="stylesheet" href="Footer.css"/>
     </head>
 
     <header>
@@ -256,7 +255,7 @@
                 </ul>
             </footer>
         </div>
+        <?php include("footer.php"); ?>
     </main>
-
 
 </html>

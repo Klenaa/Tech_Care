@@ -4,7 +4,6 @@
         <meta charset="utf-8">
 	<title>Conditions générales d'utilisations</title>
 	<link rel="stylesheet" href="cgu.css"/>
-        <link rel="stylesheet" href="../css/Footer.css"/>
         <link rel="stylesheet" href="header.css"/>
     </head>
 
@@ -178,33 +177,9 @@
 
                     Le rôle de l'équipe de modération et des administrateurs est de veiller au bon fonctionnement des forums, en écartant tout message qui par leur caractère indigne, attentatoire aux personnes, destructeur ou manifestement hors sujet, nuisent aux échanges. Les modérateurs et les administrateurs excluent également tous messages contraires aux lois en vigueur.
                    </p>
-
                 </article>
-
-
-                
             </div>
         </div>
-
-        </div>
-
-        <div id="footer">
-            <footer>
-                <ul id="scroll">
-                    <li><a href="FAQ.html">FAQ</a></li>
-                    <li><a href="Forum.html">Forum</a></li>
-                    <li><a href="cgu.html">CGU</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#">Langues</a>
-                        <ul>
-                            <li><a href="#">English</a></li>
-                            <li><a href="#">Français</a></li>
-                        </ul>
-                    <li><a href="legal_mentions.html">Mentions légales</a></li>
-                </ul>
-            </footer>
-        </div>
-
-    </main>
-        
+        <?php include("footer.php"); ?>
+    </main>   
 </html>

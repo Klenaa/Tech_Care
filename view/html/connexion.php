@@ -6,7 +6,7 @@
     <title>Connexion</title>
     <link rel="stylesheet" href="connexion.css">
     <link rel="stylesheet" href="header.css"/>
-    <link rel="stylesheet" href="Footer.css"/>
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 </head>
 
@@ -69,27 +69,12 @@
             Vous n'avez pas encore de <a>compte</a>? <a href="signUp.html"><span> Créez-en un !</span></a>
 
 
-        <div align="center">
-            <a href="Doyouwant.html"><button type="button" >Se connecter</button></a>
+        <div>
+            <a href="Doyouwant.php"><button type="button" >Se connecter</button></a>
         </div>
     </form>
 </broly>
-</body>
 
-<div id="footer">
-    <footer>
-        <ul id="scroll">
-            <li><a href="FAQ.html">FAQ</a></li>
-            <li><a href="Forum.html">Forum</a></li>
-            <li><a href="cgu.html">CGU</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Langues</a>
-                <ul>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Français</a></li>
-                </ul>
-            <li><a href="legal_mentions.html">Mentions légales</a></li>
-        </ul>
-    </footer>
-</div>
+<?php include("footer.php"); ?>
+</body>
 </html>

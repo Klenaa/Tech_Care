@@ -5,7 +5,6 @@
 
     	<title>Mentions légales</title>
     	<link rel="stylesheet" href="cgu.css"/>  
-        <link rel="stylesheet" href="Footer.css"/>
         <link rel="stylesheet" href="header.css"/>  
 
     </head>
@@ -90,7 +89,7 @@
                 </ul>
             </footer>
         </div>
-
+        <?php include("footer.php"); ?>
     </main>
         
 </html>
