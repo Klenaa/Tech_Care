@@ -1,6 +1,9 @@
 <?php
     require 'connect.php';
 
+   
+
+
     if(isset($_POST['register'])){
         //Hash password
         $passwordHash = password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
@@ -9,6 +12,7 @@
         $req = $bdd->prepare('INSERT INTO users (email, userName, userSurname, pass) VALUES (:email, :userName, :userSurname, :pass)');
         
         //TODO : erreur management (length, type...)
+        // && gettype($_POST['email']===    
 
         //the email is already registered
        // $sql = $bdd->prepare('SELECT COUNT(email) as mail FROM users WHERE email = ')
@@ -21,16 +25,20 @@
             'pass' =>$passwordHash
 
 
-            /* avec ?, ?, ?, ?
+            /* avec ?, ?, ?, ? dans la requete INSERT
             $_POST['email'],
             $_POST['userName'],
             $_POST['userSurname'],
             $passwordHash*/
         ));
-                
+
+        
+        echo 'email type : ' . gettype($_POST['email']);
+
         header('Location: register.php');
-      
-   
+
+
+
     }   
            //retrieve the field values from our registration form
        /*

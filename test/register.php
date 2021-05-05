@@ -15,17 +15,19 @@ session_start();
         <h1>Register</h1>
         <form action="register_post.php" method="post">
             <label for="email">email</label>
-            <input type="text" id="email" name="email"><br>
+            <input type="text" id="email" name="email" required><br>
 
             <label for="userName">Nom</label>
-            <input type="text" id="userName" name="userName"><br>
+            <input type="text" id="userName" name="userName" required><br>
 
             <label for="userSurname">Prénom</label>
-            <input type="text" id="userSurname" name="userSurname"><br>
+            <input type="text" id="userSurname" name="userSurname" required><br>
 
             <label for="pass">Mot de passe</label>
-            <input type="password" id="pass" name="pass"><br>
+            <input type="password" id="pass" name="pass" required><br>
 
+            <label for="pass">Confirmer votre mot de passe</label>
+            <input type="password" id="pass2" name="pass2" required><br>
 
 
             <input type="submit" name="register" value="Register"></button>
