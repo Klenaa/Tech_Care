@@ -1,5 +1,7 @@
 <?php
     require 'connect.php';
+    include('config.php');
+
 ?>
 
 
@@ -8,28 +10,33 @@
     <head>
         <meta charset="UTF-8">
         <title>S'inscrire</title>
+        <link rel="stylesheet" href="../view/css/register.css"/>
     </head>
     <body>
-        <h1>Register</h1>
-        <form action="register_post.php" method="post">
-            <label for="email">email</label>
-            <input type="email" id="email" name="email" required maxlength="50"><br>
+        <h1>S'inscrire</h1>
+        <div class="separator"></div>
+        <broly>
+            <form action="register_post.php" method="post">
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" required maxlength="50"><br>
 
-            <label for="userName">Nom</label>
-            <input type="text" id="userName" name="userName" required maxlength="50"><br>
+                <label for="userName">Nom</label>
+                <input type="text" id="userName" name="userName" required maxlength="50"><br>
 
-            <label for="userSurname">Prénom</label>
-            <input type="text" id="userSurname" name="userSurname" required maxlength="50"><br>
+                <label for="userSurname">Prénom</label>
+                <input type="text" id="userSurname" name="userSurname" required maxlength="50"><br>
 
-            <label for="pass">Mot de passe</label>
-            <input type="password" id="pass" name="pass" required maxlength="50"><br>
+                <label for="pass">Mot de passe</label>
+                <input type="password" id="pass" name="pass" required maxlength="50"><br>
 
-            <label for="pass2">Confirmer votre mot de passe</label>
-            <input type="password" id="pass2" name="pass2" required maxlength="50"><br>
+                <label for="pass2">Confirmer votre mot de passe</label>
+                <input type="password" id="pass2" name="pass2" required maxlength="50"><br>
 
-            <script type="text/javascript" src="validatePassword.js"></script>
-            <input type="submit" name="register" value="Register" maxlength="50" onclick="return Validate()"></button>
-        </form>
+                <script type="text/javascript" src="validatePassword.js"></script>
+                <button type="submit" id="register" name="register" value="Register" maxlength="50" onclick="return Validate()">S'inscrire</button>
+            </form>
+        </broly>
+        <?php include("includes/footer.php"); ?>
     </body>
 </html>
 

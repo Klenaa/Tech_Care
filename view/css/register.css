@@ -1,0 +1,100 @@
+/*
+light-blue : #1F7DBF;
+dark-blue : #1E4D6E;
+red : #8F0015;
+
+*/
+body {
+    font-family: Helvetica, Verdana, sans-serif;
+    color: #1e4d6e;
+  }
+* {box-sizing: border-box;}
+  
+/*OVERALL*/
+
+h1{
+    text-align: center;
+}
+broly {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
+    font-family: 'Roboto', sans-serif;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+form {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 40px 60px;
+    border-radius: 10px;
+    min-width: 300px;
+}
+
+
+.separator{
+	float: none;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 5px;
+    margin-bottom: 20px;
+	height: 2px;
+	width: 100px;
+	background-color:#1F7DBF;
+}
+/*Label*/
+form > label {
+    color: #1e4d6e;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+/*CHAMP*/
+form input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    outline: none;
+    margin-bottom: 15px;
+    width: 100%;
+    align-items: center;
+ }
+
+
+ /*Bouton*/
+ 
+form button {
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    color: #fff;
+    background-color: none;
+
+    cursor: pointer;
+}
+
+#register{
+    width: 100%;
+    background-color:#1F7DBF;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}

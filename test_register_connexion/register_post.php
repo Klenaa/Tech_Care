@@ -34,6 +34,7 @@
                 echo 'Vos mots de passe ne correspondent pas.';
                 header('Location: register.php');
             }
+        
             
         
            //retrieve the field values from our registration form
