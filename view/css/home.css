@@ -27,6 +27,7 @@
 	overflow: hidden; 
 	object-fit: cover;
 	line-height: 0;
+	background-attachment: fixed;
 }
 
 .slider-img:hover{
@@ -287,10 +288,12 @@ article {
 
 /*BAIT utilisateur citation quotes*/
 #bait{
-	background-image: url(images/sky\ white.jpg);
+	background-image: url(../images/sky\ white.jpg);
 	background-size: cover;
 	margin: 4% 0%;
 	height: 15vh;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 #bait blockquote{
@@ -300,7 +303,7 @@ article {
 	text-align: center;
 	animation: rotateCitations 18s ease-in 0s infinite;
 	overflow: hidden;
-	font-size: 2.1em;
+	font-size: 200%;
 	font-weight: 500;
 	font-style: oblique;
 	color: #1F7DBF ;
@@ -344,17 +347,21 @@ article {
 /*Bandeaux*/
 
 #bandeau1{
-	background-image: url(images/teamworkzoom.jpg);
+	background-image: url(../images/teamworkzoom.jpg);
 	background-size: cover;
 	margin: 4% 0%;
 	height: 40vh;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 #bandeau2{
-	background-image: url(images/teamwork3.jpg);
+	background-image: url(../images/teamwork3.jpg);
 	background-size: cover;
 	margin: 4% 0%;
 	height: 40vh;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 caption{

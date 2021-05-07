@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Doyouwant.css"/>
-    <link rel="stylesheet" href="header.css"/>
-    <link rel="stylesheet" href="Footer.css"/>
-    <title>Présentation</title>
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css"/>    
 </head>
+
 <header>
     <section>
         <a href="Doyouwant.html">
@@ -41,37 +40,38 @@
     </section>
 </header>
 
-<body>
+<main>
+    <div class="box">
+        <div class="mini-text">
+            <h2>Contact</h2>
+            <div class="separator"></div>
+        </div>
+        <div class="cgu">
+            <article>
 
+                <h3 class="articleTitle"> Pour toutes questions vous pouvez nous contacter</h3>
+                <p><strong>Par mail :</strong> <br>
+                <h5>Responsable technique</h5> rodolphe.bernard@eleve.isep.fr
+                <h5>Project manager</h5> lena.cheam@eleve.isep.fr
+                <h5>Responsable marketing</h5> salem.khalil@eleve.isep.fr
+                <h5>Directeur adjoint</h5> eddy.ngo@eleve.isep.fr
+                <h5>Responsable relations extérieures</h5> gauthier.simon@eleve.isep.fr
+                <h5>Responsable des finances</h5> sophie.zhang@eleve.isep.fr
+                </p>
 
-<div class="vous" align="center"> Vous voulez...</div>
+                <p><strong>Par téléphone :</strong>
+                <h5>Responsable technique</h5> 06...
+                <h5>Project manager</h5> 06...
+                <h5>Responsable marketing</h5> 06...
+                <h5>Directeur adjoint</h5> 06...
+                <h5>Responsable relations extérieures</h5> 06...
+                <h5>Responsable des finances</h5> 06...
+                </p>
 
-<div class="container">
-    <div class="item">Mesurer votre état de stress ?</div>
-    <div class="item">Ne plus stresser avant ni pendant un évenement ?</div>
-    <div class="item">Améliorer votre temps de reaction ?</div>
-
-    <div class="item2">TechCare met au service un prototype et des analyses de données afin de mesurer le niveau de
-        stress chez l'individu.
+            </article>
+        </div>
     </div>
-</div>
-</body>
-
-<div id="footer">
-    <footer>
-        <ul id="scroll">
-            <li><a href="FAQ.html">FAQ</a></li>
-            <li><a href="Forum.html">Forum</a></li>
-            <li><a href="cgu.html">CGU</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Langues</a>
-                <ul>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Français</a></li>
-                </ul>
-            <li><a href="legal_mentions.html">Mentions légales</a></li>
-        </ul>
-    </footer>
-</div>
-
+    </div>
+    <?php include("footer.php"); ?>
+</main>
 </html>

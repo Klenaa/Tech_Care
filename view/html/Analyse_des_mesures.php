@@ -4,7 +4,6 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="Analyse-des-mesures.css"/>
     <link rel="stylesheet" href="header.css"/>
-    <link rel="stylesheet" href="Footer.css"/>
     <title>Analyse des mesures</title>
 </head>
 <header>
@@ -110,22 +109,6 @@
             <span class="blank"><!--BLANK--></span>
         </div>
     </section>
+    <?php include("footer.php"); ?>
 </body>
-
-<footer>
-    <div id="footer">
-            <ul id="scroll">
-                <li><a href="FAQ.html">FAQ</a></li>
-                <li><a href="Forum.html">Forum</a></li>
-                <li><a href="cgu.html">CGU</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="#">Langues</a>
-                    <ul>
-                        <li><a href="#">English</a></li>
-                        <li><a href="#">Français</a></li>
-                    </ul>
-                <li><a href="legal_mentions.html">Mentions légales</a></li>
-            </ul>
-    </div>
-</footer>
 </html>

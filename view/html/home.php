@@ -3,10 +3,7 @@
     <head>
         <meta charset="utf-8">
 	<title>Accueil</title>
-	<link rel="stylesheet" href="home.css"/>
-        <link rel="stylesheet" href="header.css"/>
-        <link rel="stylesheet" href="Footer.css"/>
-
+	<link rel="stylesheet" href="../css/home.css"/>
     </head>
 
     <header>
@@ -44,14 +41,14 @@
         <!--SLIDER-->
         <div class="slider-container">
             <div class="slider fade">
-                <img class="slider-img bg-overlay" src="images/peaceful.jfif">
+                <img class="slider-img bg-overlay" src="../images/peaceful.jfif">
                 <blockquote class="text">
                     Le stress modifie le tempérament d'une personne :<br>il en fait un être désorienté.
                     <cite><br><br>Amoe Abbassi, écrivain ingénieur</cite>
                 </blockquote>
             </div>
             <div class="slider fade">
-                <img class="slider-img bg-overlay" src="images/peaceful.jfif">
+                <img class="slider-img bg-overlay" src="../images/peaceful.jfif">
                 <blockquote class="text">
                     En cas de stress extrême, le corps se met aux commandes<br>et fait ce qu'il a à faire pendant que le cerveau se tient sur la.touche,
                     <br>incapable d'autre chose que de siffler, taper du pied ou regarder le ciel.
@@ -60,7 +57,7 @@
             </div>
         </div>
         <!--JS SLIDER-->
-        <script type="text/javascript" src="slider.js"></script>
+        <script type="text/javascript" src="../javascript/slider.js"></script>
         <!--Le stress-->
         <div id="part1">            
             <div class="mini-text">
@@ -161,15 +158,15 @@
             <div class="info-container png-container">
                 <div class="info-box">
                     <h3>Cardiaque</h3>
-                    <img class="png" src="images/test/cardio.png">
+                    <img class="png" src="../images/test/cardio.png">
                 </div>
                 <div class="info-box">
                     <h3>Auditif</h3>
-                    <img class="png" src="images/test/auditif.png">
+                    <img class="png" src="../images/test/auditif.png">
                 </div>
                 <div class="info-box">
                     <h3>Réflexe</h3>
-                    <img class="png" src="images/test/reflex.png">
+                    <img class="png" src="../images/test/reflex.png">
                 </div>
             </div>
 
@@ -183,7 +180,7 @@
             </div>
             <div class="alterimage">
                 <div class="elementAlternate">
-                    <img id="image_partenaire" src="images/Infinite_measures.gif">
+                    <img id="image_partenaire" src="../images/Infinite_measures.gif">
                 </div>                
             </div>
 
@@ -199,52 +196,32 @@
             </div>
             <div class="gallery-container">
                 <div class="boximg">
-                    <img src="images/profil/sophie.jpg">
+                    <img src="../images/profil/sophie.jpg">
                     <span>Sophie ZHANG<br>Responsable des finances</span>
                 </div>
                 <div class="boximg">
-                    <img src="images/profil/Photo Léna.jpg">
+                    <img src="../images/profil/Photo Léna.jpg">
                     <span>Léna CHEAM<br>Project manager</span>
                 </div>
                 <div class="boximg">
-                    <img src="images/profil/rodolphe.jpg">
+                    <img src="../images/profil/rodolphe.jpg">
                     <span>Rodolphe BERNARD<br>Responsable technique</span>
                 </div>
                 <div class="boximg">
-                    <img src="images/profil/salem.jpg">
+                    <img src="../images/profil/salem.jpg">
                     <span>Salem KHALIL<br>Responsable marketing</span>
                 </div>
                 <div class="boximg">
-                    <img src="images/profil/eddy.jpg">
+                    <img src="../images/profil/eddy.jpg">
                     <span>Eddy NGO<br>Directeur adjoint</span>
                 </div>
                 <div class="boximg">
-                    <img src="images/profil/gauthier.jpg">
+                    <img src="../images/profil/gauthier.jpg">
                     <span>Gauthier SIMON<br>Responsable relations extérieures</span>
                 </div>            
             </div>
-        </div>
-
-            <div id="footer">
-                <footer>
-                    <ul id="scroll">
-                        <li><a href="FAQ.html">FAQ</a></li>
-                        <li><a href="Forum.html">Forum</a></li>
-                        <li><a href="cgu.html">CGU</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Langues</a>
-                            <ul>
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">Français</a></li>
-                            </ul>
-                        <li><a href="legal_mentions.html">Mentions légales</a></li>
-                    </ul>
-                </footer>
-            </div>
-
-            
-            
-            
+        </div>   
+        <?php include("footer.php"); ?>   
     </main>
 </html>
 

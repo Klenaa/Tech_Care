@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="Forum.css"/>
-    <link rel="stylesheet" href="Footer.css"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Doyouwant.css"/>
     <link rel="stylesheet" href="header.css"/>
-    <title>Forum</title>
+    
+    <title>Présentation</title>
 </head>
 <header>
     <section>
@@ -40,44 +40,22 @@
         </div>
     </section>
 </header>
-<br>
+
 <body>
 
 
+<div class="vous"> Vous voulez...</div>
 
-<h1>Forum</h1>
-<p>Sujet 1</p>
-<p>Sujet 2</p>
-<p>Sujet 3</p>
-<p>Sujet 4</p>
-<br>
-<hr>
+<div class="container">
+    <div class="item">Mesurer votre état de stress ?</div>
+    <div class="item">Ne plus stresser avant ni pendant un évenement ?</div>
+    <div class="item">Améliorer votre temps de reaction ?</div>
 
-<h3>Posez vos questions</h3><br>
-
-<div class="ask">
-<label>
-    <input type="text" name="" class="champ" placeholder="Ecrivez votre question" size="50">
-</label><br>
-<button type="button" class="signupbtn">Ajouter le sujet</button>
+    <div class="item2">TechCare met au service un prototype et des analyses de données afin de mesurer le niveau de
+        stress chez l'individu.
+    </div>
 </div>
-
+<?php include("footer.php"); ?>
 </body>
 
-<div id="footer">
-    <footer>
-        <ul id="scroll">
-            <li><a href="FAQ.html">FAQ</a></li>
-            <li><a href="Forum.html">Forum</a></li>
-            <li><a href="cgu.html">CGU</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Langues</a>
-                <ul>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Français</a></li>
-                </ul>
-            <li><a href="legal_mentions.html">Mentions légales</a></li>
-        </ul>
-    </footer>
-</div>
 </html>
