@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="FAQ Salem.css"/>
-    <link rel="stylesheet" href="Footer.css"/>
     <link rel="stylesheet" href="header.css"/>
     <title>FAQ</title>
 </head>
@@ -111,20 +110,7 @@
 </body>
 
 
-<div id="footer">
-    <footer>
-        <ul id="scroll">
-            <li><a href="FAQ.html">FAQ</a></li>
-            <li><a href="Forum.html">Forum</a></li>
-            <li><a href="cgu.html">CGU</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Langues</a>
-                <ul>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Français</a></li>
-                </ul>
-            <li><a href="legal_mentions.html">Mentions légales</a></li>
-        </ul>
-    </footer>
-</div>
+<?php
+            $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+            include($IPATH . "footer.php"); ?>
 </html>

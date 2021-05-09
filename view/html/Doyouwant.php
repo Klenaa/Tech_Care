@@ -55,7 +55,9 @@
         stress chez l'individu.
     </div>
 </div>
-<?php include("footer.php"); ?>
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "footer.php"); ?>
 </body>
 
 </html>

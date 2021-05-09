@@ -2,6 +2,8 @@
     require 'connect.php';
 
     echo 'Function test';
+    echo 'Hello '. $_SESSION['userName'] . ' ET ' . $_SESSION['email'] ;
+
     function isEmailAlreadyRegistered($bdd, $emailToCheck){
         $reqMail = $bdd->prepare('SELECT email FROM users WHERE email = ?');
         $reqMail->execute(array($emailToCheck));           
@@ -17,9 +19,9 @@
             return false;
         }
     }
-    
+    //session_destroy();
      /*while($dataMail = $reqMail->fetch()){
             echo '<br> Nombre Email : ' . (int)htmlspecialchars($dataMail['email']);
             array('email' => $_POST['email']*/
-        
-?>
+
+ ?>

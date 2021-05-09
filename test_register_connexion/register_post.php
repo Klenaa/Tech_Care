@@ -3,15 +3,39 @@
     include('register_functions.php');
     
 
-     
-        if(isset($_POST['register']) && $_POST['pass'] == $_POST['pass2'])
+
+    //Condition du gestionnaire
+        if((isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']
+            && $_POST['status'] == 'gestionnaire' && $_POST['verificationCode'] = 'MDPGest123.'
+            )
+            OR ((isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']
+                && $_POST['status'] == 'utilisateur' && $_POST['verificationCode'] = 'user'
+            ))
+        )
         {
+
             //Hash password
             $passwordHash = password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
             $email = trim($_POST['email']);
-        
-            //INSERT 
-            $req = $bdd->prepare('INSERT INTO users (email, userName, userSurname, pass) VALUES (:email, :userName, :userSurname, :pass)');
+            $status = trim($_POST['status']);
+
+            //éléments optionnels lors du remplissage de l'insciption
+            $birthday = !empty($_POST['birthday']) ? trim($_POST['birthday']) : null;
+            $gender = !empty($_POST['gender']) ? trim($_POST['gender']) : null;
+            $address = !empty($_POST['address']) ? trim($_POST['address']) : null;
+            $postalCode = !empty($_POST['postalCode']) ? trim($_POST['postalCode']) : null;
+            $city = !empty($_POST['city']) ? trim($_POST['city']) : null;
+            $country = !empty($_POST['country']) ? trim($_POST['country']) : null;
+            $profession = !empty($_POST['profession']) ? trim($_POST['profession']) : null;
+
+            echo 'anniv : ' . $birthday . '<br>';
+            echo 'anniv : ' . gender . '<br>';
+
+
+
+            //INSERT
+            $req = $bdd->prepare('INSERT INTO users (email, userName, userSurname, pass, birthday, gender, address, postalCode, city, country, profession, status) 
+                                        VALUES (:email, :userName, :userSurname, :pass, :birthday, :gender, :address, :postalCode, :city, :country, :profession, :status)');
             
             if (isEmailAlreadyRegistered($bdd, $email)){
 
@@ -20,7 +44,16 @@
                     'email' => $_POST['email'],
                     'userName' => $_POST['userName'],
                     'userSurname' =>  $_POST['userSurname'],
-                    'pass' =>$passwordHash
+                    'pass' => $passwordHash,
+                    'birthday' => $birthday,
+                    'gender' => $gender,
+                    'address' => $address,
+                    'postalCode' =>$postalCode,
+                    'city' =>$city,
+                    'country' => $country,
+                    'profession' =>$profession,
+                    'status' =>$status
+
 
                     /* avec ?, ?, ?, ? dans la requete INSERT
                     $_POST['email'],
@@ -28,17 +61,29 @@
                     $_POST['userSurname'],
                     $passwordHash*/
                 ));
-            header('Location: register.php');
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['userName'] = $_POST['userName'];
+                $_SESSION['userSurname'] = $_POST['userSurname'];
+                $_SESSION['status'] = $_POST['status'];
+
+
+                header('Location: register_functions.php');
             }          
-        }elseif (isset($_POST['register']) && $_POST['pass'] != $_POST['pass2']){
+        }
+        elseif (isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']
+            && $_POST['status'] == 'utilisateur' && $_POST['verificationCode'] = 'user'
+        ){
+            echo 'Les utilisateurs ici';
+        }
+
+
+        elseif (isset($_POST['register']) && $_POST['pass'] != $_POST['pass2']){
                 echo 'Vos mots de passe ne correspondent pas.';
                 header('Location: register.php');
             }
-        
-            
-        
-           //retrieve the field values from our registration form
+
        /*
+        * //retrieve the field values from our registration form
            email, user_name, user_surname, pass
        $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
        $userName = !empty($_POST['userName']) ? trim($_POST['userName']) : null;
@@ -85,9 +130,11 @@
        //If the signup process is a success
        if($result){
            echo 'Votre inscription a bien été prise en compte';
-       }*/
+       }
    
-   //}
+   //}*/
 
-
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "footer.php");
 ?>
+
