@@ -135,3 +135,15 @@ details summary{
 #scroll a:hover {
     text-decoration: underline;
 }
+
+.container {
+    padding: 16px;
+}
+
+
+.signup {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 80%;
+}
