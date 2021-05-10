@@ -1,8 +1,5 @@
 <?php
-
     require 'connect.php';
-    include('config.php');
-
 ?>
 
 
@@ -51,23 +48,23 @@
                     <div class="element-form">
                         <label for="birthday">Date de naissance</label>
                         <div class="multipleChoice">
-                            <input type="date" id="birthday" name="birthday"><br>
+                            <input type="date" id="birthday" required name="birthday"><br>
                         </div>
 
                         <label for="gender">Genre</label>
                         <div class="multipleChoice">
-                            <input type="radio" id="birthdayH" name="gender" value="homme"><label for="birthdayH">Homme</label>
+                            <input type="radio" id="birthdayH" name="gender" required value="homme"><label for="birthdayH">Homme</label>
                             <input type="radio" id="birthdayF" name="gender" value="femme"><label for="birthdayF">Femme</label><br>
                         </div>
 
                         <label for="address">Adresse</label>
-                        <input type="text" id="address" name="address" maxlength="70" placeholder="Adresse"><br>
+                        <input type="text" id="address" name="address" required maxlength="70" placeholder="Adresse"><br>
 
                         <label for="postalCode">Code Postal</label>
-                        <input type="text" pattern="[0-9]{5}" id="postalCode" name="postalCode" placeholder="75001"><br>
+                        <input type="text" pattern="[0-9]{5}" id="postalCode" required name="postalCode" placeholder="75001"><br>
 
                         <label for="city">Ville</label>
-                        <input type="text" id="city" name="city" placeholder="Ville"><br>
+                        <input type="text" id="city" name="city" required placeholder="Ville"><br>
 
                         <label for="country">Pays</label>
                         <select name="country" id="country">

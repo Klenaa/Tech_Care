@@ -15,7 +15,7 @@ if(isset($_POST['connexion'])) {
             $_SESSION['userName'] = $userinfo['userName'];
             $_SESSION['userSurname'] = $userinfo['userSurname'];
             $_SESSION['pass'] = $userinfo['pass'];
-            header("Location:function.php");
+            header("Location: function.php");
         } else {
             $erreur = "Mauvais mail ou mot de passe !";
         }
@@ -28,7 +28,7 @@ if(isset($_POST['connexion'])) {
     <head>
         <title>Se connecter</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="signIn.css"/>
+        <link rel="stylesheet" href="../view/css/signIn.css"/>
     </head>
 <body>
 <broly>
