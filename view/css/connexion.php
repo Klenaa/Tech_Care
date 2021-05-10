@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
-    <link rel="stylesheet" href="connexion.css">
+    <link rel="stylesheet" href="connexion.css"/>
     <link rel="stylesheet" href="header.css"/>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
@@ -70,7 +70,7 @@
 
 
         <div>
-            <a href="Doyouwant.php"><button type="button" >Se connecter</button></a>
+            <a href="../html/Doyouwant.php"><button type="button" >Se connecter</button></a>
         </div>
     </form>
 </broly>

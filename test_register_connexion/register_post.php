@@ -15,7 +15,7 @@
         {
 
             //Hash password
-            $passwordHash = password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
+            $passwordHash = sha1($_POST['pass']);
             $email = trim($_POST['email']);
             $status = trim($_POST['status']);
 
