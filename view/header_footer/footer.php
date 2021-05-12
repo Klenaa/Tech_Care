@@ -55,7 +55,6 @@
             text-decoration: underline;
         }
     </style>
-    <link rel="stylesheet" href="../css/Footer.css"/>
 </head>
 
 <body>
@@ -71,6 +70,10 @@
                     <li><a href="#">Français</a></li>
                 </ul>
             <li><a href="../html/legal_mentions.php">Mentions légales</a></li>
+            <li><a href="../../test_register_connexion/registerManager.php">Nous rejoindre</a></li>
+            <li><a href="../../test_register_connexion/deconnexion.php">se Déconnecter</a></li>
+
+
         </ul>
     </footer>
 </body>

@@ -5,19 +5,11 @@
 
 
     //Condition du gestionnaire
-        if((isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']
-            && $_POST['status'] == 'gestionnaire' && $_POST['verificationCode'] = 'MDPGest123.'
-            )
-            OR ((isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']
-                && $_POST['status'] == 'utilisateur' && $_POST['verificationCode'] = 'user'
-            ))
-        )
+        if((isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']))
         {
-
             //Hash password
             $passwordHash = sha1($_POST['pass']);
             $email = trim($_POST['email']);
-            $status = trim($_POST['status']);
 
             //éléments optionnels lors du remplissage de l'insciption
             $birthday = !empty($_POST['birthday']) ? trim($_POST['birthday']) : null;
@@ -52,7 +44,7 @@
                     'city' =>$city,
                     'country' => $country,
                     'profession' =>$profession,
-                    'status' =>$status
+                    'status' =>'utilisateur'
 
 
                     /* avec ?, ?, ?, ? dans la requete INSERT
@@ -61,22 +53,19 @@
                     $_POST['userSurname'],
                     $passwordHash*/
                 ));
+
+                //Elements de session importants
                 $_SESSION['email'] = $_POST['email'];
                 $_SESSION['userName'] = $_POST['userName'];
                 $_SESSION['userSurname'] = $_POST['userSurname'];
                 $_SESSION['status'] = $_POST['status'];
 
+                createCodeVerification();
 
-                header('Location: register_functions.php');
-            }          
+
+                header('Location: registerVerification.php');
+            }
         }
-        elseif (isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']
-            && $_POST['status'] == 'utilisateur' && $_POST['verificationCode'] = 'user'
-        ){
-            echo 'Les utilisateurs ici';
-        }
-
-
         elseif (isset($_POST['register']) && $_POST['pass'] != $_POST['pass2']){
                 echo 'Vos mots de passe ne correspondent pas.';
                 header('Location: register.php');

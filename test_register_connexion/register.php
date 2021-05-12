@@ -1,8 +1,7 @@
 <?php
     require 'connect.php';
+    include('register_functions.php');
 ?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,16 +25,6 @@
 
                         <label for="userSurname">Prénom</label>
                         <input type="text" id="userSurname" name="userSurname" required maxlength="50" placeholder="Prénom"><br>
-
-                        <label>Type d'utilisateur</label>
-                        <select name="status" id="status" required>
-                            <option value="utilisateur">Utilisateur</option>
-                            <option value="gestionnaire">Gestionnaire (médecin)</option>
-                        </select>
-
-                        <label for="verificationCode">Entrer le code de vérification</label>
-                        <input type="password" id="verificationCode" name="verificationCode" required maxlength="50" placeholder="Code de vérification"><br>
-
 
                         <label for="pass">Mot de passe</label>
                         <input type="password" id="pass" name="pass" required maxlength="50" placeholder="Mot de passe"><br>
@@ -67,24 +56,26 @@
                         <input type="text" id="city" name="city" required placeholder="Ville"><br>
 
                         <label for="country">Pays</label>
+                        <?php $countryArray = getCountry($bdd);?>
                         <select name="country" id="country">
-                            <option value="france">France</option>
-                            <option value="angleterre">Angleterre</option>
-                            <option value="allemagne">Allemagne</option>
-                            <option value="espagne">Espagne</option>
-                            <option value="usa">USA</option>
-                            <option value="chine">Chine</option>
-                            <option value="japon">Japon</option>
+                            <?php
+                            foreach($countryArray as $pays) {
+                                echo '<option value=' . trim($pays) . '>' . trim($pays) . '</option>' ;
+                            }
+                            ?>
                         </select>
-
                         <label for="profession">Profession</label>
-                        <input type="text" id="profession" name="profession" placeholder="profession"><br>
-
-
+                        <?php $professionArray = getProfession($bdd);?>
+                            <select name="profession" id="profession">
+                                <?php
+                                foreach($professionArray as $job) {
+                                    echo '<option value=' . trim($job) . '>' . trim($job) . '</option>' ;
+                                }
+                                ?>
+                            </select>
                     </div>
-
-
                 </div>
+
                 <div class="multipleChoice">
                     <input type="checkbox" name="conditions" id="conditions" required><label>Je déclare accepter les <a href="../view/html/cgu.php" style="color:dodgerblue">Conditions Générales d'Utilisation</a>
                     </label>
@@ -101,7 +92,7 @@
 </html>
 
 <?
-
+    /*
     //$register exist => registration form submitted
     //on récupère tout le contenu de la table users (pour vérifier le contenu de la bdd)
     $reponse = $bdd->query('SELECT * FROM users'); //Contient toute la réponse de la requete
@@ -115,7 +106,7 @@
         echo 'userSurname : ' . htmlspecialchars($donnees['userSurname']) . '  -  ';
         echo 'password : ' . htmlspecialchars($donnees['pass']) . '<br>';
     }
-    $reponse->closeCursor(); //Termine le traitement de la requête
+    $reponse->closeCursor(); //Termine le traitement de la requête*/
     
 ?>
 

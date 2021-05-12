@@ -69,7 +69,7 @@ form input, form select {
     margin: 6px;
 }
 
-input[type=text], input[type=password], input[type=email], input[type=text], input[type=date], #status, #country {
+input[type=text], input[type=password], input[type=email], input[type=text], input[type=date], #status, #country, #profession {
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -81,7 +81,7 @@ input[type=text], input[type=password], input[type=email], input[type=text], inp
     border-bottom: 2px solid #1F7DBF;
  }
 
-input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=text]:hover, input[type=date]:hover, #status:hover {
+input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=text]:hover, input[type=date]:hover, #status:hover, #country:hover, #profession:hover {
     background-color: #F2F2F8;
     transition: 0.3s;
 }
@@ -110,6 +110,8 @@ form button {
     margin-top: 10px;
 
 }
+
+
 
 #conditions{
     justify-content: flex-start;
