@@ -3,37 +3,20 @@ body {
     color: #1e4d6e;
 }
 
-
-broly {
-    display: flex;
-    justify-content: center;
-    flex-direction: columns;
-    align-items: center;
-    box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 200px;
-}
-
 form {
     margin-top: 20px;
-    background-color: #fff;
-    padding: 40px 60px;
-    border-radius: 10px;
-    min-width: 300px;
-}
-
-
-form p.choose-email {
     text-align: center;
+    height: 400px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
 }
 
-form .inputs {
-    display: flex;
-    flex-direction: column;
-}
 
-form .inputs input[type='email'], input[type='password'], input[type='nom'], input[type='prénom'], input[type='nomUtilisateur'] {
+form .inputs input[type='email'], input[type='password'] {
     padding: 15px;
+    width: 300px;
     border: none;
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -63,10 +46,16 @@ form button {
     cursor: pointer;
 }
 
-.container {
-    font-size: 0.9em;
-}
-
 a {
     text-decoration: none;
+}
+
+.erreur {
+    text-align: center;
+}
+
+#global {
+    margin-left: auto;
+    margin-right: auto;
+    width:400px;
 }

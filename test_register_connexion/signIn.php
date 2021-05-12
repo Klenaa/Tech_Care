@@ -15,9 +15,10 @@ if(isset($_POST['connexion'])) {
             $_SESSION['userName'] = $userinfo['userName'];
             $_SESSION['userSurname'] = $userinfo['userSurname'];
             $_SESSION['pass'] = $userinfo['pass'];
-            header("Location: function.php");
+            $_SESSION['status'] = $userinfo['status'];
+            header("Location:function.php");
         } else {
-            $erreur = "Mauvais mail ou mot de passe !";
+            $erreur = "E-mail ou mot de passe incorrect !";
         }
     } else {
         $erreur = "Tous les champs doivent être complétés !";
@@ -31,29 +32,34 @@ if(isset($_POST['connexion'])) {
         <link rel="stylesheet" href="../view/css/signIn.css"/>
     </head>
 <body>
-<broly>
 
-    <form method="post" action="">
+
+    <form method="post" action="" id="global">
 
         <div class="inputs">
             <h2>Connexion</h2>
-        <label for="email">E-mail</label>
-        <input type="email" name="mail" placeholder="Mail" />
-
-        <label for="pass">Mot de passe</label>
+        <label for="email">E-mail</label><br>
+        <input type="email" name="mail" placeholder="E-mail" />
+<br>
+        <label for="pass">Mot de passe</label><br>
         <input type="password" name="pass" placeholder="Mot de passe" />
         </div>
         <p class="inscription">
         Vous n'avez pas encore de compte? <a href="register.php"><span> Créez-en un !</span></a><br>
 <br>
+            <div class="bouton">
             <button type="submit" name="connexion">Se connecter</button>
+        </div>
     </form>
-</broly>
+
+
+<div class="erreur">
 
 <?php
 if(isset($erreur)) {
     echo $erreur;
 }
 ?>
+</div>
 
-
+</body>
