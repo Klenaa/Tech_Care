@@ -1,4 +1,4 @@
-@@ -0,0 +1,357 @@
+
 /*SLIDER - https://www.w3schools.com/howto/howto_js_slideshow.asp*/
 
 /* Slider container*/
@@ -45,7 +45,6 @@
 	text-shadow:5px 0 10px rgba(0, 10, 10, .5);
 	font-size: 150%;
 
-	padding:auto;
 	position: absolute;
 	width: 90%;
 	height: calc(100% - 10vh);
@@ -60,7 +59,7 @@
 	text-align: center;
 	display: block;
 	opacity: 0;
-	transition : opacity .0.5s;
+	transition : opacity 0.5s;
   }
 
 
@@ -92,8 +91,6 @@ main{
 h2{
 
 	color :#1E4D6E;
-	padding: none;
-	margin: none;
 	text-transform:uppercase;
 }
 

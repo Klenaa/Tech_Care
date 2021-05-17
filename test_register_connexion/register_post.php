@@ -3,8 +3,6 @@
     include('register_functions.php');
     
 
-
-    //Condition du gestionnaire
         if((isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']))
         {
             //Hash password
@@ -19,10 +17,6 @@
             $city = !empty($_POST['city']) ? trim($_POST['city']) : null;
             $country = !empty($_POST['country']) ? trim($_POST['country']) : null;
             $profession = !empty($_POST['profession']) ? trim($_POST['profession']) : null;
-
-            echo 'anniv : ' . $birthday . '<br>';
-            echo 'anniv : ' . gender . '<br>';
-
 
 
             //INSERT
@@ -64,6 +58,10 @@
 
 
                 header('Location: registerVerification.php');
+            }
+            else{
+                echo 'Cet email existe déjà.';
+                header('Location: register.php');
             }
         }
         elseif (isset($_POST['register']) && $_POST['pass'] != $_POST['pass2']){

@@ -4,8 +4,7 @@
         <meta charset="utf-8">
 
     	<title>Mentions légales</title>
-    	<link rel="stylesheet" href="cgu.css"/>  
-        <link rel="stylesheet" href="header.css"/>  
+    	<link rel="stylesheet" href="../css/cgu.css"/>
 
     </head>
 

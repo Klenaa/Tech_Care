@@ -7,43 +7,45 @@
             width: 100%;
             background: #1e4d6e;
             height : 150px;
+            display: flex;
+            align-items: center;
+
         }
 
         #scroll, #scroll ul {
             padding: 0;
             margin: 0;
             list-style: none;
+
         }
 
-        #scroll {
+        #scroll{
+            width: 100%;
+            display: flex;
             text-align: center;
-            padding : 65px;
+            justify-content: space-evenly;
+            align-items: center;
+
         }
 
-        #scroll li {
-            /* on place les liens du menu horizontalement */
-            display: inline-block;
-            width: 100px;
-        }
 
-        #scroll ul li {
-            /* on enlève ce comportement pour les liens du sous menu */
-            display: inherit;
-        }
 
         #scroll a {
             text-decoration: none;
             display: block;
             color:white;
             text-align: center;
-            white-space:nowrap;
+            align-items: center;
+
         }
+
 
         #scroll ul {
             position: absolute;
             /* on cache les sous menus complètement sur la gauche */
             left: -999em;
-            z-index: 1000;
+            z-index: 2000;
+
         }
 
         #scroll li:hover ul {
@@ -54,16 +56,21 @@
         #scroll a:hover{
             text-decoration: underline;
         }
+
+
+
+
+
     </style>
 </head>
 
 <body>
     <footer>
         <ul id="scroll">
-            <li><a href="../html/FAQ.php">FAQ</a></li>
-            <li><a href="../html/Forum.php">Forum</a></li>
-            <li><a href="../html/cgu.php">CGU</a></li>
-            <li><a href="../html/contact.php">Contact</a></li>
+            <li><a href="<?php echo "http://localhost/Tech_Care/view/html/FAQ.php"?>">FAQ</a></li>
+            <li><a href="http://localhost/Tech_Care/view/html/forum.php">Forum</a></li>
+            <li><a href="http://localhost/Tech_Care/view/html/cgu.php">CGU</a></li>
+            <li><a href="http://localhost/Tech_Care/view/html/contact.php">Contact</a></li>
             <li><a href="#">Langues</a>
                 <ul>
                     <li><a href="#">English</a></li>
@@ -71,7 +78,7 @@
                 </ul>
             <li><a href="../html/legal_mentions.php">Mentions légales</a></li>
             <li><a href="../../test_register_connexion/registerManager.php">Nous rejoindre</a></li>
-            <li><a href="../../test_register_connexion/deconnexion.php">se Déconnecter</a></li>
+            <li><a href="../../test_register_connexion/deconnexion.php">Se déconnecter</a></li>
 
 
         </ul>

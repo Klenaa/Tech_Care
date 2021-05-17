@@ -7,7 +7,7 @@ include('register_functions.php');
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="../test/mail.css"/>
+    <link rel="stylesheet" href="../view/css/registerVerification.css"/>
     <title>Vérifier votre adresse mail</title>
 </head>
 
@@ -19,7 +19,6 @@ include('register_functions.php');
         <div class="multipleChoice">
             <label for="verificationCode">Entrer le code de vérification</label>
             <input type="password" id="verificationCode" name="verificationCode" required maxlength="50" placeholder="Code de vérification"><br>
-
         </div>
         <input type="submit" value="Confirmer" name="confirm">
     </form>
@@ -37,13 +36,14 @@ if(isset($_POST['confirm'])) {
     echo 'vous avez appuyer sur send';
     if ($_SESSION['codeVerification'] == $_POST['verificationCode']) {
         echo '<p> BRAVO VOUS AVEZ REUSSI A VOUS INSCRIRE !</p>';
-        //header('Location: function.php');
+
+        header('Location: ../view/html/doYouWant.php');
     }
     else{
         echo '<p>dommage, réessayez.</p>';
     }
 }
-if(isset($_POST['sendMail'])){
+if(isset($_POST['sendMail']) && isset($_SESSION['email'])){
     sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);
     echo 'it is send !!';
 }
