@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
 	<title>Conditions générales d'utilisations</title>
-	<link rel="stylesheet" href="cgu.css"/>
-        <link rel="stylesheet" href="header.css"/>
+	<link rel="stylesheet" href="../css/cgu.css"/>
+
     </head>
 
     <header>
         <section>
-            <a href="Doyouwant.html">
-                <img src="./images/logoHeader.png" alt=""/>
+            <a href="doYouWant.php">
+                <img src="../images/logoHeader.png" alt=""/>
             </a>
         </section>
         <section class="navButtonContainer">
