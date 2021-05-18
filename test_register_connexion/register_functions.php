@@ -15,7 +15,7 @@
             header('Location: C:\MAMP\htdocs\Tech_Care\test_register_connexion\register_functions.php');
         }
         else {
-            echo '<br> This email already registered. ' . $emailCount .' email : ' . $emailToCheck;
+            echo '<br> Ce mail est déjà enregistré. ' . $emailCount .' email : ' . $emailToCheck;
             return false;
         }
     }

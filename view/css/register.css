@@ -16,32 +16,26 @@ h1{
     text-align: center;
 }
 broly {
-    align-items: center;
-    box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
-    font-family: 'Roboto', sans-serif;
+    display: flex;
+    /*box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);*/
+    justify-content: center;
 }
 
 form {
+
+
     margin-top: 20px;
-    background-color: #fff;
-    padding: 40px 60px;
     border-radius: 10px;
-    min-width:500px;
+    min-width:600px;
+    width: 75%;
+
 
 }
 
-.contenant{
-    display: flex;
-    flex-direction: row;
+span{
+    color : #8f0015;
 }
-.element-form{
-    display:flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 20px;
-    justify-content: space-evenly;
-    align-items: center;
-}
+
 
 .separator{
 	float: none;
@@ -51,13 +45,15 @@ form {
 	background-color:#1F7DBF;
 }
 /*Label*/
-form > .contenant >.element-form >label {
+form > .contenant > label {
     color: #1e4d6e;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     font-weight: bold;
+    margin: 10 0 px
+
 }
 
 
@@ -66,7 +62,8 @@ form input, form select {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 6px;
+    justify-content: center;
+
 }
 
 input[type=text], input[type=password], input[type=email], input[type=text], input[type=date], #status, #country, #profession {
@@ -99,18 +96,18 @@ form button {
 }
 
 #register{
-    width: 100%;
+    width: 120px;
     background-color:#1F7DBF;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
     font-size: 1em;
     margin-top: 10px;
-
 }
 
+#divButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
 #conditions{
@@ -124,4 +121,11 @@ form button {
     padding: 5px;
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+#gender{
+    justify-content: center;
+    margin: 15px;
+    padding: 10px;
+
 }

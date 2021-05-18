@@ -12,28 +12,27 @@ include('register_functions.php');
 </head>
 
 <body>
+<div class="sideByside">
+    <div class="container">
+        <h1>Code de vérification</h1>
+        <form method="post">
+            <div class="multipleChoice">
+                <label for="verificationCode">Entrer le code de vérification</label>
+                <input type="password" id="verificationCode" name="verificationCode" required maxlength="50" placeholder="Code de vérification"><br>
+            </div>
+            <input type="submit" value="Confirmer" name="confirm">
+        </form>
+    </div>
 
-<div class="container">
-    <h1>Code de vérification</h1>
-    <form method="post">
-        <div class="multipleChoice">
-            <label for="verificationCode">Entrer le code de vérification</label>
-            <input type="password" id="verificationCode" name="verificationCode" required maxlength="50" placeholder="Code de vérification"><br>
-        </div>
-        <input type="submit" value="Confirmer" name="confirm">
-    </form>
+    <div class="container">
+        <h1>Envoyer le mail à nouveau</h1>
+        <form method="post">
+            <input type="submit" value="Envoyer" name="sendMail">
+        </form>
+    </div>
 </div>
-
-<div class="container">
-    <h1>Envoyer le mail à nouveau</h1>
-    <form method="post">
-        <input type="submit" value="Envoyer" name="sendMail">
-    </form>
-</div>
-
 <?php
 if(isset($_POST['confirm'])) {
-    echo 'vous avez appuyer sur send';
     if ($_SESSION['codeVerification'] == $_POST['verificationCode']) {
         echo '<p> BRAVO VOUS AVEZ REUSSI A VOUS INSCRIRE !</p>';
 
