@@ -3,45 +3,15 @@
     <head>
         <meta charset="utf-8">
 	<title>Données des utilisateurs</title>
-	<link rel="stylesheet" href="Gest_userData_style.css"/>
-        <link rel="stylesheet" href="header.css"/>
+	<link rel="stylesheet" href="../css/Gest_userData_style.css"/>
     </head>
 
-    <header>
-        <section>
-            <a href="Doyouwant.html">
-                <img src="./images/logoHeader.png" alt=""/>
-            </a>
-        </section>
-        <section class="navButtonContainer">
-            <div class="nav">
-                <button class="navButton" id="takeMeasures"><a href="measuring_home.html">Prendre des mesures</a></button>
-            </div>
-            <div class="nav">
-                <button class="navButton" id="mesurementAnalysis"><a href="Analyse_des_mesures.html">Analyse des résultats</a></button>
-            </div>
-            <div class="nav">
-                <button class="navButton" id="usersData"><a href="Gest_userData.html">Données des utilisateurs</a></button>
-            </div>
-            <div class="nav">
-                <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
-                <div class="dropDownMenu dropAdmin">
-                    <a class="downMenu" href="user_management.html">Gérer les utilisateurs</a>
-                    <a class="downMenu" href="FAQ.html">Gérer la FAQ</a>
-                    <a class="downMenu" href="messagerie.html">Gérer la messagerie</a>
-                </div>
-            </div>
-        </section>
-        <section>
-            <button class="option" ><a>Options</a></button>
-            <div class="dropDownMenu dropOption">
-                <a class="downMenu" href="edit_profile.html">Profil</a>
-                <a class="downMenu" href="home.html">Se déconnecter</a>
-            </div>
-        </section>
-    </header>
-
     <main>
+
+        <?php
+        $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+        include($IPATH . "header.php"); ?>
+
         <div class="mini-text">
             <h2>Données des utilisateurs</h2>
                 <div class="separator"></div>
@@ -237,23 +207,6 @@
                 </div>
                 
             </div>
-        </div>
-
-        <div id="footer">
-            <footer>
-                <ul id="scroll">
-                    <li><a href="FAQ.html">FAQ</a></li>
-                    <li><a href="Forum.html">Forum</a></li>
-                    <li><a href="cgu.html">CGU</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#">Langues</a>
-                        <ul>
-                            <li><a href="#">English</a></li>
-                            <li><a href="#">Français</a></li>
-                        </ul>
-                    <li><a href="legal_mentions.html">Mentions légales</a></li>
-                </ul>
-            </footer>
         </div>
         <?php
         $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';

@@ -7,7 +7,11 @@
     
     <title>Menu utilisateur</title>
 </head>
+
 <body>
+    <?php
+    $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+    include($IPATH . "header.php"); ?>
     <div class="container">
         <a href="#"><article class="elements">
             <h2>Compléter son profil</h2>

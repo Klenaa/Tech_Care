@@ -3,45 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Prendre des mesures</title>
-    <link rel="stylesheet" href="measuring_home.css"/>
-    <link rel="stylesheet" href="header.css"/>
+    <link rel="stylesheet" href="../css/measuring_home.css"/>
 </head>
-
-<header>
-    <section>
-        <a href="Doyouwant.html">
-            <img src="./images/logoHeader.png" alt=""/>
-        </a>
-    </section>
-    <section class="navButtonContainer">
-        <div class="nav">
-            <button class="navButton" id="takeMeasures"><a href="measuring_home.html">Prendre des mesures</a></button>
-        </div>
-        <div class="nav">
-            <button class="navButton" id="mesurementAnalysis"><a href="Analyse_des_mesures.html">Analyse des résultats</a></button>
-        </div>
-        <div class="nav">
-            <button class="navButton" id="usersData"><a href="Gest_userData.html">Données des utilisateurs</a></button>
-        </div>
-        <div class="nav">
-            <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
-            <div class="dropDownMenu dropAdmin">
-                <a class="downMenu" href="user_management.html">Gérer les utilisateurs</a>
-                <a class="downMenu" href="FAQ.html">Gérer la FAQ</a>
-                <a class="downMenu" href="messagerie.html">Gérer la messagerie</a>
-            </div>
-        </div>
-    </section>
-    <section>
-        <button class="option" ><a>Options</a></button>
-        <div class="dropDownMenu dropOption">
-            <a class="downMenu" href="edit_profile.html">Profil</a>
-            <a class="downMenu" href="home.html">Se déconnecter</a>
-        </div>
-    </section>
-</header>
 <main>
 
+    <?php
+    $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+    include($IPATH . "header.php"); ?>
     <!--Le stress-->
 
     <div class="mini-text">
@@ -56,21 +24,21 @@
                 <article>
                     <div class="info-box">
                         <h4 class="articleTitle">Reconnaissance de tonalité</h4>
-                        <img class="png" src="images/test/auditif.png">
+                        <img class="png" src="../images/test/auditif.png">
                     </div>
                 </article>
                 <article>
-                    <a href="taking_measurement.html">
+                    <a href="taking_measurement.php">
                         <div class="info-box">
                             <h4 class="articleTitle">Mesure la fréquence cardiaque</h4>
-                            <img class="png" src="images/test/cardio.png">
+                            <img class="png" src="../images/test/cardio.png">
                         </div>
                     </a>
                 </article>
                 <article>
                     <div class="info-box">
                         <h4 class="articleTitle">Mesure de la température</h4>
-                        <img class="png" src="images/temperature.png">
+                        <img class="png" src="../images/temperature.png">
                     </div>
                 </article>
             </div>
@@ -88,19 +56,19 @@
             <article>
                 <div class="info-box">
                     <h4 class="articleTitle">Temps de réaction à une lumière inattendue</h4>
-                    <img class="png" src="images/lumiere.png">
+                    <img class="png" src="../images/lumiere.png">
                 </div>
             </article>
             <article>
                 <div class="info-box">
                     <h4 class="articleTitle">Temps de réaction à un son inattendu</h4>
-                    <img class="png" src="images/son.png">
+                    <img class="png" src="../images/son.png">
                 </div>
             </article>
             <article>
                 <div class="info-box">
                     <h4 class="articleTitle">Capacité à reproduire une teinte colorée</h4>
-                    <img class="png" src="images/ampoule.png">
+                    <img class="png" src="../images/ampoule.png">
                 </div>
             </article>
         </div>
