@@ -1,0 +1,45 @@
+body {
+    font-family: Helvetica, Verdana, sans-serif;
+    color: #1e4d6e;
+}
+
+* {box-sizing: border-box;}
+
+h1{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #1e4d6e;
+}
+
+ul{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px;
+    justify-content: space-evenly;
+    list-style: none;
+
+}
+
+li {
+    margin-bottom:15px;
+}
+
+broly {
+    align-items: center;
+    box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.conteneur{
+    margin: auto;
+    background-color: #fff;
+
+    border-radius: 10px;
+    min-width:500px;
+
+}
