@@ -1,0 +1,27 @@
+tr{
+    padding: 10px;
+
+}
+
+td{
+    padding : 10px;
+}
+
+table{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    margin-bottom: 50px;
+}
+
+thead{
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background-color: #1f7dbf;
+
+
+}

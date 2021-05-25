@@ -14,7 +14,7 @@ try{
 }
 
 if ($recherche=""){
-    echo "Veuillez rentrer un nom d'utilisateur."
+    echo "Veuillez rentrer un nom d'utilisateur.";
 }else{
     $query = "SELECT distinct count(lien) FROM users WHERE keyword LIKE \"%recherche%\" OR titre LIKE \"%$recherche%\"";
 }

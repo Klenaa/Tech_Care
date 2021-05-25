@@ -73,7 +73,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Editer le profil</title>
-        <link rel="stylesheet" href="editProfile.css"/>
+        <link rel="stylesheet" href="../view/css/editProfile.css"/>
     </head>
     <body>
         <h1>Modifier le Profil</h1>

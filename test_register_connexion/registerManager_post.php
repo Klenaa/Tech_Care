@@ -18,11 +18,6 @@ if((isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']))
     $country = !empty($_POST['country']) ? trim($_POST['country']) : null;
     $profession = !empty($_POST['profession']) ? trim($_POST['profession']) : null;
 
-    echo 'anniv : ' . $birthday . '<br>';
-    echo 'anniv : ' . gender . '<br>';
-
-
-
     //INSERT
     $req = $bdd->prepare('INSERT INTO users (email, userName, userSurname, pass, birthday, gender, address, postalCode, city, country, profession, status) 
                                         VALUES (:email, :userName, :userSurname, :pass, :birthday, :gender, :address, :postalCode, :city, :country, :profession, :status)');
@@ -59,6 +54,8 @@ if((isset($_POST['register']) && $_POST['pass'] == $_POST['pass2']))
         $_SESSION['status'] = $_POST['status'];
 
         createCodeVerification();
+        sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);
+
 
 
         header('Location: registerVerification.php');

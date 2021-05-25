@@ -55,6 +55,7 @@
                 $_SESSION['status'] = $_POST['status'];
 
                 createCodeVerification();
+                sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);
 
 
                 header('Location: registerVerification.php');

@@ -15,23 +15,23 @@
         <h1>S'inscrire</h1>
         <div class="separator"></div>
         <broly>
-            <form action="register_post.php" method="post">
+            <form action="registerManager_post.php" method="post">
                 <div class="contenant">
                     <!--Information obligatoires à l'inscription-->
 
                         <label for="email">Email*</label>
-                        <label id="MSG"></label>
-                        <input type="email" id="email" name="email" required maxlength="50" placeholder="email"><br>
+
+                        <input type="email" id="email" name="email" required maxlength="50" placeholder="jean.dupont@gmail.com"><br>
                         <span id="MSG"></span>
 
                         <label for="userName">Nom*</label>
-                        <input type="text" id="userName" name="userName" required maxlength="50" placeholder="Nom"><br>
+                        <input type="text" id="userName" name="userName" required maxlength="50" placeholder="Dupont"><br>
 
                         <label for="userSurname">Prénom*</label>
-                        <input type="text" id="userSurname" name="userSurname" required maxlength="50" placeholder="Prénom"><br>
+                        <input type="text" id="userSurname" name="userSurname" required maxlength="50" placeholder="Jean"><br>
 
                         <label for="pass">Mot de passe*</label>
-                        <input type="password" id="pass" name="pass" required maxlength="50" placeholder="1 chiffre, 1 Majuscule, 1 minuscule, 1 caractère spécial, 8 caractères min" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"><br>
+                        <input type="password" id="pass" name="pass" required maxlength="50" placeholder="1 chiffre, 1 Majuscule, 1 minuscule, 1 caractère spécial, 8 caractères min" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&]{8,}$"><br>
 
                         <label for="pass2">Confirmer votre mot de passe*</label>
                         <input type="password" id="pass2" name="pass2" required maxlength="50" placeholder="Confirmation mot de passe" onclick="ValidateMDP()"><br>
@@ -50,13 +50,13 @@
                         </div>
 
                         <label for="address">Adresse</label>
-                        <input type="text" id="address" name="address" maxlength="70" placeholder="Adresse"><br>
+                        <input type="text" id="address" name="address" maxlength="70" placeholder="1 rue de Paris"><br>
 
                         <label for="postalCode">Code Postal</label>
                         <input type="text" pattern="[0-9]{5}" id="postalCode" name="postalCode" placeholder="75001"><br>
 
                         <label for="city">Ville</label>
-                        <input type="text" id="city" name="city" placeholder="Ville"><br>
+                        <input type="text" id="city" name="city" placeholder="Paris"><br>
 
                         <label for="country">Pays</label>
                         <?php $countryArray = getCountry($bdd);?>

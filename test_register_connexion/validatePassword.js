@@ -8,7 +8,6 @@ function Validate(){
     else{
         return true;
     }
-    
 }
 
 function ValidateMDP(){

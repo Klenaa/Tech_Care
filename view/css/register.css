@@ -22,18 +22,15 @@ broly {
 }
 
 form {
-
-
     margin-top: 20px;
     border-radius: 10px;
     min-width:600px;
-    width: 75%;
-
-
+    width: 60%;
 }
 
 span{
     color : #8f0015;
+
 }
 
 
@@ -52,7 +49,8 @@ form > .contenant > label {
     flex-direction: column;
     align-items: center;
     font-weight: bold;
-    margin: 10 0 px
+    margin: 20px;
+    font-size: 1.7em;
 
 }
 
@@ -63,6 +61,7 @@ form input, form select {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 1.4em;
 
 }
 
@@ -98,7 +97,7 @@ form button {
 #register{
     width: 120px;
     background-color:#1F7DBF;
-    font-size: 1em;
+    font-size: 1.2em;
     margin-top: 10px;
 }
 
