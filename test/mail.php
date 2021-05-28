@@ -6,29 +6,41 @@ session_start();
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="mail.css"/>
+    <link rel="stylesheet" href="mail2.css"/>
     <title>Contact</title>
 </head>
 
 <body>
 
 <div class="container">
-    <h1>Formulaire de contact</h1>
-    <form method="post">
 
-        <label for="emailAddress">E-mail</label>
-        <input id="emailAddress" type="email" name="email" placeholder="Votre e-mail">
+    <form method="post" id="global">
 
-        <label for="sujet">Sujet</label>
-        <input type="text" id="sujet" name="sujet" placeholder="L'objet de votre message" required>
+        <div class="inputs">
+            <h1>Formulaire de contact</h1>
+            <label for="email">E-mail</label><br>
+            <input id="emailAddress" type="email" name="email"><br>
 
-        <label for="subject">Message</label>
-        <textarea id="subject" name="message" placeholder="Votre message" style="height:250px" required></textarea>
+        <label for="sujet">Sujet</label><br>
+            <input type="text" id="sujet" name="sujet"  required><br>
 
-        <input type="submit" value="Envoyer">
+            <label for="subject">Message</label><br>
+            <textarea id="subject" name="message" style="height:250px" required></textarea>
+        </div>
+        <div class="bouton">
+            <button type="submit">Envoyer</button>
+        </div>
     </form>
+</div>
+</body>
+</html>
 
-    <?php
+
+
+
+
+
+<?php
     if(isset($_POST['message'])) {
         $entete = 'MIME-Version: 1.0' . "\r\n";
         $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
@@ -43,14 +55,11 @@ session_start();
             echo '<p>Votre message a bien été envoyé.</p>';
         }
         else{
-            echo '<p>dommage</p>';
+            echo '<p>Votre message n\'a pas pu être envoyé.</p>';
         }
     }
     ?>
 
-</div>
-</body>
-</html>
 
 
 

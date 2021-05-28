@@ -25,6 +25,7 @@ if(isset($_POST['connexion'])) {
     }
 }
 ?>
+
 <html>
 <head>
     <title>Se connecter</title>
@@ -34,6 +35,7 @@ if(isset($_POST['connexion'])) {
 <?php
 $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
 include($IPATH . "header.php"); ?>
+
 <body>
 
 
