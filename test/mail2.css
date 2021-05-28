@@ -5,8 +5,7 @@ body {
 
 form {
     margin-top: 20px;
-    text-align: center;
-    height: 600px;
+    height: 800px;
     background-color: #fff;
     padding: 40px;
     border-radius: 10px;
@@ -14,21 +13,20 @@ form {
 }
 
 
-form .inputs input[type='email'], input[type='password'] {
+form .inputs input[type='email'], input[type='text'], textarea{
     padding: 15px;
-    height: 30px;
-    width: 450px;
-    font-size: 20px;
+    width: 875px;
+    height: 25px;
     border: none;
     border-radius: 5px;
     background-color: #f2f2f2;
     outline: none;
-    margin-bottom: 35px;
-    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-top: 15px;
 }
 
 form p.inscription {
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 20px;
     color: #878787;
     text-decoration: none
@@ -40,10 +38,9 @@ form p.inscription span {
 
 form button {
     padding: 15px 25px;
-    margin-top: 30px;
     border-radius: 5px;
     border: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #fff;
     background-color: #1F7DBF;
     outline: none;
@@ -58,15 +55,17 @@ a {
     text-align: center;
 }
 
-h2 {
-    font-size: 40px;
-}
-
 #global {
     margin-left: auto;
     margin-right: auto;
-    width:600px;
+    width:900px;
 }
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
 label {
-    font-size: 25px;
+    font-size: 20px;
 }
