@@ -102,30 +102,41 @@
 
 <header>
     <section>
-        <a href="../html/Doyouwant.php">
+        <a href="../html/doYouWant.php">
         <img src="../images/logoHeader.png" alt=""/>
         </a>
     </section>
-    <section class="navButtonContainer">
-        <div class="nav">
-            <button class="navButton" id="takeMeasures"><a href="../html/measuring_home.php">Prendre des mesures</a></button>
-        </div>
-        <div class="nav">
-            <button class="navButton" id="mesurementAnalysis"><a href="../html/Analyse_des_mesures.php">Analyse des résultats</a></button>
-        </div>
-
         <?php
+
         if ($_SESSION['status'] == 'gestionnaire') {
             echo '
+<section class="navButtonContainer">
+            <div class="nav">
+                <button class="navButton" id="takeMeasures"><a href="../html/measuring_home.php">Prendre des mesures</a></button>
+            </div>
+            <div class="nav">
+                <button class="navButton" id="mesurementAnalysis"><a href="../html/Analyse_des_mesures.php">Analyse des résultats</a></button>
+            </div>
             <div class="nav">
                 <button class="navButton" id="usersData"><a href="../html/Gest_userData.php">Données des utilisateurs</a></button>
-            </div>';
-        }
-        ?>
-
-        <?php
-        if ($_SESSION['status'] == 'administrateur') {
+            </div>
+                </section>
+    <section>
+        <button class="option" ><a>Options</a></button>
+        <div class="dropDownMenu dropOption">
+            <a class="downMenu" href="../html/edit_profile.php">Profil</a>
+            <a class="downMenu" href="../html/home.php">Se déconnecter</a>
+        </div>
+    </section>';
+        } else if ($_SESSION['status'] == 'administrateur') {
             echo '
+<section class="navButtonContainer">
+                <div class="nav">
+                    <button class="navButton" id="takeMeasures"><a href="../html/measuring_home.php">Prendre des mesures</a></button>
+                   </div>
+                <div class="nav">
+                    <button class="navButton" id="mesurementAnalysis"><a href="../html/Analyse_des_mesures.php">Analyse des résultats</a></button>
+                </div>
                 <div class="nav">
                     <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
                     <div class="dropDownMenu dropAdmin">
@@ -133,18 +144,50 @@
                         <a class="downMenu" href="../html/FAQ.php">Gérer la FAQ</a>
                         <a class="downMenu" href="../html/Forum.php">Gérer le forum</a>
                     </div>
-                </div>';
-        }
-        ?>
-
-    </section>
+                </div>
+                    </section>
     <section>
         <button class="option" ><a>Options</a></button>
         <div class="dropDownMenu dropOption">
             <a class="downMenu" href="../html/edit_profile.php">Profil</a>
             <a class="downMenu" href="../html/home.php">Se déconnecter</a>
         </div>
-    </section>
+    </section>';
+        }
+        else if ($_SESSION['status'] == 'utilisateur') {
+            echo '
+<section class="navButtonContainer">
+                <div class="nav">
+                    <button class="navButton" id="takeMeasures"><a href="../html/measuring_home.php">Prendre des mesures</a></button>
+                   </div>
+                <div class="nav">
+                    <button class="navButton" id="mesurementAnalysis"><a href="../html/Analyse_des_mesures.php">Analyse des résultats</a></button>
+                </div>
+                    </section>
+    <section>
+        <button class="option" ><a>Options</a></button>
+        <div class="dropDownMenu dropOption">
+            <a class="downMenu" href="../html/edit_profile.php">Profil</a>
+            <a class="downMenu" href="../html/home.php">Se déconnecter</a>
+        </div>
+    </section>';
+        } else {
+            echo'
+             <ul class="menu">
+                <li class="nav-item"><a class="nav-link" href="#">S\'inscrire</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Se connecter</a></li>
+            </ul>
+            ';
+        }
+        ?>
+
+
 </header>
+
+<?php
+// echo session_status();
+
+// echo $_SESSION['status'];
+?>
 
 </html>
