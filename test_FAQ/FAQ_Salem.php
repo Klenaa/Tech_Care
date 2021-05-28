@@ -31,35 +31,41 @@ catch(Exception $e)
             $reponse = $bdd->query('SELECT * FROM faq');
 
             ?>
-            <div class="lemsa" align="center"><a href="FAQ_Salem_Modifier.php">Modifier</a> ou <a href="FAQ_Salem_Modifier.php">ajouter</a> des questions ? </div>
+            <div class="lemsa" align="center" ><a href="FAQ_add.php" style="text-decoration:none">Ajouter</a> des questions ? </div>
 <section1>
 
     <?php
     if ($_SESSION['status']=='administrateur'){
 
     }
+
+
     ?>
     <div class="container">
         <div class="accordion">
-<?php
-            while ($donnees = $reponse->fetch())
-            {
-
-                echo '<div class="accordion-item" id="' .$donnees['idQuestion']. '">'
-                .'<a class="accordion-link" href="#' .$donnees['idQuestion']. '">' . htmlspecialchars($donnees['questions']) . '</a>';
-
-
-                ;
+            <?php
+            foreach ($reponse as $indexQuestion=>$rowQuestion) {
+                $id='Supprimer'.$indexQuestion;
+                $numero=$rowQuestion['idQuestion'];
+                echo '
+                       <div class="accordion-item " id="' . $rowQuestion['idQuestion'] . '">'
+                    . '<a class="accordion-link" href="#' . $rowQuestion['idQuestion'] . '"> ' . htmlspecialchars($rowQuestion['questions']) . '</a>';;
 
 
+                echo '<div class="answer"> <p> ' . htmlspecialchars($rowQuestion['réponses']) .
+                    '<div class="lemsa1"><br><br><a href="FAQ_Modifer.php" style="text-decoration:none">Modifier</a></button></br>
+                    <button class= "lemsa2" type="submit" name='.$id.' style="text-decoration: none" onclick="onDelete()">Supprimer </button> 
+                    </div></p> </div> </div>';
 
+                if (isset($_POST[$id])) {
+                    $bdd->prepare('DELETE FROM faq WHERE idQuestion=?')->execute(array($rowQuestion['idQuestion']));
+                    header("Location: FAQ_Salem.php");
+                    exit;
 
-                echo '<div class="answer"> <p> ' . htmlspecialchars($donnees['réponses']) . '</p> </div> </div> ';
-
-
-
+                }
             }
             ?>
+
 
         </div> </div> </section1>
             <?php
@@ -74,6 +80,10 @@ catch(Exception $e)
         ?>
 
 
+
     </div>
 </body>
+
+
+
 </html>
