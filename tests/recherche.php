@@ -19,15 +19,16 @@ if(isset($_POST['chercher'])){
         echo " Veuillez rentrer un nom d'utilisateur. ";
     }else{
         echo ' résultat de la recherche ';
-        $rep = $db->query('SELECT distinct userName, userSurname FROM users WHERE userName LIKE "%$recherche%" OR userSurname LIKE "%$recherche%"');
-        //echo ' résultat de la recherche ' . $rep['userName'] . $rep['userSurname'];
+        $rep = $db->prepare('SELECT userName, userSurname FROM users WHERE userName LIKE ? OR userSurname LIKE ?');
+        $rep->execute(array("%".$recherche."%","%".$recherche."%"));
 
-        while ($donnees = $rep->fetch()) {
-            echo $donnees['userName'] . $donnees['userSurname'] . '<br />';
+        foreach ($rep as $indexNumber=>$rowUser){
+            echo "<td>" . $rowUser['userName'] . "</td>";
+            echo "<td>" . $rowUser['userSurname'] . "</td>";
         }
-        $rep->closeCursor();
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +42,49 @@ if(isset($_POST['chercher'])){
             <input type='text'  id='recherche' name='recherche' placeholder="Rechercher un utilisateur">
             <input type='submit' name='chercher' value='chercher' >
         </form>
+        <div>
+            <?php
+            $allUsers  = $db->query('SELECT email, userName AS nom, userSurname AS prenom, status AS statut FROM users ORDER BY nom')->fetchAll();
+            foreach ($allUsers as $indexNumber=>$rowUser){
+                $email = $rowUser['email'];
+                echo "<form method='post'> 
+                          <button type='submit' name='afficher' valeur=$email style='background: none;border: none;font-size: 20px;'>
+                               <td>" . $rowUser['nom'] . " " . $rowUser['prenom'] . "</td> <br>
+                          </button>
+                      </form>";
 
+                if(isset($_POST['afficher'])){
+                    $profil = $db->prepare('SELECT * FROM users WHERE email = ?');
+                    $profil->execute(array($rowUser['email']));
+                    $profil = $profil->fetch();
+                    if(isset($profil)){
+                        echo '<fieldset">
+                                <article class="colone">
+                                    <p>'.$profil['userName'].'</p>
+                                    <p>'.$profil['userSurname'].'</p>
+                                    <p>'.$profil['email'].'</p>
+                                    <p>'.$profil['status'].'</p>
+                
+                                    <div class="aligne">
+                                        <form method="post">
+                                            <button type="submit" name="supprimer" value="Confirmer" onClick="Confirmer()" style="background: none;border: none">Supprimer l\'utilisateur</button><br>
+                                        </form>
+                                    </div>
+                                </article>
+                            </fieldset>';
+                    }
+                }
+            }
+
+            ?>
+        </div>
+        <div>
+            <?php
+
+            ?>
+        </div>
     </body>
 </html>
+
+
+
