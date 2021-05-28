@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('../test_register_connexion/connect.php');
+include('../test_register_connexion/connect.php');
 
 ?>
 
@@ -11,6 +11,9 @@ include ('../test_register_connexion/connect.php');
         <title>Modifier le statut d'un utilisateur</title>
         <link rel="stylesheet" href="../view/css/updateUserStatus.css"/>
     </head>
+    <?php
+    $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+    include($IPATH . "header.php"); ?>
     <body>
         <div class="container">
             <?php

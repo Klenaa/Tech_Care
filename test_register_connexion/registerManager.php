@@ -10,6 +10,9 @@ include('register_functions.php');
     <link rel="stylesheet" href="../view/css/register.css"/>
     <script type="text/javascript" src="validatePassword.js"></script>
 </head>
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "header.php"); ?>
 <body>
 
 <h1>S'inscrire</h1>

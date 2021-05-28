@@ -10,7 +10,9 @@ include('register_functions.php');
     <link rel="stylesheet" href="../view/css/registerVerification.css"/>
     <title>Vérifier votre adresse mail</title>
 </head>
-
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "header.php"); ?>
 <body>
 <div class="sideByside">
     <div class="container">
@@ -32,18 +34,21 @@ include('register_functions.php');
     </div>
 </div>
 <?php
+//Confirmation du code de vérification
 if(isset($_POST['confirm'])) {
     if ($_SESSION['codeVerification'] == $_POST['verificationCode']) {
-        echo '<p> BRAVO VOUS AVEZ REUSSI A VOUS INSCRIRE !</p>';
-
         header('Location: ../view/html/doYouWant.php');
     }
     else{
         echo '<p>dommage, réessayez.</p>';
     }
 }
+//Envoie de mail
 if(isset($_POST['sendMail']) && isset($_SESSION['email'])){
     sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);
-    echo 'it is send !!';
 }
+
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "footer.php");
+
 ?>

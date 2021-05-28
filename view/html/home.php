@@ -175,7 +175,7 @@
                 </div>
                 <div class="boximg">
                     <img src="../images/profil/Photo Léna.jpg">
-                    <span>Léna CHEAM<br>Project manager</span>
+                    <span>Léna CHEAM<br>CEO and Project manager</span>
                 </div>
                 <div class="boximg">
                     <img src="../images/profil/rodolphe.jpg">

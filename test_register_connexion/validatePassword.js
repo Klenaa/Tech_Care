@@ -15,7 +15,7 @@ function ValidateMDP(){
     var password = document.getElementById("pass").value;
     var confirmPassword = document.getElementById("pass2").value;
     if(password != confirmPassword){
-        msgMDP = "<p style='color:red'>X</p>"
+        msgMDP = "<p style='color:red'>Les mots de passe ne correspondent pas</p>"
     }
     else{
         msgMDP = "<p style='color:green'>Ok</p>"

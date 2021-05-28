@@ -25,12 +25,15 @@ if(isset($_POST['connexion'])) {
     }
 }
 ?>
-    <html>
-    <head>
-        <title>Se connecter</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../view/css/signIn.css"/>
-    </head>
+<html>
+<head>
+    <title>Se connecter</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../view/css/signIn.css"/>
+</head>
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "header.php"); ?>
 <body>
 
 
@@ -61,5 +64,9 @@ if(isset($erreur)) {
 }
 ?>
 </div>
-
+    <?php
+    $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+    include($IPATH . "footer.php");
+    ?>
 </body>
+</html>
