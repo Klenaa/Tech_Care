@@ -12,11 +12,21 @@ try{
     print"Erreur:" . $e->getMessage() . "<br/>"; //Message d'erreur
     die;
 }
+if(isset($_POST['chercher'])){
+    echo 'la recheche est ', $_POST['recherche'] ;
+    $recherche = $_POST['recherche'];
+    if ($recherche == ""||$recherche == "%"){
+        echo " Veuillez rentrer un nom d'utilisateur. ";
+    }else{
+        echo ' résultat de la recherche ';
+        $rep = $db->query('SELECT distinct userName, userSurname FROM users WHERE userName LIKE "%$recherche%" OR userSurname LIKE "%$recherche%"');
+        //echo ' résultat de la recherche ' . $rep['userName'] . $rep['userSurname'];
 
-if ($recherche=""){
-    echo "Veuillez rentrer un nom d'utilisateur.";
-}else{
-    $query = "SELECT distinct count(lien) FROM users WHERE keyword LIKE \"%recherche%\" OR titre LIKE \"%$recherche%\"";
+        while ($donnees = $rep->fetch()) {
+            echo $donnees['userName'] . $donnees['userSurname'] . '<br />';
+        }
+        $rep->closeCursor();
+    }
 }
 ?>
 
@@ -27,9 +37,10 @@ if ($recherche=""){
         <title>Editer le profil</title>
     </head>
     <body>
-        <form method='post' action='....' >
-            <input type='text'  id='recherche' name='recherche'>
-            <input type='submit' value='go' >
+        <form method='post'>
+            <input type='text'  id='recherche' name='recherche' placeholder="Rechercher un utilisateur">
+            <input type='submit' name='chercher' value='chercher' >
         </form>
+
     </body>
 </html>
