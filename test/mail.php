@@ -6,7 +6,7 @@ session_start();
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="mail2.css"/>
+    <link rel="stylesheet" href="../view/css/mail2.css"/>
     <title>Contact</title>
 </head>
 

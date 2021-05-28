@@ -70,7 +70,7 @@
             <li><a href="<?php echo "http://localhost/Tech_Care/view/html/FAQ.php"?>">FAQ</a></li>
             <li><a href="http://localhost/Tech_Care/view/html/forum.php">Forum</a></li>
             <li><a href="http://localhost/Tech_Care/view/html/cgu.php">CGU</a></li>
-            <li><a href="http://localhost/Tech_Care/view/html/contact.php">Contact</a></li>
+            <li><a href="http://localhost/Tech_Care/test/mail.php">Contact</a></li>
             <li><a href="#">Langues</a>
                 <ul>
                     <li><a href="#">English</a></li>
@@ -78,7 +78,7 @@
                 </ul>
             <li><a href="http://localhost/Tech_Care/view/html/legal_mentions.php">Mentions légales</a></li>
             <li><a href="http://localhost/Tech_Care//test_register_connexion/registerManager.php">Nous rejoindre</a></li>
-            <li><a href="http://localhost/Tech_Care/test_register_connexion/deconnexion.php">Se déconnecter</a></li>
+            <li><a href="http://localhost/Tech_Care/controller/deconnexion.php">Se déconnecter</a></li>
 
 
         </ul>

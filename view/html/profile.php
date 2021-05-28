@@ -20,7 +20,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8"/>
-    <link rel="stylesheet" href="profile.css"/>
+    <link rel="stylesheet" href="../css/profile.css"/>
     <title>Page profil</title>
 </head>
 <body>
@@ -37,7 +37,7 @@
                 <li>Votre pays : <?php if(isset($_POST['country'])){ echo $_POST['country'];}else{ echo $_SESSION['country'];}?></li>
                 <li>Votre profession : <?php if(isset($_POST['profession'])){ echo $_POST['profession'];}else{ echo $_SESSION['profession'];}?></li>
             </ul>
-            <a href="editProfile.php">Editer son profil</a>
+            <a href="../../test/editProfile.php">Editer son profil</a>
         </div>
     </broly>
 </body>

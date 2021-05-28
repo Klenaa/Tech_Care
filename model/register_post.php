@@ -1,6 +1,6 @@
 <?php
     require 'connect.php';
-    include('register_functions.php');
+    include('../controller/register_functions.php');
 
 if(isset($_POST['register'])){
     if($_POST['pass'] != $_POST['pass2']){

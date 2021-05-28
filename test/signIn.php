@@ -1,5 +1,5 @@
 <?php
-require 'connect.php';
+require '../model/connect.php';
 
 if(isset($_POST['connexion'])) {
     $mail = htmlspecialchars($_POST['mail']);
@@ -16,7 +16,7 @@ if(isset($_POST['connexion'])) {
             $_SESSION['userSurname'] = $userinfo['userSurname'];
             $_SESSION['pass'] = $userinfo['pass'];
             $_SESSION['status'] = $userinfo['status'];
-            header("Location:function.php");
+            header("Location:../view/html/doYouWant.php");
         } else {
             $erreur = "E-mail ou mot de passe incorrect !";
         }
@@ -50,7 +50,7 @@ include($IPATH . "header.php"); ?>
         <input type="password" name="pass" placeholder="Mot de passe" />
         </div>
         <p class="inscription">
-        Vous n'avez pas encore de compte? <a href="register.php"><span> Créez-en un !</span></a><br>
+        Vous n'avez pas encore de compte? <a href="../controller/register.php"><span> Créez-en un !</span></a><br>
 <br>
             <div class="bouton">
             <button type="submit" name="connexion">Se connecter</button>

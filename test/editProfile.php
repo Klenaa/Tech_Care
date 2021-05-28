@@ -2,9 +2,6 @@
     //On démarre une session
     session_start();
 
-    //On définit des variables de session pour le test
-    $_SESSION['email'] = "sophie.zhang@eleve.isep.fr";
-
     //On se connecte à la basse de donnés
     $user = 'root';
     $pass = 'root';
@@ -73,7 +70,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Editer le profil</title>
-        <link rel="stylesheet" href="editProfile.css"/>
+        <link rel="stylesheet" href="../view/css/editProfile.css"/>
     </head>
     <body>
         <h1>Modifier le Profil</h1>

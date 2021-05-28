@@ -2,7 +2,7 @@
     //require '../test_register_connexion/connect.php';//
 try
 {
-    $bdd = new PDO('mysql:host=localhost:3306;dbname=db;charset=utf8', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost:3307;dbname=db;charset=utf8', 'root', 'root');
 }
 catch(Exception $e)
 {
@@ -31,7 +31,7 @@ catch(Exception $e)
             $reponse = $bdd->query('SELECT * FROM faq');
 
             ?>
-            <div class="lemsa" align="center" ><a href="FAQ_add.php" style="text-decoration:none">Ajouter</a> des questions ? </div>
+            <div class="lemsa" align="center" ><a href="../../controller/FAQ_add.php" style="text-decoration:none">Ajouter</a> des questions ? </div>
 <section1>
 
     <?php
@@ -53,8 +53,8 @@ catch(Exception $e)
 
 
                 echo '<div class="answer"> <p> ' . htmlspecialchars($rowQuestion['réponses']) .
-                    '<div class="lemsa1"><br><br><a href="FAQ_Modifer.php" style="text-decoration:none">Modifier</a></button></br>
-                    <button class= "lemsa2" type="submit" name='.$id.' style="text-decoration: none" onclick="onDelete()">Supprimer </button> 
+                    '<div class="lemsa1"><br><br><a href="../../controller/FAQ_Modifer.php" style="text-decoration:none">Modifier</a></button></br>
+                    <button class= "lemsa2" type="submit" name=' .$id.' style="text-decoration: none" onclick="onDelete()">Supprimer </button> 
                     </div></p> </div> </div>';
 
                 if (isset($_POST[$id])) {

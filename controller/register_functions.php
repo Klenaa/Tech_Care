@@ -1,7 +1,6 @@
 <?php
-    require 'connect.php';
+    require '../model/connect.php';
 
-    echo 'Function test';
     echo 'Hello '. $_SESSION['userSurname'] . ' ET ' . $_SESSION['email'] ;
 
     //Requête SQL Insert INSCRIPTION

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../test_register_connexion/connect.php');
+include('../model/connect.php');
 
 ?>
 

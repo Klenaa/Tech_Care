@@ -1,6 +1,6 @@
 <?php
-require '../../test_register_connexion/connect.php';
-include('../../tests/measureAnalysisFunction.php');
+require '../../model/connect.php';
+include('../../controller/measureAnalysisFunction.php');
 ?>
 
 <!DOCTYPE html>

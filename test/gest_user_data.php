@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Données des utilisateurs</title>
-    <link rel="stylesheet" href="gest_user_data.css"/>
+    <link rel="stylesheet" href="../view/css/gest_user_data.css"/>
 
 </head>
 

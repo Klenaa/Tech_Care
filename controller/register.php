@@ -1,5 +1,5 @@
 <?php
-    require 'connect.php';
+    require '../model/connect.php';
     include('register_functions.php');
 ?>
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <title>S'inscrire</title>
         <link rel="stylesheet" href="../view/css/register.css"/>
-        <script type="text/javascript" src="validatePassword.js"></script>
+        <script type="text/javascript" src="../view/javascript/validatePassword.js"></script>
     </head>
     <?php
     $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
@@ -18,7 +18,7 @@
         <h1>S'inscrire</h1>
         <div class="separator"></div>
         <broly>
-            <form action="register_post.php" method="post">
+            <form action="../model/register_post.php" method="post">
                 <div class="contenant">
                     <!--Information obligatoires à l'inscription-->
 

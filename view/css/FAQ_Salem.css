@@ -38,7 +38,6 @@ section1{
 
 .accordion-link{
     font-size: 1.6rem;
-    color:;
     text-decoration: none;
     background-color: white;
     width: 100%;
@@ -173,7 +172,6 @@ body {font-family: Helvetica, Verdana, sans-serif;
     width: 100%;
     display: flex;
     justify-content: center;
-    border-top: ;
     margin-top: 20px;
 
 
@@ -194,7 +192,6 @@ body {font-family: Helvetica, Verdana, sans-serif;
     width: 100%;
     display: flex;
     justify-content: center;
-    border-top: ;
     margin-top: 20px;
 
 

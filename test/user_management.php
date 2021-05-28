@@ -51,7 +51,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="user_management.css"/>
+		<link rel="stylesheet" href="../view/css/user_management.css"/>
     	<link rel="stylesheet" href="header.css"/>
 		<title>Page gérer les utilisateur</title>
 	</head>
