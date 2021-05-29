@@ -1,7 +1,13 @@
 <?php
-    require '../model/connect.php';
+$user = 'root';
+$pass = 'root';
+try{
+    $db = new PDO('mysql:host=localhost;dbname=db;port=3307;',$user,$pass);
+}catch(PDOExecption $e){
+    print"Erreur:" . $e->getMessage() . "<br/>"; //Message d'erreur
+    die;
+}
 
-    echo 'Hello '. $_SESSION['userSurname'] . ' ET ' . $_SESSION['email'] ;
 
     //Requête SQL Insert INSCRIPTION
     function addNewUser($bdd, $email, $userName, $userSurname, $pass, $birthday, $gender, $address, $postalCode, $city, $country, $profession){

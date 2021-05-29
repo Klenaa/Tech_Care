@@ -33,6 +33,10 @@
         <link rel="stylesheet" href="../view/css/editProfile.css"/>
     </head>
     <body>
+        <?php
+        $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+        include($IPATH . "header.php"); ?>
+
         <h1>Modifier le Profil</h1>
         <div class="separator"></div>
         <broly>
@@ -134,5 +138,9 @@
                 </div>
             </div>
         </broly>
+
+        <?php
+        $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+        include($IPATH . "footer.php"); ?>
     </body>
 </html>
