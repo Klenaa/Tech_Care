@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require 'connect.php';
     include('../controller/register_functions.php');
 

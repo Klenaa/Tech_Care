@@ -1,4 +1,5 @@
 <?php
+include ('../controller/register_functions.php');
 //Confirmation du code de vérification
 $error_code = false;
 
@@ -19,6 +20,7 @@ if(isset($_POST['confirm'])) {
 }
 //Envoie de mail
 if(isset($_POST['sendMail']) && isset($_SESSION['email'])){
+    echo 'succès';
     sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);
     header('Location:../controller/registerVerification.php');
 }

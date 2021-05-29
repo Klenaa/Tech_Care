@@ -28,13 +28,9 @@ include('../model/connect.php');
                 $baseNameDelete = "deleteUser";
 
 
-
-
                 if(isset($_POST[$baseNameDelete.$indexNumber])){
                     header('Location:delete_user_post.php?mail=' . $rowUser['email']);
                 }
-
-
 
                 if(isset($_POST[$baseNameButton.$indexNumber])){
                     $statusSelected = htmlspecialchars($_POST[$baseNameSelect. $indexNumber]);
@@ -62,7 +58,6 @@ include('../model/connect.php');
                 echo '<td><input type="submit" value="Modifier" name="' . $baseNameButton. $indexNumber.'"></form></td>';
                 echo '<td><form method="post"><input type="submit" name="'.$baseNameDelete.$indexNumber.'" value="Supprimer"></form></td>';
                 echo '</tr><br>';
-                $i++;
             }
             echo '</table></div>';
 
