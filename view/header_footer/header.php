@@ -176,7 +176,7 @@
             echo'
              <ul class="menu">
                 <li class="nav-item"><a class="nav-link" href="../../controller/register.php">S\'inscrire</a></li>
-                <li class="nav-item"><a class="nav-link" href="../../test/signIn.php">Se connecter</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../test/sign_in.php">Se connecter</a></li>
             </ul>
             ';
         }

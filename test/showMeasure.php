@@ -1,7 +1,7 @@
 <?php
 try
 {
-    $bdd = new PDO('mysql:host=localhost:3306;dbname=db;charset=utf8', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost:3307;dbname=db;charset=utf8', 'root', 'root');
 }
 catch(Exception $e)
 {
@@ -10,13 +10,8 @@ catch(Exception $e)
 
 ?>
 <?php
-$host="localhost";
-$username="root";
-$password="root";
-$dbname="db";
-$connection=mysql_connect($host,$username,$password) or die('Connexion impossible: ' . mysql_error());
-$db=mysql_select_db($dbname, $connection) or die('Connexion a la base impossible : ' . mysql_error());
-$query=mysql_query('SELECT * FROM measure ORDER BY measureDate ASC');
+
+$query='SELECT * FROM measure ORDER BY measureDate ASC';
 
 
 $measureDate=array();
