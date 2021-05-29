@@ -11,10 +11,10 @@ body {
 * {box-sizing: border-box;}
   
 /*OVERALL*/
-
 h1{
     text-align: center;
 }
+
 broly {
     display: flex;
     /*box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);*/
@@ -23,6 +23,7 @@ broly {
 
 form {
     margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
     min-width:600px;
     width: 60%;
@@ -50,10 +51,9 @@ form > .contenant > label {
     align-items: center;
     font-weight: bold;
     margin: 20px;
-    font-size: 1.7em;
+    font-size: 1.5em;
 
 }
-
 
 /*CHAMP*/
 form input, form select {
@@ -83,7 +83,7 @@ input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, inp
 }
 
 /*Bouton*/
- 
+
 form button {
     padding: 15px 25px;
     border-radius: 5px;
@@ -93,6 +93,7 @@ form button {
     background-color: #1F7DBF;
     outline: none;
     cursor: pointer;
+    text-align: center;
 }
 
 #register{
@@ -104,11 +105,11 @@ form button {
 
 #divButton{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
 }
-
 
 #conditions{
     justify-content: flex-start;
@@ -127,5 +128,4 @@ form button {
     justify-content: center;
     margin: 15px;
     padding: 10px;
-
 }

@@ -67,7 +67,7 @@
 <body>
     <footer>
         <ul id="scroll">
-            <li><a href="<?php echo "http://localhost/Tech_Care/view/html/FAQ.php"?>">FAQ</a></li>
+            <li><a href="<?php echo "http://localhost/Tech_Care/view/html/FAQ_USER.php"?>">FAQ</a></li>
             <li><a href="http://localhost/Tech_Care/view/html/forum.php">Forum</a></li>
             <li><a href="http://localhost/Tech_Care/view/html/cgu.php">CGU</a></li>
             <li><a href="http://localhost/Tech_Care/test/mail.php">Contact</a></li>

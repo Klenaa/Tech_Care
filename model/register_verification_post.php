@@ -1,12 +1,16 @@
 <?php
+require 'connect.php';
 include ('../controller/register_functions.php');
 //Confirmation du code de vérification
+
+//Création variable erreur
 $error_code = false;
 
 if(isset($_POST['confirm'])) {
     //Sécurisation des entrées utilisateurs
     $_POST['verificationCode'] = strip_tags(htmlspecialchars($_POST['verificationCode']));
 
+    //Vérification du code envoyé et du code entré
     if ($_SESSION['codeVerification'] == $_POST['verificationCode']) {
         $_SESSION['mailVerification'] = true;
         header('Location: ../view/html/doYouWant.php');
@@ -18,11 +22,6 @@ if(isset($_POST['confirm'])) {
 
     }
 }
-//Envoie de mail
-if(isset($_POST['sendMail']) && isset($_SESSION['email'])){
-    echo 'succès';
-    sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);
-    header('Location:../controller/registerVerification.php');
-}
+
 
 ?>

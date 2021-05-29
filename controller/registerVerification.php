@@ -16,7 +16,7 @@ include($IPATH . "header.php"); ?>
 <body>
 <div class="sideByside">
     <?php
-    echo 'hello ' . $_SESSION['email'];
+    echo 'hello ' . $_SESSION['email'] . " " . $_SESSION['codeVerification'];
     ?>
     <div class="container">
         <h1>Code de vérification</h1>
@@ -36,7 +36,7 @@ include($IPATH . "header.php"); ?>
 
     <div class="container">
         <h1>Envoyer le mail à nouveau</h1>
-        <form method="post" action="../model/register_verification_post.php">
+        <form method="post" action="../model/register_verification_sendmail_post.php">
             <input type="submit" value="Envoyer" name="sendMail">
         </form>
     </div>

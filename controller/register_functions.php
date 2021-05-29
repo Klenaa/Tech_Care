@@ -1,11 +1,11 @@
 <?php
-$user = 'root';
-$pass = 'root';
-try{
-    $db = new PDO('mysql:host=localhost;dbname=db;port=3307;',$user,$pass);
-}catch(PDOExecption $e){
-    print"Erreur:" . $e->getMessage() . "<br/>"; //Message d'erreur
-    die;
+//Connexion BDD
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=db;port=3307;', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+    die('Erreur : ' . $e->getMessage());
 }
 
 
@@ -85,7 +85,7 @@ try{
         $thirdNumber = rand(10,99);
         $codeVerification = (int)($firstNumber . $secondNumber . $thirdNumber);
         $_SESSION['codeVerification'] = $codeVerification;
-        //echo $codeVerification;
+
         return $codeVerification;
     }
 
