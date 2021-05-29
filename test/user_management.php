@@ -39,7 +39,7 @@
             <fieldset>Liste des utilisateur</fieldset>
             <div class="aligne">
                 <?php
-                    $allUsers  = $db->query('SELECT email, userName AS nom, userSurname AS prenom, status AS statut FROM users ORDER BY nom')->fetchAll();
+                    $allUsers  = userInformation($bdd);
                     foreach ($allUsers as $indexNumber=>$rowUser){
                         $email = $rowUser['email'];
                         //echo "<form method='post'> <input type=''> </form>";
@@ -47,9 +47,7 @@
                         echo '</tr><br>';
                     }
 
-                    $profil = $db->prepare('SELECT * FROM users WHERE email = ?');
-                    $profil->execute(array($_POST['email']));
-                    $profil = $profil->fetch();
+                    $profil = donner($db,$_SESSION['email']);
                 ?>
             </div>
         </nav>

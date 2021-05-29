@@ -15,7 +15,12 @@ function donner($bdd,$email){
     return $rep;
 }
 
-function modifPass($bdd,$pass ,$email){
+function userInformation($bdd){
+    $rep = $bdd->query('SELECT email, userName AS nom, userSurname AS prenom, status AS statut FROM users ORDER BY nom')->fetchAll();
+    return $rep;
+}
+
+function updatePass($bdd,$pass ,$email){
     $rep = $bdd->prepare('UPDATE user SET pass = ? WHERE email = ?');
     $rep->execute(array($pass, $email));
     $_SESSION['pass'] = $pass;
@@ -29,4 +34,10 @@ function researchUser($bdd,$recherche){
 
 function delUser($bdd,$email){
     $bdd->prepare('DELETE FROM users WHERE email=?')->execute(array($email));
+}
+
+function updateUserInfo($bdd,$name,$surname,$birthday,$gender,$address,$postalCode,$city,$country,$profession,$email){
+    $rep = $bdd->prepare('UPDATE users SET userName = ?, userSurname = ?, birthday = ?, gender = ?, address = ?, postalCode = ?, city = ?, country = ?, profession = ? WHERE email = ?');
+    $rep->execute(array($name, $surname, $birthday, $gender, $address, $postalCode, $city, $country, $profession, $email));
+    return $rep;
 }
