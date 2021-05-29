@@ -1,33 +1,6 @@
 <?php
-    //On démarre une session
-    session_start();
-
-    $_SESSION['email']="lena.cheam@eleve.isep.fr";
-    //On se connecte à la basse de donnés
-    $user = 'root';
-    $pass = 'root';
-    try{
-        $db = new PDO('mysql:host=localhost;dbname=db;port=3307;',$user,$pass);
-        foreach ($db->query('SELECT * FROM users') as $row) {
-            //print_r($row); //afficher tous les données de la table
-        }
-    }catch(PDOExecption $e){
-        print"Erreur:" . $e->getMessage() . "<br/>"; //Message d'erreur
-        die;
-    }
-
-    //Ajouter l'utilisateur à un groupe
-    if (isset($_POST['ajouter'])){
-        echo '1';
-    }
-
-    //Supprimer l'utilisateur
-    if (isset($_POST['supprimer'])){
-        $db->prepare('DELETE FROM users WHERE email=?')->execute(array($profil['email']));
-        header("Location: user_management.php");
-        exit;
-    }
-
+    require '../model/connect.php';
+    include 'function.php';
     //Recherche utilisateur
     if(isset($_POST['chercher'])){
         echo 'la recheche est ', $_POST['recherche'] ;
@@ -36,14 +9,20 @@
             echo " Veuillez rentrer un nom d'utilisateur. ";
         }else{
             echo ' résultat de la recherche ';
-            $rep = $db->prepare('SELECT userName, userSurname FROM users WHERE userName LIKE ? OR userSurname LIKE ?');
-            $rep->execute(array("%".$recherche."%","%".$recherche."%"));
+            $rep = researchUser($bdd,$recherche);
 
             foreach ($rep as $indexNumber=>$rowUser){
                 echo "<td>" . $rowUser['userName'] . "</td>";
                 echo "<td>" . $rowUser['userSurname'] . "</td>";
             }
         }
+    }
+
+    //Supprimer l'utilisateur
+    if (isset($_POST['supprimer'])){
+        delUser($bdd,$profil['email']);
+        header("Location: user_management.php");
+        exit;
     }
 ?>
 
