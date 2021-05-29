@@ -1,65 +1,25 @@
 <?php
-    //On démarre une session
-    session_start();
-
-    //On se connecte à la basse de donnés
-    $user = 'root';
-    $pass = 'root';
-    try{
-        $db = new PDO('mysql:host=localhost;dbname=db;port=3307;',$user,$pass);
-        foreach ($db->query('SELECT * FROM users') as $row) {
-            //print_r($row); //afficher tous les données de la table
-        }
-    }catch(PDOExecption $e){
-        print"Erreur:" . $e->getMessage() . "<br/>"; //Message d'erreur
-        die;
-    }
-
-    // On récupère les informations de l'utilisateur connecté
-    $profil = $db->prepare('SELECT * FROM users WHERE email = ?');
-    $profil->execute(array($_SESSION['email']));
-    $profil = $profil->fetch();
-
-    //Modifier profil
-    if (isset($_POST['modification'])){
-        //Mettre a jour les information
-        $rep = $db->prepare('UPDATE users SET userName = ?, userSurname = ?, birthday = ?, gender = ?, address = ?, postalCode = ?, city = ?, country = ?, profession = ? WHERE email = ?');
-        $rep->execute(array($_POST['userName'], $_POST['userSurname'], $_POST['birthday'], $_POST['gender'], $_POST['address'], $_POST['postalCode'], $_POST['city'], $_POST['country'], $_POST['profession'], $_SESSION['email']));
-
-        //Recharge la session
-        $_SESSION['userName'] = $_POST['userName'];
-        $_SESSION['userSurname'] = $_POST['userSurname'];
-        $_SESSION['birthday'] = $_POST['birthday'];
-        $_SESSION['gender'] = $_POST['gender'];
-        $_SESSION['address'] = $_POST['address'];
-        $_SESSION['postalCode'] = $_POST['postalCode'];
-        $_SESSION['city'] = $_POST['city'];
-        $_SESSION['country'] = $_POST['country'];
-        $_SESSION['profession'] = $_POST['profession'];
-        $_SESSION['status'] = $profil['status'];
-        header("Location: profile.php");
-        exit;
-    }
+    require '../model/connect.php';
+    include 'function.php';
+    $profil = donner($db,$_SESSION['email']);
 
     //Modifier mot de passe & vérification
     if (isset($_POST['changer']) && $_POST['antPass'] == $profil['pass'] && $_POST['newPass'] == $_POST['confPass']){
         if($profil['pass'] != $_POST['newPass']){
-            $rep = $db->prepare('UPDATE user SET pass = ? WHERE email = ?');
-            $rep->execute(array($_POST['newPass'], $_SESSION['email']));
-            $_SESSION['pass'] = $_POST['newPass'];
+            modifPass($db,$_POST['newPass'],$profil['email']);
             header('Location: edit.php');
             exit;
         }else{
             echo '<script language="Javascript"> alert ("Votre nouveau mot de passe ne peut pas être identique à l\'ancien.") </script>';
             exit;
         }
-    }elseif (isset($_POST['changer']) && $_POST['antPass'] != $profil['pass']) {
+    }elseif (isset($_POST['changer']) && $_POST['oldPass'] != $profil['pass']) {
         echo '<script language="Javascript"> alert ("Le mot de passe renseigner est incorrect.") </script>';
         exit;
     }elseif (isset($_POST['changer']) && $_POST['newPass'] != $_POST['confPass']) {
         echo '<script language="Javascript"> alert ("Vos mot de passe ne sont pas identique.") </script>';
         exit;
-    }elseif (isset($_POST['changer']) && ($_POST['antPass'] != $profil['pass'] || $_POST['newPass'] != $_POST['confPass'])){
+    }elseif (isset($_POST['changer']) && ($_POST['oldPass'] != $profil['pass'] || $_POST['newPass'] != $_POST['confPass'])){
         echo '<script language="Javascript"> alert ("Vos mot de passe renseigner sont incorrect ou différent." ) </script>';
         exit;
     }
@@ -76,7 +36,7 @@
         <h1>Modifier le Profil</h1>
         <div class="separator"></div>
         <broly>
-            <form method="post">
+            <form method="post" action="edit.php">
                 <div class="contenant">
                     <!--Information obligatoires à l'inscription-->
                     <div class="element-form">
@@ -147,14 +107,17 @@
                     <div class="separator"></div>
                     <div class="element-form">
                         <form method="post">
-                            <label for="pass">Mot de passe</label>
-                            <input type="password" id="pass" name="pass" required maxlength="50" placeholder="Mot de passe"><br>
+                            <label for="pass">Ancien mot de passe</label>
+                            <input type="password" id="pass" name="oldPass" placeholder="Ancien mot de passe"><br>
+
+                            <label for="pass1">Nouveau mot de passe</label>
+                            <input type="password" id="pass1" name="newPass" required maxlength="50" placeholder="Nouveau mot de passe"><br>
 
                             <label for="pass2">Confirmer votre mot de passe</label>
-                            <input type="password" id="pass2" name="pass2" required maxlength="50" placeholder="Confirmation mot de passe"><br>
+                            <input type="password" id="pass2" name="confPass" required maxlength="50" placeholder="Confirmation mot de passe"><br>
 
                             <button type="submit" id="annuler" name="annuler"><a href="edit.php" style="text-decoration: none; color:#fff;">Annuler<a></button>
-                            <button type="submit" id="modifier" name="modification" value="Register" maxlength="50" onclick="return Validate()">Modifier</button>
+                            <button type="submit" id="modifier" name="changer" value="Register" maxlength="50" onclick="return Validate()">Modifier</button>
                         </form>
                     </div>
                 </div>
@@ -162,7 +125,7 @@
                     <h1>Demande de modification de statut</h1>
                     <div class="separator"></div>
                     <div class="element-form">
-                        <form>
+                        <form method="post">
                             <label>Type d'utilisateur</label>
                             <?php if(isset($_POST['status'])){$gender = $_POST['status'];}else{$status = $profil['status'];}?>
                             <select name="status" id="status" required>
