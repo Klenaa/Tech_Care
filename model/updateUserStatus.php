@@ -21,13 +21,23 @@ include('../model/connect.php');
         //Donner l'option de faire le tri par nom, email...
             echo '<div class="container"><table>';
             echo '<thead><tr><th>Mail</th><th>Nom</th><th>Prenom</th><th>Statut</th></tr></thead>';
+
             foreach ($allUsers as $indexNumber=>$rowUser){
                 $baseNameButton = "updateStatus";
                 $baseNameSelect = "selectStatus";
+                $baseNameDelete = "deleteUser";
+
+
+
+
+                if(isset($_POST[$baseNameDelete.$indexNumber])){
+                    header('Location:delete_user_post.php?mail=' . $rowUser['email']);
+                }
+
 
 
                 if(isset($_POST[$baseNameButton.$indexNumber])){
-                    $statusSelected = $_POST[$baseNameSelect. $indexNumber];
+                    $statusSelected = htmlspecialchars($_POST[$baseNameSelect. $indexNumber]);
                     echo 'status selectionné : ' . $statusSelected;
                     $reqUpdate = $bdd->prepare('UPDATE users SET status=? WHERE email =?');
                     $reqUpdate->execute(array(
@@ -50,7 +60,9 @@ include('../model/connect.php');
                         <option value="administrateur">Administrateur</option>
                         </select></td>';
                 echo '<td><input type="submit" value="Modifier" name="' . $baseNameButton. $indexNumber.'"></form></td>';
+                echo '<td><form method="post"><input type="submit" name="'.$baseNameDelete.$indexNumber.'" value="Supprimer"></form></td>';
                 echo '</tr><br>';
+                $i++;
             }
             echo '</table></div>';
 
