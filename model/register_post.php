@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'connect.php';
     include('../controller/register_functions.php');
 
@@ -7,7 +8,6 @@ if(isset($_POST['register'])){
         echo "Les mots de passe sont différents.";
         return false;
     }else {
-
             //Hash password
             $passwordHash = sha1($_POST['pass']);
             $pwd2 = ($_POST['pass']);

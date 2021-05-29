@@ -1,5 +1,7 @@
 <?php
-try
+
+/*
+ * try
 {
     $bdd = new PDO('mysql:host=localhost:3306;dbname=db;charset=utf8', 'root', 'root');
 }
@@ -7,12 +9,16 @@ catch(Exception $e)
 {
     die('Erreur : '.$e->getMessage());
 }
+ */
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include("styleFAQ_add.php"); ?>
+    <?php include("../view/css/styleFAQ_add.php"); ?>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href=""/>
     <title>FAQ : Ajouter une question</title>
@@ -22,7 +28,7 @@ catch(Exception $e)
 
 <div class="container">
     <h1>Ajouter une question</h1>
-    <form method="post">
+    <form method="post" action="../model/FAQ_add_post.php">
 
         <label for="questions">Question</label>
         <input id="questions" type="text" name="questions" placeholder="Votre question" required>
@@ -35,22 +41,3 @@ catch(Exception $e)
 
 </div>
 
-<!-- AJOUT DE QUESTION -->
-<?php
-if(isset($_POST['AddQuestion'])) //Si on a cliqué sur le bouton d'ajout de question
-{
-
-    $req =$bdd->prepare('INSERT INTO faq(questions, réponses) VALUES(?,?)');
-
-
-    $req->execute(array(
-        $_POST['questions'],
-        $_POST['réponses']
-    ));
-
-
-    header('Location: FAQ_Salem.php');
-}
-
-
-?>

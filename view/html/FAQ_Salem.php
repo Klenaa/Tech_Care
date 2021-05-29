@@ -66,20 +66,15 @@ catch(Exception $e)
             }
             ?>
 
-
         </div> </div> </section1>
             <?php
-
         }
         catch (Exception $e)
         {
             die('Erreur : '.$e->getMessage());
         }
 
-
         ?>
-
-
 
     </div>
 </body>
