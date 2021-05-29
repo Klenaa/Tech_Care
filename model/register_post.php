@@ -11,19 +11,19 @@ if(isset($_POST['register'])){
             //Hash password
             $passwordHash = sha1($_POST['pass']);
             $pwd2 = ($_POST['pass']);
-            $userName = htmlspecialchars(trim($_POST['userName']));
-            $userSurname = htmlspecialchars(trim($_POST['userSurname']));
-            $email = htmlspecialchars(trim($_POST['email']));
+            $userName = strip_tags(htmlspecialchars(trim($_POST['userName'])));
+            $userSurname = strip_tags(htmlspecialchars(trim($_POST['userSurname'])));
+            $email = strip_tags(htmlspecialchars(trim($_POST['email'])));
 
 
             //éléments optionnels lors du remplissage de l'insciption
-            $birthday = !empty($_POST['birthday']) ? htmlspecialchars(trim($_POST['birthday'])) : null;
-            $gender = !empty($_POST['gender']) ? htmlspecialchars(trim($_POST['gender'])) : null;
-            $address = !empty($_POST['address']) ? htmlspecialchars(trim($_POST['address'])) : null;
-            $postalCode = !empty($_POST['postalCode']) ? htmlspecialchars(trim($_POST['postalCode'])) : null;
-            $city = !empty($_POST['city']) ? htmlspecialchars(trim($_POST['city'])) : null;
-            $country = !empty($_POST['country']) ? htmlspecialchars(trim($_POST['country'])) : null;
-            $profession = !empty($_POST['profession']) ? htmlspecialchars(trim($_POST['profession'])) : null;
+            $birthday = !empty($_POST['birthday']) ? strip_tags(htmlspecialchars(trim($_POST['birthday']))) : null;
+            $gender = !empty($_POST['gender']) ? strip_tags(htmlspecialchars(trim($_POST['gender']))) : null;
+            $address = !empty($_POST['address']) ? strip_tags(htmlspecialchars($_POST['address'])): null;
+            $postalCode = !empty($_POST['postalCode']) ? strip_tags(htmlspecialchars(trim($_POST['postalCode']))) : null;
+            $city = !empty($_POST['city']) ? strip_tags(htmlspecialchars($_POST['city'])) : null;
+            $country = !empty($_POST['country']) ? strip_tags(htmlspecialchars($_POST['country'])) : null;
+            $profession = !empty($_POST['profession']) ? strip_tags(htmlspecialchars($_POST['profession'])) : null;
 
 
             $req = $bdd->prepare("SELECT email FROM users WHERE email = ?");
@@ -36,7 +36,7 @@ if(isset($_POST['register'])){
             if($loginCount != 0){
                 echo "Le login existe déjà !";
                 $mailDuplication = true;
-                header('Location: ../controller/register.php?mailDuplication=' . htmlspecialchars($mailDuplication));
+                header('Location: ../controller/register.php?mailDuplication=' . $mailDuplication);
 
                 return false;
                 } else {
@@ -45,19 +45,19 @@ if(isset($_POST['register'])){
                 echo "succès";
 
                 //Elements de session importants
-                $_SESSION['email'] = $_POST['email'];
-                $_SESSION['userName'] = $_POST['userName'];
-                $_SESSION['userSurname'] = $_POST['userSurname'];
-                $_SESSION['status'] = $_POST['status'];
+                $_SESSION['email'] = $email;
+                $_SESSION['userName'] = $userName;
+                $_SESSION['userSurname'] = $userSurname;
+                $_SESSION['status'] = 'utilisateur';
 
                 //Session non obligatoire à remplir après
-                $_SESSION['birthday'] = $_POST['birthday'];
-                $_SESSION['gender'] = $_POST['gender'];
-                $_SESSION['address'] = $_POST['address'];
-                $_SESSION['postalCode'] = $_POST['postalCode'];
-                $_SESSION['city'] = $_POST['city'];
-                $_SESSION['country'] = $_POST['country'];
-                $_SESSION['profession'] = $_POST['profession'];
+                $_SESSION['birthday'] = $birthday;
+                $_SESSION['gender'] = $gender;
+                $_SESSION['address'] = $address;
+                $_SESSION['postalCode'] = $postalCode;
+                $_SESSION['city'] = $city;
+                $_SESSION['country'] = $country;
+                $_SESSION['profession'] = $profession;
 
                 //Mail vérifié ?
                 $_SESSION['mailVerification'] = false;

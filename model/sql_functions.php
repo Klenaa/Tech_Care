@@ -25,17 +25,23 @@ function selectFAQ(){
 }
 
 //FAQ : ADD
-function addFAQ($bdd, $question, $reponse){
+function addFAQ($bdd, $question, $response){
     $req =$bdd->prepare('INSERT INTO faq(questions, réponses) VALUES(?,?)');
 
     $req->execute(array(
         $question,
-        $reponse
+        $response
     ));
-
     return $req;
 }
 
+
+//DELETE : user
+function deleteUser($bdd, $user){
+    $req = $bdd -> prepare('DELETE FROM users WHERE email=?');
+    $req->execute(array($user));
+    return $req;
+}
 
 ?>
 

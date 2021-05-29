@@ -17,7 +17,7 @@ include($IPATH . "header.php"); ?>
 <div class="sideByside">
     <div class="container">
         <h1>Code de vérification</h1>
-        <form method="post">
+        <form method="post" action="../model/register_verification_post.php">
             <div class="multipleChoice">
                 <label for="verificationCode">Entrer le code de vérification</label>
                 <input type="password" id="verificationCode" name="verificationCode" required maxlength="50" placeholder="Code de vérification"><br>
@@ -34,19 +34,7 @@ include($IPATH . "header.php"); ?>
     </div>
 </div>
 <?php
-//Confirmation du code de vérification
-if(isset($_POST['confirm'])) {
-    if ($_SESSION['codeVerification'] == $_POST['verificationCode']) {
-        header('Location: ../view/html/doYouWant.php');
-    }
-    else{
-        echo '<p>dommage, réessayez.</p>';
-    }
-}
-//Envoie de mail
-if(isset($_POST['sendMail']) && isset($_SESSION['email'])){
-    sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);
-}
+
 
 $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
 include($IPATH . "footer.php");
