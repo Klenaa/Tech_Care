@@ -39,7 +39,7 @@ p{
 .container{
 	display: flex;
 	flex-direction: row;
-	height: 50vh;
+	height: 70vh;
 
 	justify-content: center;
 	align-items: center;
@@ -64,4 +64,22 @@ article{
 
 a {
 	text-decoration:none;
+}
+
+.iconImg{
+
+
+
+
+}
+
+.boximg{
+
+	height: 20vh;
+}
+
+img{
+	width: 100%;
+	height: 50vh;
+	object-fit:contain;
 }

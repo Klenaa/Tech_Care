@@ -13,15 +13,31 @@
     $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
     include($IPATH . "header.php"); ?>
     <div class="container">
-        <a href="#"><article class="elements">
-            <h2>Compléter son profil</h2>
-        </article></a>
-        <a href="#"><article class="elements">
+        <a href="../../test/editProfile.php">
+            <article class="elements">
+                <h2>Compléter son profil</h2>
+            </article>
+            <div class="boximg">
+                <img class="iconmg" src="../images/img/profil.png">
+            </div>
+        </a>
+
+        <a href="#">
+            <article class="elements">
             <h2>Prendre ses mesures</h2>
-        </article></a>
-        <a href="#"><article class="elements">
-            <h2>Historique des mesures</h2>
-        </article></a>
+            </article>
+            <div class="boximg">
+                <img class="iconmg" src="../images/img/heart.png">
+            </div>
+        </a>
+        <a href="#">
+            <article class="elements">
+                <h2>Historique des mesures</h2>
+            </article>
+            <div class="boximg">
+                <img class="iconmg" src="../images/img/historic.png">
+            </div>
+        </a>
     </div>
 
     <?php

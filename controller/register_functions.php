@@ -4,7 +4,6 @@
     echo 'Hello '. $_SESSION['userSurname'] . ' ET ' . $_SESSION['email'] ;
 
     //Requête SQL Insert INSCRIPTION
-
     function addNewUser($bdd, $email, $userName, $userSurname, $pass, $birthday, $gender, $address, $postalCode, $city, $country, $profession){
         $status = 'utilisateur';
         $req = $bdd->prepare('INSERT INTO users (email, userName, userSurname, pass, birthday, gender, address, postalCode, city, country, profession, status) 

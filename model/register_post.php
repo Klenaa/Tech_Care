@@ -42,8 +42,31 @@ if(isset($_POST['register'])){
                 } else {
                 $mdp1HASH = sha1($_POST['pass']);
                 addNewUser($bdd, $email, $userName, $userSurname, $mdp1HASH, $birthday, $gender, $address, $postalCode, $city, $country, $profession);
-
                 echo "succès";
+
+                //Elements de session importants
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['userName'] = $_POST['userName'];
+                $_SESSION['userSurname'] = $_POST['userSurname'];
+                $_SESSION['status'] = $_POST['status'];
+
+                //Session non obligatoire à remplir après
+                $_SESSION['birthday'] = $_POST['birthday'];
+                $_SESSION['gender'] = $_POST['gender'];
+                $_SESSION['address'] = $_POST['address'];
+                $_SESSION['postalCode'] = $_POST['postalCode'];
+                $_SESSION['city'] = $_POST['city'];
+                $_SESSION['country'] = $_POST['country'];
+                $_SESSION['profession'] = $_POST['profession'];
+
+                //Mail vérifié ?
+                $_SESSION['mailVerification'] = false;
+
+                createCodeVerification();
+                sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);
+
+
+                header('Location: ../controller/registerVerification.php');
                 return true;
             }
         }
