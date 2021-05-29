@@ -67,10 +67,8 @@
                         <label for="city">Ville</label>
                         <input type="text" id="city" name="city" placeholder="Paris"><br>
 
-                        <label for="country">Profession</label>
+                        <label for="country">Pays</label>
                         <input type="text" id="country" name="country" maxlength="70" placeholder="France"><br>
-
-
 
                         <!--<label for="profession">Profession</label>
                             <?php /*$professionArray = getProfession($bdd);?>

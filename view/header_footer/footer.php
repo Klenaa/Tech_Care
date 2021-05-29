@@ -77,7 +77,6 @@
                     <li><a href="#">Français</a></li>
                 </ul>
             <li><a href="http://localhost/Tech_Care/view/html/legal_mentions.php">Mentions légales</a></li>
-            <li><a href="http://localhost/Tech_Care//test_register_connexion/registerManager.php">Nous rejoindre</a></li>
             <li><a href="http://localhost/Tech_Care/controller/deconnexion.php">Se déconnecter</a></li>
 
 

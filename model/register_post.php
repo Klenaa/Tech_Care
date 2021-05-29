@@ -13,7 +13,7 @@ if(isset($_POST['register'])){
             $pwd2 = ($_POST['pass']);
             $userName = htmlspecialchars(trim($_POST['userName']));
             $userSurname = htmlspecialchars(trim($_POST['userSurname']));
-            $email = trim($_POST['email']);
+            $email = htmlspecialchars(trim($_POST['email']));
 
 
             //éléments optionnels lors du remplissage de l'insciption
@@ -36,21 +36,17 @@ if(isset($_POST['register'])){
             if($loginCount != 0){
                 echo "Le login existe déjà !";
                 $mailDuplication = true;
-                header('Location: register.php?mailDuplication=' . htmlspecialchars($mailDuplication));
-
-
+                header('Location: ../controller/register.php?mailDuplication=' . htmlspecialchars($mailDuplication));
 
                 return false;
                 } else {
                 $mdp1HASH = sha1($_POST['pass']);
-                addNewUser($bdd, $email, $userName, $userSurname, $passwordHash, $birthday, $gender, $address, $postalCode, $city, $country, $profession);
+                addNewUser($bdd, $email, $userName, $userSurname, $mdp1HASH, $birthday, $gender, $address, $postalCode, $city, $country, $profession);
 
                 echo "succès";
                 return true;
             }
         }
-
-
     //$retour = addUser($_POST['login'], $_POST['mdp1'], $_POST['mdp2']);
 }
 
@@ -139,9 +135,7 @@ elseif (isset($_POST['register']) && $_POST['pass'] != $_POST['pass2']){
 */
 
 
-
-
-$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/view/header_footer/';
 include($IPATH . "footer.php");
 ?>
 
