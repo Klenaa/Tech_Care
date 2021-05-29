@@ -1,22 +1,54 @@
 <?php
-    require 'connect.php';
+    require '../model/connect.php';
 
-    echo 'Function test';
     echo 'Hello '. $_SESSION['userSurname'] . ' ET ' . $_SESSION['email'] ;
 
+    //Requête SQL Insert INSCRIPTION
+
+    function addNewUser($bdd, $email, $userName, $userSurname, $pass, $birthday, $gender, $address, $postalCode, $city, $country, $profession){
+        $status = 'utilisateur';
+        $req = $bdd->prepare('INSERT INTO users (email, userName, userSurname, pass, birthday, gender, address, postalCode, city, country, profession, status) 
+                                        VALUES (:email, :userName, :userSurname, :pass, :birthday, :gender, :address, :postalCode, :city, :country, :profession, :status)');
+        $req->execute(array(
+            'email' => $email,
+            'userName' => $userName,
+            'userSurname' =>  $userSurname,
+            'pass' => $pass,
+            'birthday' => $birthday,
+            'gender' => $gender,
+            'address' => $address,
+            'postalCode' =>$postalCode,
+            'city' =>$city,
+            'country' => $country,
+            'profession' =>$profession,
+            'status' =>$status
+
+            /* avec ?, ?, ?, ? dans la requete INSERT
+            $_POST['email'],
+            $_POST['userName'],
+            $_POST['userSurname'],
+            $passwordHash*/
+        ));
+        return $req;
+
+    }
+
+
+
+    //Mail déjà enregistré ?
     function isEmailAlreadyRegistered($bdd, $emailToCheck){
         $reqMail = $bdd->prepare('SELECT email FROM users WHERE email = ?');
-        $reqMail->execute(array($emailToCheck));           
+        $reqMail->execute(array($emailToCheck));
         $emailCount = $reqMail->rowCount();
-        
+
         if($emailCount == 0){
             echo ' <br> Cet email est nouveau.' . $emailCount .' email : ' . $emailToCheck ;
-            return true; 
-            header('Location: C:\MAMP\htdocs\Tech_Care\test_register_connexion\register_functions.php');
+            return 0;
         }
         else {
             echo '<br> Ce mail est déjà enregistré. ' . $emailCount .' email : ' . $emailToCheck;
-            return false;
+            return 1;
+
         }
     }
     //RETURN AN ARRAY OF PROFESSION FROM BDD

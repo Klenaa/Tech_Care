@@ -1,4 +1,4 @@
-body {
+.corps {
     font-family: Helvetica, sans-serif;
     color: #1e4d6e;
 }
@@ -22,7 +22,7 @@ header{
 
 footer {
     position: absolute;
-    bottom: 0;
+    bottom: -100px;
     width: 100%;
 }
 
@@ -43,7 +43,6 @@ footer {
 }
 
 .selection{
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: 100px;
@@ -61,71 +60,53 @@ footer {
     justify-content: center;
     align-items: center;
     flex: 1;
-    margin-bottom: 5%;
+    margin-top: 5%;
     border-radius: 10px;
     box-shadow: -1px 2px 5px 1px #1e4d6e;
 }
 
-.calendar {
-    width:315px;
-    background:white;
-    border-radius:5px;
-    overflow:hidden;
-    display:block;
-    box-shadow: -1px 2px 5px 1px #1e4d6e;
+.testDateLabel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.truc {
-    box-sizing:border-box!important;
+.multipleChoice{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
-.police {
-    font:18px 'Roboto';
-    font-weight:700;
-    color:#1e4d6e;
-    display:block;
-    margin:18px 0 0 0;
-    text-transform:uppercase;
-    text-align:center;
-    letter-spacing:1px;
+.resultTable  {
+    border-collapse: collapse;
+    min-width: 400px;
+    width: auto;
+    box-shadow: 0 5px 50px rgba(0,0,0,0.15);
+    cursor: pointer;
+    margin: 100px auto;
+    border: 2px solid #1e4d6e;
+    /* border: 1px solid #ddd;  */
 }
 
-.truc span {
-    font:11px 'Roboto';
-    font-weight:400;
-    color:#1e4d6e;
-    text-align:center;
-    width:42px;
-    height:42px;
-    display:inline-block;
-    float:left;
-    overflow:hidden;
-    line-height:40px;
+thead tr {
+    background-color: #1e4d6e;
+    color: #fff;
+    text-align: left;
 }
 
-.truc .blank:before {
-    opacity:0.3;
-    content:'o';
+th, td {
+    padding: 15px 20px;
 }
 
-.circle {
-    border:1px solid #a3e0cc;
-    box-sizing:border-box!important;
-    border-radius:200px!important;
+tbody tr, td, th {
+    border: 1px solid #ddd;
 }
 
-span[data-title]:hover:after,
-div[data-title]:hover:after {
-    font:11px 'Roboto';
-    font-weight:400;
-    content:attr(data-title);
-    position:absolute;
-    margin:0 0 100px;
-    background:white;
-    border:1px solid #1e4d6e;
-    color:#1e4d6e;
-    padding:5px;
-    z-index:9999;
-    min-width:150px;
-    max-width:150px;
+tbody tr:nth-child(even){
+    background-color: #f3f3f3;
 }
+
