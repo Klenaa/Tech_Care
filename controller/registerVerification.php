@@ -15,6 +15,9 @@ $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
 include($IPATH . "header.php"); ?>
 <body>
 <div class="sideByside">
+    <?php
+    echo 'hello ' . $_SESSION['email'];
+    ?>
     <div class="container">
         <h1>Code de vérification</h1>
         <form method="post" action="../model/register_verification_post.php">
@@ -23,12 +26,17 @@ include($IPATH . "header.php"); ?>
                 <input type="password" id="verificationCode" name="verificationCode" required maxlength="50" placeholder="Code de vérification"><br>
             </div>
             <input type="submit" value="Confirmer" name="confirm">
+            <?php
+            if(isset($_GET['error_code']) && $_GET['error_code'] == true){
+                echo "<p style='color: #8f0015'>Code Invalide</p>";
+            }
+            ?>
         </form>
     </div>
 
     <div class="container">
         <h1>Envoyer le mail à nouveau</h1>
-        <form method="post">
+        <form method="post" action="../model/register_verification_post.php">
             <input type="submit" value="Envoyer" name="sendMail">
         </form>
     </div>

@@ -4,10 +4,12 @@
     include('../controller/register_functions.php');
 
 if(isset($_POST['register'])){
+    //MDP différents
     if($_POST['pass'] != $_POST['pass2']){
         echo "Les mots de passe sont différents.";
         return false;
     }else {
+
             //Hash password
             $passwordHash = sha1($_POST['pass']);
             $pwd2 = ($_POST['pass']);

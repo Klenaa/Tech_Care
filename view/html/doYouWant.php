@@ -14,7 +14,16 @@
     include($IPATH . "header.php"); ?>
     <div class="container">
         <?php
-        if
+        if(empty($_SESSION['birthday']) ||
+                empty($_SESSION['gender']) ||
+                empty($_SESSION['address']) ||
+                empty($_SESSION['postalCode']) ||
+                empty($_SESSION['city']) ||
+                empty($_SESSION['country']) ||
+                empty($_SESSION['profession'])){
+            echo '<p>Avant de continuer, veuillez compléter vos informations.</p>';
+
+        }
         ?>
         <a href="../../test/editProfile.php">
             <article class="elements">
