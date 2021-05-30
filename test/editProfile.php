@@ -1,7 +1,7 @@
 <?php
     require '../model/connect.php';
     include 'function.php';
-    $profil = donner($db,$_SESSION['email']);
+    $profil = donner($bdd,$_SESSION['email']);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -73,8 +73,8 @@
                 </div>
 
                 <div class="multipleChoice">
-                    <button type="submit" id="annuler" name="annuler">Annuler</button> &ensp;
-                    <button type="submit" id="modifier" name="modification" value="Register" maxlength="50" onclick="return Validate()">Modifier</button>
+                    <button type="submit" id="modifier" name="modification" value="Register" maxlength="50" onclick="return Validate()">Modifier</button> &ensp;
+                    <button type="submit" id="annuler" name="annuler">Annuler</button>
                 </div>
             </form>
         </broly>

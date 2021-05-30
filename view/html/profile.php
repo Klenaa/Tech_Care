@@ -1,7 +1,7 @@
 <?php
     require '../../model/connect.php';
-    include 'function.php';
-    $profil = donner($db,$_SESSION['email']);
+    include '../../test/function.php';
+    $profil = donner($bdd,$_SESSION['email']);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,13 @@ include($IPATH . "header.php"); ?>
                 <li>Votre pays : <?php if(isset($_POST['country'])){ echo $_POST['country'];}else{ echo $profil['country'];}?></li>
                 <li>Votre profession : <?php if(isset($_POST['profession'])){ echo $_POST['profession'];}else{ echo $profil['profession'];}?></li>
             </ul>
-            <a href="../../test/editProfile.php">Editer son profil</a>
+            <a href="../../test/editProfile.php">Editer son profil</a><br>
+            <a href="../../test/password.php">Modifier le mot de passe</a><br>
+            <?php
+            if($profil['profession'] == "Médecin"&& $profil['status'] == "utilisateur"){
+                echo '<a href=" ">Vous etes médecin? Souhaiter vous nous rejoindre et changer votre statut en gestionnaire?</a><br>';
+            }
+            ?>
         </div>
     </broly>
 

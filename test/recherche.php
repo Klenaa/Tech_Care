@@ -86,5 +86,17 @@ if(isset($_POST['chercher'])){
     </body>
 </html>
 
+<?php
+if(isset($_POST[$baseNameDelete.$indexNumber])){
+    header('Location:delete_user_post.php?mail=' . $rowUser['email']);
+}
 
+echo  '<td><form method="post"><select name="' . $baseNameSelect. $indexNumber.'" id="' . $baseNameSelect. $indexNumber.'">
+                        <option value="utilisateur">Utilisateur</option>
+                        <option value="gestionnaire">Gestionnaire</option>
+                        <option value="administrateur">Administrateur</option>
+                        </select></td>';
+echo '<td><input type="submit" value="Modifier" name="' . $baseNameButton. $indexNumber.'"></form></td>';
+echo '<td><form method="post"><input type="submit" name="'.$baseNameDelete.$indexNumber.'" value="Supprimer"></form></td>';
+echo '</tr><br>';
 
