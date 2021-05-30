@@ -7,6 +7,7 @@ if(isset($_GET['mail']) && isset($_GET['pass'])) {
     $myMail = strip_tags($_GET['mail']);
     $_GET['pass'] = htmlspecialchars($_GET['pass']);
     $newPass = strip_tags($_GET['pass']);
+    $newPass = sha1($newPass);
     updatePass($bdd, $newPass, $myMail);
     $_SESSION['pass'] = $newPass;
     header('Location: ../view/html/profile.php');
