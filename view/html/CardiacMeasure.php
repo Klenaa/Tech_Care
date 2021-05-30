@@ -22,15 +22,15 @@
 				<div class="info-container png-container">
 					<article>
 						<h4 class="articleTitle">Notice d'utilisation</h4>
-						<p> lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum
-						lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-						lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+						<p> Insérez votre index dans le cylindre noir et veuillez coller celui-ci à la plaque blanche
+                            à l'opposé de la lumière. Une fois l'index bien appuyé contre le senseur blanc, appuyez sur
+                            le bouton de compte à rebours pour démarrer la prise de votre pouls.
 						</p>
 					</article>
 					<article>
 						<div class="info-box">
 							<h4 class="articleTitle">Photo du capteur</h4>	
-							<img id="image_capteur" class="pnj" src="../images/cardiacCard.png">
+							<img id="image_capteur" class="pnj" src="../images/cardiacCard.JPG">
 						</div>
 					</article>
 					<article>

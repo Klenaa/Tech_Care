@@ -29,7 +29,7 @@
                     </div>
                 </article>
                 <article>
-                    <a href="taking_measurement.php">
+                    <a href="CardiacMeasure.php">
                         <div class="info-box">
                             <h4 class="articleTitle">Mesure la fréquence cardiaque</h4>
                             <img class="png" src="../images/test/cardio.png">
