@@ -119,7 +119,7 @@
                 <button class="navButton" id="mesurementAnalysis"><a href="../html/Analyse_des_mesures.php">Analyse des résultats</a></button>
             </div>
             <div class="nav">
-                <button class="navButton" id="usersData"><a href="../html/Gest_userData.php">Données des utilisateurs</a></button>
+                <button class="navButton" id="usersData"><a href="../../controller/gest_user_data.php">Données des utilisateurs</a></button>
             </div>
                 </section>
     <section>
@@ -141,7 +141,7 @@
                 <div class="nav">
                     <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
                     <div class="dropDownMenu dropAdmin">
-                        <a class="downMenu" href="../html/user_management.php">Gérer les utilisateurs</a>
+                        <a class="downMenu" href="../../model/updateUserStatus.php">Gérer les utilisateurs</a>
                         <a class="downMenu" href="../html/FAQ_Salem.php">Gérer la FAQ</a>
                         <a class="downMenu" href="../html/Forum.php">Gérer le forum</a>
                     </div>

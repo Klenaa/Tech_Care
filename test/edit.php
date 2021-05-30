@@ -22,3 +22,4 @@ if(isset($_POST['annuler'])){
     header("Location: editProfile.php");
     exit;
 }
+
