@@ -1,13 +1,6 @@
 <?php
-//require '../test_register_connexion/connect.php';//
-try
-{
-    $bdd = new PDO('mysql:host=localhost:3306;dbname=db;charset=utf8', 'root', 'root');
-}
-catch(Exception $e)
-{
-    die('Erreur : '.$e->getMessage());
-}
+require '../../model/connect.php';
+
 ?>
 
 
@@ -15,13 +8,16 @@ catch(Exception $e)
 <html lang="en">
 
 <head>
-    <?php include("style.php"); ?>
+    <?php include("../css/style.php"); ?>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/FAQ_Salem.css"/>
     <title>FAQ</title>
 </head>
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "header.php"); ?>
 <body>
 <div class="box">
-
     <p class="heading" id="titre">FAQ</p>
     <div id="faq">
 
@@ -33,8 +29,16 @@ catch(Exception $e)
             ?>
 
             <section1>
-
                 <div class="container">
+                    <?php
+                    if($_SESSION['status'] == 'administrateur'){
+                        ?>
+                        <h1>Ajouter une question</h1>
+                        <form method="post" action="../model/FAQ_add_post.php">
+                    <?php
+                    }
+                    ?>
+
                     <div class="accordion">
                         <?php
                         while ($donnees = $reponse->fetch())
@@ -43,28 +47,23 @@ catch(Exception $e)
 
                             ;echo '<div class="answer"> <p> ' . htmlspecialchars($donnees['réponses']) .
                             '</p> </div> </div> ';
-
                         }
                         ?>
-
-
                     </div> </div> </section1>
             <?php
-
         }
         catch (Exception $e)
         {
             die('Erreur : '.$e->getMessage());
         }
-
-
         ?>
-
-
-
     </div>
+</div>
+
+
 </body>
-
-
-
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "footer.php");
+?>
 </html>

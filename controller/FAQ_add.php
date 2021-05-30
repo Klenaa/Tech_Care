@@ -23,6 +23,9 @@ catch(Exception $e)
     <link rel="stylesheet" href=""/>
     <title>FAQ : Ajouter une question</title>
 </head>
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "header.php"); ?>
 
 <body>
 
@@ -40,4 +43,11 @@ catch(Exception $e)
     </form>
 
 </div>
+
+</body>
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "footer.php");
+?>
+</html>
 

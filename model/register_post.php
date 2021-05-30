@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require 'connect.php';
     include('../controller/register_functions.php');
 
@@ -63,6 +62,7 @@ if(isset($_POST['register'])){
 
                 //Mail vérifié ?
                 $_SESSION['mailVerification'] = false;
+
 
                 createCodeVerification();
                 sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);

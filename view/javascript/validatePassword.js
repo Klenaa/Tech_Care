@@ -35,6 +35,9 @@ function isEmpty(what){
     }
     document.getElementById("MSG").innerHTML = msg;
 
-
-
 }*/
+
+
+function informationNotCompleted(){
+
+}

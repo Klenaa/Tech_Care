@@ -2,7 +2,7 @@
 $user = 'root';
 $pass = 'root';
 try{
-    $db = new PDO('mysql:host=localhost;dbname=db;port=3307;',$user,$pass);
+    $bdd = new PDO('mysql:host=localhost;dbname=db;port=3307;',$user,$pass);
 }catch(PDOExecption $e){
     print"Erreur:" . $e->getMessage() . "<br/>"; //Message d'erreur
     die;
@@ -20,10 +20,10 @@ function userInformation($bdd){
     return $rep;
 }
 
-function updatePass($bdd,$pass ,$email){
-    $rep = $bdd->prepare('UPDATE user SET pass = ? WHERE email = ?');
+function updatePass($bdd,$pass,$email){
+    $rep = $bdd->prepare('UPDATE users SET pass = ? WHERE email = ?');
     $rep->execute(array($pass, $email));
-    $_SESSION['pass'] = $pass;
+    return $rep;
 }
 
 function researchUser($bdd,$recherche){

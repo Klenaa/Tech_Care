@@ -1,7 +1,13 @@
 <?php
-    require '../model/connect.php';
+//Connexion BDD
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=db;port=3307;', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+    die('Erreur : ' . $e->getMessage());
+}
 
-    echo 'Hello '. $_SESSION['userSurname'] . ' ET ' . $_SESSION['email'] ;
 
     //Requête SQL Insert INSCRIPTION
     function addNewUser($bdd, $email, $userName, $userSurname, $pass, $birthday, $gender, $address, $postalCode, $city, $country, $profession){
@@ -79,7 +85,7 @@
         $thirdNumber = rand(10,99);
         $codeVerification = (int)($firstNumber . $secondNumber . $thirdNumber);
         $_SESSION['codeVerification'] = $codeVerification;
-        //echo $codeVerification;
+
         return $codeVerification;
     }
 

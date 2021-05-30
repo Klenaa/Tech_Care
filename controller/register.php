@@ -43,7 +43,7 @@
 
 
                         <label for="pass2">Confirmer votre mot de passe*</label>
-                        <input type="password" id="pass2" name="pass2" required maxlength="50" placeholder="Confirmation mot de passe" onclick="ValidateMDP()"><br>
+                        <input type="password" id="pass2" name="pass2" required maxlength="50" placeholder="Confirmation mot de passe" onblur="ValidateMDP()"><br>
                         <span id="msgMDP"></span>
                     
                     <!--Information non obligatoires à l'inscription-->

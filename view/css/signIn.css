@@ -4,19 +4,20 @@ body {
 }
 
 form {
-    margin-top: 20px;
+    margin-top: 50px;
     text-align: center;
     height: 600px;
     background-color: #fff;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 30px 30px 100px rgb(0 0 0 / 20%);
+    margin-bottom: 150px;
 }
 
 
 form .inputs input[type='email'], input[type='password'] {
     padding: 15px;
-    height: 30px;
+    height: 50px;
     width: 450px;
     font-size: 20px;
     border: none;

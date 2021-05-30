@@ -2,12 +2,9 @@
 require '../model/connect.php';
 include 'function.php';
 
-//Modifier profil
 if (isset($_POST['modification'])){
-    //Mettre a jour les information
     $rep = updateUserInfo($bdd,$_POST['userName'], $_POST['userSurname'], $_POST['birthday'], $_POST['gender'], $_POST['address'], $_POST['postalCode'], $_POST['city'], $_POST['country'], $_POST['profession'], $_SESSION['email']);
 
-    //Recharge la session
     $_SESSION['userName'] = $_POST['userName'];
     $_SESSION['userSurname'] = $_POST['userSurname'];
     $_SESSION['birthday'] = $_POST['birthday'];
@@ -18,7 +15,11 @@ if (isset($_POST['modification'])){
     $_SESSION['country'] = $_POST['country'];
     $_SESSION['profession'] = $_POST['profession'];
     $_SESSION['status'] = $_POST['status'];
-    header("Location: profile.php");
+    header("Location: ../view/html/profile.php");
+    exit;
+}
+if(isset($_POST['annuler'])){
+    header("Location: password.php");
     exit;
 }
 ?>
