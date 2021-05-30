@@ -21,4 +21,10 @@ if (isset($_POST['modification'])){
     header("Location: profile.php");
     exit;
 }
+
+//Annuler les modifications
+if(isset($_POST['annuler'])){
+    header("Location: editProfile.php");
+    exit;
+}
 ?>

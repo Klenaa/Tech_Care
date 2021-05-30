@@ -2,35 +2,13 @@
     require '../model/connect.php';
     include 'function.php';
     $profil = donner($db,$_SESSION['email']);
-
-    //Modifier mot de passe & vérification
-    if (isset($_POST['changer']) && $_POST['antPass'] == $profil['pass'] && $_POST['newPass'] == $_POST['confPass']){
-        if($profil['pass'] != $_POST['newPass']){
-            updatePass($db,$_POST['newPass'],$profil['email']);
-            header('Location: edit.php');
-            exit;
-        }else{
-            echo '<script language="Javascript"> alert ("Votre nouveau mot de passe ne peut pas être identique à l\'ancien.") </script>';
-            exit;
-        }
-    }elseif (isset($_POST['changer']) && $_POST['oldPass'] != $profil['pass']) {
-        echo '<script language="Javascript"> alert ("Le mot de passe renseigner est incorrect.") </script>';
-        exit;
-    }elseif (isset($_POST['changer']) && $_POST['newPass'] != $_POST['confPass']) {
-        echo '<script language="Javascript"> alert ("Vos mot de passe ne sont pas identique.") </script>';
-        exit;
-    }elseif (isset($_POST['changer']) && ($_POST['oldPass'] != $profil['pass'] || $_POST['newPass'] != $_POST['confPass'])){
-        echo '<script language="Javascript"> alert ("Vos mot de passe renseigner sont incorrect ou différent." ) </script>';
-        exit;
-    }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>Editer le profil</title>
-        <link rel="stylesheet" href="../view/css/editProfile.css"/>
+        <link rel="stylesheet" href="../view/css/edit_profile.css"/>
     </head>
     <body>
         <?php
@@ -94,49 +72,11 @@
                     </select>
                 </div>
 
-                <button type="submit" id="annuler" name="annuler"><a href="edit.php" style="text-decoration: none; color:#fff;">Annuler<a></button>
-                <button type="submit" id="modifier" name="modification" value="Register" maxlength="50" onclick="return Validate()">Modifier</button>
+                <div class="multipleChoice">
+                    <button type="submit" id="annuler" name="annuler">Annuler</button> &ensp;
+                    <button type="submit" id="modifier" name="modification" value="Register" maxlength="50" onclick="return Validate()">Modifier</button>
+                </div>
             </form>
-        </broly>
-
-        <broly>
-            <div class="contenant">
-                <div>
-                    <h1>Modifier le mot de passe</h1>
-                    <div class="separator"></div>
-                    <div class="element-form">
-                        <form method="post">
-                            <label for="pass">Ancien mot de passe</label>
-                            <input type="password" id="pass" name="oldPass" placeholder="Ancien mot de passe"><br>
-
-                            <label for="pass1">Nouveau mot de passe</label>
-                            <input type="password" id="pass1" name="newPass" required maxlength="50" placeholder="Nouveau mot de passe"><br>
-
-                            <label for="pass2">Confirmer votre mot de passe</label>
-                            <input type="password" id="pass2" name="confPass" required maxlength="50" placeholder="Confirmation mot de passe"><br>
-
-                            <button type="submit" id="annuler" name="annuler"><a href="edit.php" style="text-decoration: none; color:#fff;">Annuler<a></button>
-                            <button type="submit" id="modifier" name="changer" value="Register" maxlength="50" onclick="return Validate()">Modifier</button>
-                        </form>
-                    </div>
-                </div>
-                <div>
-                    <h1>Demande de modification de statut</h1>
-                    <div class="separator"></div>
-                    <div class="element-form">
-                        <form method="post">
-                            <label>Type d'utilisateur</label>
-                            <?php if(isset($_POST['status'])){$gender = $_POST['status'];}else{$status = $profil['status'];}?>
-                            <select name="status" id="status" required>
-                                <option value="utilisateur" <?php if("utilisateur" == $status){echo "selected";}?>>Utilisateur</option>
-                                <option value="gestionnaire" <?php if("gestionnaire" == $status){echo "selected";}?>>Gestionnaire (médecin)</option>
-                                <option value="admin" <?php if("admin" == $status){echo "selected";}?>>Admin</option>
-                            </select>
-                            <button type="submit" id="envoyer" name="envoyer"><a href="edit.php" style="text-decoration: none; color:#fff; ">Envoyer demande<a></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
         </broly>
 
         <?php

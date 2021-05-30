@@ -1,56 +1,107 @@
-*{
-  font-family: helvetica, verdana;
-  color: #1E4D6E; 
-} 
+/*
+light-blue : #1F7DBF;
+dark-blue : #1E4D6E;
+red : #8F0015;
+
+*/
+body {
+    font-family: Helvetica, Verdana, sans-serif;
+    color: #1e4d6e;
+}
+* {box-sizing: border-box;}
+
+/*OVERALL*/
 
 h1{
-  text-align: center;
+    text-align: center;
 }
 
-label {
-  width: 220px;
-  display: inline-block;
-  vertical-align: top;
-  margin: 6px;
-}
- 
-input:focus {
-  background: #ddd;
-}
- 
-input {
-  width: 249px;
-  background: #f1f1f1;
-}
- 
-.button{
-  width: 150px;
-  padding: 10px;
+broly {
+    display: flex;
+    justify-content: center;
 }
 
-em {
-  font-weight: bold;
-  font-style: normal;
-  color: #f00;
+form {
+    margin-top: 20px;
+    border-radius: 10px;
+    min-width:600px;
+    width: 60%;
 }
 
-fieldset {
-  padding-top:1em;
-  text-align: center;
-  margin-left: 100px ;
-  background-color: #F2F2F8;
-  padding:16px;
-  width:500px;
-  border:2px solid;
-  border-radius:8px;
-  margin-bottom: 150px;
+.separator{
+    float: none;
+    margin: 5px auto 20px;
+    height: 2px;
+    width: 100px;
+    background-color:#1F7DBF;
 }
 
-.droit{
-  margin-left: 1000px;
-  margin-top: -400px
+/*Label*/
+form > .contenant > label {
+    color: #1e4d6e;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 1.7em;
 }
 
-.gauche{
-  margin-left: 400px;
+/*CHAMP*/
+form input, form select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=text], input[type=date], #status, #country {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 15px;
+    width: 100%;
+    align-items: center;
+    border-bottom: 2px solid #1F7DBF;
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=text]:hover, input[type=date]:hover, #status:hover {
+    background-color: #F2F2F8;
+    transition: 0.3s;
+}
+
+/*Bouton*/
+form button {
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#modifier{
+    width: 140px;
+    background-color:#1F7DBF;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+#annuler{
+    width: 140px;
+    background-color:#F2F2F8;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.multipleChoice{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
