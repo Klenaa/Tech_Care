@@ -35,7 +35,7 @@ $graph->yaxis->HideTicks(false,false);
 //Placement de la date sur l'axe des abscisses
 
 
-$graph->xaxis->SetTickLabels(array('test 1', 'test 2', 'test 3', 'test 4', 'test 5', 'test 6', 'test 7', 'test 8', 'test 9', 'test 10'));
+$graph->xaxis->SetTickLabels(array('date'));
 $graph->ygrid->SetFill(false);
 $graph->yaxis->scale->SetAutoMin(0);
 $graph->yaxis->scale->SetAutoMax(10);

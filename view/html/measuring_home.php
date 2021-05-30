@@ -23,10 +23,12 @@
         <div id="performance">
             <div class="info-container png-container">
                 <article>
-                    <div class="info-box">
-                        <h4 class="articleTitle">Reconnaissance de tonalité</h4>
-                        <img class="png" src="../images/test/auditif.png">
-                    </div>
+                   <a href="audioMeasure.php">
+                        <div class="info-box">
+                            <h4 class="articleTitle" >Reconnaissance de tonalité</h4>
+                            <img class="png" src="../images/test/auditif.png">
+                        </div>
+                   </a>
                 </article>
                 <article>
                     <a href="CardiacMeasure.php">
@@ -37,10 +39,12 @@
                     </a>
                 </article>
                 <article>
-                    <div class="info-box">
-                        <h4 class="articleTitle">Mesure de la température</h4>
-                        <img class="png" src="../images/temperature.png">
-                    </div>
+                    <a href="HeatMeasure.php">
+                        <div class="info-box">
+                            <h4 class="articleTitle">Mesure de la température</h4>
+                            <img class="png" src="../images/temperature.png">
+                        </div>
+                    </a>
                 </article>
             </div>
         </div>
