@@ -4,45 +4,8 @@
     <meta charset="utf-8">
     <title>Prendre des mesures</title>
     <link rel="stylesheet" href="../css/measuring_home.css"/>
-<<<<<<< Updated upstream
-
     <link rel="stylesheet" href="../css/header2.css"/>
 </head>
-
-<header>
-    <section>
-        <a href="../html/doYouWant.php">
-            <img src="../images/logoHeader.png" alt=""/>
-        </a>
-    </section>
-    <section class="navButtonContainer">
-        <div class="nav">
-            <button class="navButton" id="takeMeasures"><a href="../html/measuring_home.php">Prendre des mesures</a></button>
-        </div>
-        <div class="nav">
-            <button class="navButton" id="mesurementAnalysis"><a href="Analyse_des_mesures.php">Analyse des résultats</a></button>
-        </div>
-        <div class="nav">
-            <button class="navButton" id="usersData"><a href="Gest_userData.php">Données des utilisateurs</a></button>
-        </div>
-        <div class="nav">
-            <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
-            <div class="dropDownMenu dropAdmin">
-                <a class="downMenu" href="user_management.php">Gérer les utilisateurs</a>
-                <a class="downMenu" href="FAQ.php">Gérer la FAQ</a>
-                <a class="downMenu" href="messagerie.php">Gérer la messagerie</a>
-            </div>
-        </div>
-    </section>
-    <section>
-        <button class="option" ><a>Options</a></button>
-        <div class="dropDownMenu dropOption">
-            <a class="downMenu" href="edit_profile.php">Profil</a>
-            <a class="downMenu" href="home.php">Se déconnecter</a>
-        </div>
-    </section>
-</header>
->>>>>>> Stashed changes
 <main>
 
     <?php

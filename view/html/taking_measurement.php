@@ -6,48 +6,9 @@
 	<link rel="stylesheet" href="../css/taking_measurement.css"/>
     </head>
     <main>
-<<<<<<< Updated upstream
-
         <?php
         $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
         include($IPATH . "header.php"); ?>
-
-=======
-    	
-		<header>
-		    <section>
-		        <a href="Doyouwant.html">
-		        <img src="./images/logoHeader.png" alt=""/>
-		        </a>
-		    </section>
-		    <section class="navButtonContainer">
-		        <div class="nav">
-		            <button class="navButton" id="takeMeasures"><a href="measuring_home.html">Prendre des mesures</a></button>
-		        </div>
-		        <div class="nav">
-		            <button class="navButton" id="mesurementAnalysis"><a href="Analyse_des_mesures.html">Analyse des résultats</a></button>
-		        </div>
-		        <div class="nav">
-		            <button class="navButton" id="usersData"><a href="../html/Gest_userData.php">Données des utilisateurs</a></button>
-		        </div>
-		        <div class="nav">
-		            <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
-		            <div class="dropDownMenu dropAdmin">
-		                <a class="downMenu" href="../html/user_management.php">Gérer les utilisateurs</a>
-		                <a class="downMenu" href="../html/FAQ.php">Gérer la FAQ</a>
-		                <a class="downMenu" href="../html/messagerie.php">Gérer la messagerie</a>
-		            </div>
-		        </div>
-		    </section>
-		    <section>
-		        <button class="option" ><a>Options</a></button>
-		        <div class="dropDownMenu dropOption">
-		            <a class="downMenu" href="../html/edit_profile.php">Profil</a>
-		            <a class="downMenu" href="../html/home.php">Se déconnecter</a>
-		        </div>
-		    </section>
-		</header>
->>>>>>> Stashed changes
         <!--Le stress-->
         
         <div class="mini-text">
@@ -75,44 +36,38 @@
 					<article>
 						<div class="info-box">
 							<h4 class="articleTitle">Compte à rebours</h4>
-<<<<<<< Updated upstream
-							<img class="pnj" src="../images/rebour.jpg">
-=======
-                            <script type="text/javascript" src="validatePassword.js"></script>
-                            <button type="submit" id="register" name="register" value="Register" maxlength="50" onclick="return Validate()">Démarrer le compte à rebours</button>
+                            <div id= "startButtons">
+                                <button  class="bouton" id= "measureStart">Lancez le compte à rebours</button>
+                            </div>
+                            <div id= "countdown"></div>
                             <script>
-                                var sec = 3;
-                                function tick()
-                                {
-                                    document.getElementById('decompte').innerText = 'Il reste ' + sec + ' seconde(s)';
+                                document.getElementById("measureStart").addEventListener("click", function(){
+                                    var timeleft = 3;
 
-                                    if(sec == 0)
-                                    {
-                                        document.getElementById('decompte').innerText = 'Terminé !';
-                                        document.getElementById('cache').style.display = 'block';
-                                        window.clearInterval(timer);
-                                    }
+                                    var downloadTimer = setInterval(function function1(){
+                                        document.getElementById("countdown").innerHTML = timeleft +
+                                            "&nbsp"+"secondes restantes";
 
-                                    sec--;
-                                }
-                                var timer = window.setInterval(tick, 1000);
+                                        timeleft -= 1;
+                                        if(timeleft <= 0){
+                                            clearInterval(downloadTimer);
+                                            document.getElementById("countdown").innerHTML = "Temps écoulé!"
+                                        }
+                                    }, 1000);
+
+                                    console.log(countdown);
+                                });
                             </script>
 
-                            <div id="decompte">Activez JavaScript</div>
                             <div id="cache" style="display: none;">
                                 <a href="<?php echo $_GET['url']; ?>"> <?php echo $_GET['url']; ?></a>
                             </div>
-                            <img class="pnj" src="../images/rebour.jpg">
->>>>>>> Stashed changes
 						</div>
 					</article>
 				</div>
             </div>
         </div>
-			<!--Bouton-->
-		<div class="center">	
-			<h4 class="bouton">Démarrage du test</h4>
-        </div>
+
         <?php
         $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
         include($IPATH . "footer.php"); ?>

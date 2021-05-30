@@ -201,43 +201,37 @@ $allUsers  = $bdd->query($sql);
 
 if ($allUsers !== FALSE) {
     $allUsers  = $bdd->query($sql)->fetchAll();
-} else {
-    echo "<h5><br><br>Votre recherche ne correspond à aucun résultat.</h5>";
+    echo "<h3>Voici les utilisateurs qui correspondent à vos critères</h3>";
 }
 
-
-
-
-
 echo '<div class="container"><table>';
-if ($allUsers == FALSE ) {
 
-} else {
-    echo '<thead><tr><th>Mail</th><th>Nom</th><th>Prenom</th><th>Genre</th>';
-    if(!empty($_POST['date'] && !empty($_POST['date']))){
-        echo '<th>Résultat de la mesure</th></tr></thead>';
-    }
+
+?><thead><tr><th>Mail</th><th>Nom</th><th>Prenom</th><th>Genre</th><?
+if(!empty($_POST['date'] && !empty($_POST['date']))){
+    echo '<th>Résultat de la mesure</th></tr></thead>';
 }
 
 
 foreach ($allUsers as $rowUser){
 
-    echo '<tbody><tr class="col">';
-    echo "<td>" . $rowUser['email'] . "</td>";
-    echo "<td>" . $rowUser['userName'] . "</td>";
-    echo "<td>" . $rowUser['userSurname'] . "</td>";
-    echo "<td>" . $rowUser['gender'] . "</td>";
+    ?><tbody><tr class="col"><?
+    ?><td><?= $rowUser['email'] ?> </td><?
+    ?><td><?= $rowUser['userName'] ?> </td><?
+    ?><td><?= $rowUser['userSurname'] ?> </td><?
+    ?><td><?= $rowUser['gender'] ?> </td><?
     if(!empty($_POST['date'] && !empty($_POST['date']))) {
-        echo "<td>" . $rowUser['measureResult'] . "</td>";
-
-
+    ?><td><?= $rowUser['measureResult'] ?> </td><?
     }
-    echo '</tr></tbody><br>';
+    ?><td></tr></tbody><br></td><?
 }
-echo '</table></div>';
+?></table></div><br><?php
 
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "footer.php");
 
 
 ?>
+
 
 
