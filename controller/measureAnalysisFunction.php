@@ -1,14 +1,9 @@
 <?php
-require '../model/connect.php';
+require '../../model/connect.php';
 
-$refMeasure = 70;
 
 function measureSelectionAuto($bdd, $newDate) {
-    global $refMeasure;
-    if (isset($_POST["nom1"])) {
-        // $refMeasure = $_POST[$nom.$compteur];
-    }
-    echo $refMeasure;
+
     if ($newDate == null) {
         $req = $bdd->prepare('SELECT * FROM test WHERE email = ? ORDER BY date DESC LIMIT 4');
         $req->execute(array($_SESSION['email']));
@@ -16,8 +11,7 @@ function measureSelectionAuto($bdd, $newDate) {
         $req = $bdd->prepare('SELECT * FROM test WHERE date = ? and email = ? ORDER BY date');
         $req->execute(array($newDate, $_SESSION['email']));
     }
-    $compteur = 0;
-    $nom = "nom";
+    $nameCount = 0;
     while ($donnees = $req->fetch())
     {
         ?>
@@ -26,20 +20,27 @@ function measureSelectionAuto($bdd, $newDate) {
                 $measureDate = $donnees['date'];
                 echo "Mesure du " . date("j", strtotime("$measureDate")) . " " . date("F", strtotime("$measureDate")) . " " . date("Y", strtotime("$measureDate"));
                 ?></h3>
-            <form action="Analyse_des_mesures.php" method="POST" style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly">
+            <form action="Analyse_des_mesures.php?id=<?php echo $donnees['refMeasure']; ?>" method="POST" style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly">
                 <p> <?php echo $donnees['result'] ?> </p>
-                <button style="height: 20px; margin-left: 50px" type="submit" name="<?php echo $nom.$compteur ?> " value="<?php $donnees['refMeasure'] ?>">Voir</button>
+                <button style="height: 20px; margin-left: 50px" type="submit" name="  " value="<?php $donnees['refMeasure'] ?>">Voir</button>
             </form>
         </div>
         <?php
-        $compteur ++;
+        $nameCount ++;
     }
     $req->closeCursor();
 }
 
+function getId() {
+    if ($_GET['id']) {
+        return $_GET['id'];
+    } else {
+        return 70;
+    }
+}
 
 function dispData($bdd) {
-    global $refMeasure;
+    $refMeasure = getId();
     $reqResult = $bdd->prepare('SELECT m.measureResult measureResult, t.date measureDate, t.result result, s.sensorName sensor
                 FROM measure m
                 LEFT JOIN test t 
@@ -50,7 +51,7 @@ function dispData($bdd) {
                 ORDER BY s.sensorName'
     );
     try {
-    $reqResult->execute(array(70));
+    $reqResult->execute(array($refMeasure));
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
@@ -70,7 +71,6 @@ function dispData($bdd) {
         <tr>
         <?php
         while ($donnees = $reqResult->fetch()) {
-            echo $donnees['measureResult'];
             ?>
             <td><?php echo $donnees['measureResult']; ?></td>
             <?php

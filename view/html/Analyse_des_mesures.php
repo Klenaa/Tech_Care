@@ -31,7 +31,6 @@ include($IPATH . "header.php"); ?>
                 <button type="submit" name="dateValidation">Valider</button>
             </form>
         </div>
-
         <?php
             if (isset($_POST['dateValidation'])) {
                 $newDate = $_POST['chosenDate'];
