@@ -30,7 +30,7 @@
 					<article>
 						<div class="info-box">
 							<h4 class="articleTitle">Photo du capteur</h4>	
-							<img id="image_capteur" class="pnj" src="../images/lumiere.png">
+							<img id="image_capteur" class="pnj" src="../images/cardiacCard.png">
 						</div>
 					</article>
 					<article>
