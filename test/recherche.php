@@ -1,34 +1,22 @@
 <?php
-session_start();
-//On se connecte à la basse de donnés
-$user = 'root';
-$pass = 'root';
-try{
-    $db = new PDO('mysql:host=localhost;dbname=db;port=3307;',$user,$pass);
-    foreach ($db->query('SELECT * FROM users') as $row) {
-        //print_r($row); //afficher tous les données de la table
-    }
-}catch(PDOExecption $e){
-    print"Erreur:" . $e->getMessage() . "<br/>"; //Message d'erreur
-    die;
-}
-if(isset($_POST['chercher'])){
-    echo 'la recheche est ', $_POST['recherche'] ;
-    $recherche = $_POST['recherche'];
-    if ($recherche == ""||$recherche == "%"){
-        echo " Veuillez rentrer un nom d'utilisateur. ";
-    }else{
-        echo ' résultat de la recherche ';
-        $rep = $db->prepare('SELECT userName, userSurname FROM users WHERE userName LIKE ? OR userSurname LIKE ?');
-        $rep->execute(array("%".$recherche."%","%".$recherche."%"));
+    require '../model/connect.php';
+    include 'function.php';
 
-        foreach ($rep as $indexNumber=>$rowUser){
-            echo "<td>" . $rowUser['userName'] . "</td>";
-            echo "<td>" . $rowUser['userSurname'] . "</td>";
+    if(isset($_POST['chercher'])){
+        echo 'la recheche est ', $_POST['recherche'] ;
+        $recherche = $_POST['recherche'];
+        if ($recherche == ""||$recherche == "%"){
+            echo " Veuillez rentrer un nom d'utilisateur. ";
+        }else{
+            echo ' résultat de la recherche ';
+            $rep = researchUser($bdd,$recherche);
+
+            foreach ($rep as $indexNumber=>$rowUser){
+                echo "<td>" . $rowUser['userName'] . "</td>";
+                echo "<td>" . $rowUser['userSurname'] . "</td>";
+            }
         }
     }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -38,27 +26,38 @@ if(isset($_POST['chercher'])){
         <title>Editer le profil</title>
     </head>
     <body>
+        <?php
+        $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+        include($IPATH . "header.php"); ?>
+
         <form method='post'>
             <input type='text'  id='recherche' name='recherche' placeholder="Rechercher un utilisateur">
             <input type='submit' name='chercher' value='chercher' >
         </form>
         <div>
             <?php
-            $allUsers  = $db->query('SELECT email, userName AS nom, userSurname AS prenom, status AS statut FROM users ORDER BY nom')->fetchAll();
+            $allUsers  = userInformation($bdd);
             foreach ($allUsers as $indexNumber=>$rowUser){
-                $email = $rowUser['email'];
                 echo "<form method='post'> 
-                          <button type='submit' name='afficher' valeur=$email style='background: none;border: none;font-size: 20px;'>
-                               <td>" . $rowUser['nom'] . " " . $rowUser['prenom'] . "</td> <br>
+                          <button type='submit' name='". $indexNumber."' valeur='Afficher' style='background: none;border: none;font-size: 20px;'>
+                               <td>" . $rowUser['userName'] . " " . $rowUser['userSurname'] . "</td> <br>
                           </button>
                       </form>";
-
-                if(isset($_POST['afficher'])){
-                    $profil = $db->prepare('SELECT * FROM users WHERE email = ?');
-                    $profil->execute(array($rowUser['email']));
-                    $profil = $profil->fetch();
-                    if(isset($profil)){
-                        echo '<fieldset">
+                if (isset($_POST[$indexNumber])) {
+                    header('Location:recherche.php?mail=' . $rowUser['email']);
+                }
+            }
+            ?>
+        </div>
+        <div>
+            <?php
+            if(isset($_GET['mail'])){
+                echo $_GET['mail'];
+                $_GET['mail'] = htmlspecialchars($_GET['mail']);
+                $email = strip_tags($_GET['mail']);
+                $profil = donner($bdd,$email);
+                if(isset($profil)){
+                    echo '<fieldset">
                                 <article class="colone">
                                     <p>'.$profil['userName'].'</p>
                                     <p>'.$profil['userSurname'].'</p>
@@ -72,31 +71,18 @@ if(isset($_POST['chercher'])){
                                     </div>
                                 </article>
                             </fieldset>';
-                    }
                 }
             }
-
             ?>
         </div>
-        <div>
-            <?php
 
-            ?>
-        </div>
+        <?php
+        $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+        include($IPATH . "footer.php");
+        ?>
     </body>
 </html>
 
-<?php
-if(isset($_POST[$baseNameDelete.$indexNumber])){
-    header('Location:delete_user_post.php?mail=' . $rowUser['email']);
-}
 
-echo  '<td><form method="post"><select name="' . $baseNameSelect. $indexNumber.'" id="' . $baseNameSelect. $indexNumber.'">
-                        <option value="utilisateur">Utilisateur</option>
-                        <option value="gestionnaire">Gestionnaire</option>
-                        <option value="administrateur">Administrateur</option>
-                        </select></td>';
-echo '<td><input type="submit" value="Modifier" name="' . $baseNameButton. $indexNumber.'"></form></td>';
-echo '<td><form method="post"><input type="submit" name="'.$baseNameDelete.$indexNumber.'" value="Supprimer"></form></td>';
-echo '</tr><br>';
+
 

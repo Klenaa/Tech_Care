@@ -16,7 +16,7 @@ function donner($bdd,$email){
 }
 
 function userInformation($bdd){
-    $rep = $bdd->query('SELECT email, userName AS nom, userSurname AS prenom, status AS statut FROM users ORDER BY nom')->fetchAll();
+    $rep = $bdd->query('SELECT email, userName, userSurname, status AS statut FROM users ORDER BY userName')->fetchAll();
     return $rep;
 }
 

@@ -18,25 +18,33 @@ $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
 include($IPATH . "header.php"); ?>
 
     <h1>Profil de <?php echo $profil['userName'],'&nbsp', $profil['userSurname'];?></h1>
+    <div class="separator"></div>
     <broly>
         <div class="conteneur">
-            <ul>
-                <li>Votre email : <?php echo $profil['email']?></li>
-                <li>Votre date de naissance : <?php if(isset($_POST['birthday'])){ echo $_POST['birthday'];}else{ echo date( "d/m/Y" ,strtotime($profil['birthday']));}?></li>
-                <li>Votre genre: <?php if(isset($_POST['gender'])){ echo $_POST['gender'];}else{ echo $profil['gender'];}?></li>
-                <li>Votre adresse : <?php if(isset($_POST['address'])){ echo $_POST['address'];}else{ echo $profil['address'];}?></li>
-                <li>Votre code postal: <?php if(isset($_POST['postalCode'])){ echo $_POST['postalCode'];}else{ echo $profil['postalCode'];}?></li>
-                <li>Votre ville : <?php if(isset($_POST['city'])){ echo $_POST['city'];}else{ echo $profil['city'];}?></li>
-                <li>Votre pays : <?php if(isset($_POST['country'])){ echo $_POST['country'];}else{ echo $profil['country'];}?></li>
-                <li>Votre profession : <?php if(isset($_POST['profession'])){ echo $_POST['profession'];}else{ echo $profil['profession'];}?></li>
+            <ul id="profil">
+                <li style="margin-top: 10px"><label>Votre email :</label> <?php echo $profil['email']?></li>
+                <li><label>Votre date de naissance :</label> <?php if(isset($_POST['birthday'])){ echo $_POST['birthday'];}else{ echo date( "d/m/Y" ,strtotime($profil['birthday']));}?></li>
+                <li><label>Votre genre:</label> <?php if(isset($_POST['gender'])){ echo $_POST['gender'];}else{ echo $profil['gender'];}?></li>
+                <li><label>Votre adresse :</label> <?php if(isset($_POST['address'])){ echo $_POST['address'];}else{ echo $profil['address'];}?></li>
+                <li><label>Votre code postal:</label> <?php if(isset($_POST['postalCode'])){ echo $_POST['postalCode'];}else{ echo $profil['postalCode'];}?></li>
+                <li><label>Votre ville :</label> <?php if(isset($_POST['city'])){ echo $_POST['city'];}else{ echo $profil['city'];}?></li>
+                <li><label>Votre pays :</label> <?php if(isset($_POST['country'])){ echo $_POST['country'];}else{ echo $profil['country'];}?></li>
+                <li><label>Votre profession :</label> <?php if(isset($_POST['profession'])){ echo $_POST['profession'];}else{ echo $profil['profession'];}?></li>
             </ul>
-            <a href="../../test/editProfile.php">Editer son profil</a><br>
-            <a href="../../test/password.php">Modifier le mot de passe</a><br>
+
+            <div class="multipleChoice">
+            <a href="../../test/editProfile.php">Editer son profil</a> &emsp;
+            <a href="../../test/password.php">Modifier le mot de passe</a> &emsp;
             <?php
             if($profil['profession'] == "Médecin"&& $profil['status'] == "utilisateur"){
-                echo '<a href=" ">Vous etes médecin? Souhaiter vous nous rejoindre et changer votre statut en gestionnaire?</a><br>';
+                echo '<p>Vous etes médecin? Devenais gestionnaire <a href=" ">ici</a></p>&emsp;';
+            }
+            if($_SESSION['mailVerification'] = false){
+                echo '<p>Confirmer votre email <a href="../../controller/registerVerification.php">ici</a></p>';
             }
             ?>
+            </div>
+
         </div>
     </broly>
 

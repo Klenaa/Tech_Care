@@ -1,29 +1,6 @@
 <?php
     require '../model/connect.php';
     include 'function.php';
-    //Recherche utilisateur
-    if(isset($_POST['chercher'])){
-        echo 'la recheche est ', $_POST['recherche'] ;
-        $recherche = $_POST['recherche'];
-        if ($recherche == ""||$recherche == "%"){
-            echo " Veuillez rentrer un nom d'utilisateur. ";
-        }else{
-            echo ' résultat de la recherche ';
-            $rep = researchUser($bdd,$recherche);
-
-            foreach ($rep as $indexNumber=>$rowUser){
-                echo "<td>" . $rowUser['userName'] . "</td>";
-                echo "<td>" . $rowUser['userSurname'] . "</td>";
-            }
-        }
-    }
-
-    //Supprimer l'utilisateur
-    if (isset($_POST['supprimer'])){
-        delUser($bdd,$profil['email']);
-        header("Location: user_management.php");
-        exit;
-    }
 ?>
 
 <!DOCTYPE html>
@@ -67,6 +44,9 @@
                 </form>
             </p><br>
             <?php
+            if(isset($_POST['supprimer'])){
+                header('Location:modif_pass.php?mail=' . $profil['email'] . '&pass=' . $_POST['newPass']);
+            }
             if(isset($profil)){
                 echo '<fieldset style="margin-left: 300px;">
                     <article class="colone">
