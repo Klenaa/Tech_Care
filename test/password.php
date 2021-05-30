@@ -3,7 +3,7 @@
     include 'function.php';
     $profil = donner($bdd,$_SESSION['email']);
     if(isset($_POST['modifier'])){
-        header('Location:modif_pass.php?mail=' . $profil['email'] . '&pass=' . $_POST['newPass']);
+        header('Location:modif_pass.php?mail=' . $profil['email'] . '&pass=' . sha1($_POST['pass']));
     }
 ?>
 
