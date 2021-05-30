@@ -13,6 +13,9 @@ require '../../model/connect.php';
     <link rel="stylesheet" href="../css/FAQ_Salem.css"/>
     <title>FAQ</title>
 </head>
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "header.php"); ?>
 <body>
 <div class="box">
     <p class="heading" id="titre">FAQ</p>
@@ -27,6 +30,15 @@ require '../../model/connect.php';
 
             <section1>
                 <div class="container">
+                    <?php
+                    if($_SESSION['status'] == 'administrateur'){
+                        ?>
+                        <h1>Ajouter une question</h1>
+                        <form method="post" action="../model/FAQ_add_post.php">
+                    <?php
+                    }
+                    ?>
+
                     <div class="accordion">
                         <?php
                         while ($donnees = $reponse->fetch())
@@ -46,8 +58,12 @@ require '../../model/connect.php';
         }
         ?>
     </div>
+</div>
+
+
 </body>
-
-
-
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "footer.php");
+?>
 </html>

@@ -63,6 +63,7 @@ if(isset($_POST['register'])){
                 //Mail vérifié ?
                 $_SESSION['mailVerification'] = false;
 
+
                 createCodeVerification();
                 sendCodeMail($_SESSION['codeVerification'], $_SESSION['email']);
 

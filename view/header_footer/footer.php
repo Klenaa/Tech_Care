@@ -73,8 +73,8 @@
             <li><a href="http://localhost/Tech_Care/test/mail.php">Contact</a></li>
             <li><a href="#">Langues</a>
                 <ul>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Français</a></li>
+                    <li><a href="http://localhost/Tech_Care/controller/english.php">English</a></li>
+                    <li><a href="http://localhost/Tech_Care/controller/french.php">Français</a></li>
                 </ul>
             <li><a href="http://localhost/Tech_Care/view/html/legal_mentions.php">Mentions légales</a></li>
             <li><a href="http://localhost/Tech_Care/controller/deconnexion.php">Se déconnecter</a></li>
