@@ -1,5 +1,5 @@
 <?php
-require '../../model/connect.php';
+require '../model/connect.php';
 
 
 function measureSelectionAuto($bdd, $newDate) {

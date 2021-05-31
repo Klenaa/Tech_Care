@@ -1,6 +1,6 @@
 <?php
 require 'connect.php';
-include ('sql_functions.php');
+include('../fonctions/sql_functions.php');
 
 if(isset($_GET['mail'])){
     echo $_GET['mail'];

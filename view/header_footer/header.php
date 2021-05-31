@@ -5,7 +5,6 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="header.css"/>
     <title>header</title>
     <style>
         header
@@ -25,6 +24,12 @@
         .nav{
             margin-right: 15px;
         }
+
+        .navRight {
+            display: flex;
+            flex-direction: row;
+        }
+
 
         .navButtonContainer{
             display: flex;
@@ -103,55 +108,60 @@
 
 <header>
     <section>
-        <a href="../html/home.php">
-        <img src="../images/logoHeader.png" alt=""/>
+        <a href="http://localhost/Tech_Care/view/html/home.php">
+        <img src="http://localhost/Tech_Care/view/images/logoHeader.png" alt=""/>
         </a>
     </section>
         <?php
-
         if ($_SESSION['status'] == 'gestionnaire') {
             echo '
 <section class="navButtonContainer">
+               <div class="nav">
+                    <button class="navButton" id="afterCo"><a href="http://localhost/Tech_Care/view/html/doYouWant.php">Tableau de bord</a></button>
+               </div>
             <div class="nav">
-                <button class="navButton" id="takeMeasures"><a href="../html/measuring_home.php">Prendre des mesures</a></button>
+                <button class="navButton" id="takeMeasures"><a href="http://localhost/Tech_Care/view/html/measuring_home.php">Prendre des mesures</a></button>
             </div>
             <div class="nav">
-                <button class="navButton" id="mesurementAnalysis"><a href="../html/Analyse_des_mesures.php">Analyse des résultats</a></button>
+                <button class="navButton" id="mesurementAnalysis"><a href="http://localhost/Tech_Care/view/html/analyse_des_mesures.php">Analyse des résultats</a></button>
             </div>
             <div class="nav">
-                <button class="navButton" id="usersData"><a href="../../controller/gest_user_data.php">Données des utilisateurs</a></button>
+                <button class="navButton" id="usersData"><a href="http://localhost/Tech_Care/controller/gest_user_data.php">Données des utilisateurs</a></button>
             </div>
                 </section>
     <section>
         <button class="option" ><a>Options</a></button>
         <div class="dropDownMenu dropOption">
-            <a class="downMenu" href="../../test/editProfile.php">Profil</a>
-            <a class="downMenu" href="../../controller/deconnexion.php">Se déconnecter</a>
+            <a class="downMenu" href="http://localhost/Tech_Care/controller/editProfile.php">Profil</a>
+            <a class="downMenu" href="http://localhost/Tech_Care/controller/deconnexion.php">Se déconnecter</a>
         </div>
     </section>';
         } else if ($_SESSION['status'] == 'administrateur') {
             echo '
 <section class="navButtonContainer">
                 <div class="nav">
-                    <button class="navButton" id="takeMeasures"><a href="../html/measuring_home.php">Prendre des mesures</a></button>
-                   </div>
+                    <button class="navButton" id="afterCo"><a href="http://localhost/Tech_Care/view/html/doYouWant.php">Tableau de bord</a></button>
+               </div>
                 <div class="nav">
-                    <button class="navButton" id="mesurementAnalysis"><a href="../html/Analyse_des_mesures.php">Analyse des résultats</a></button>
+                    <button class="navButton" id="takeMeasures"><a href="http://localhost/Tech_Care/view/html/measuring_home.php">Prendre des mesures</a></button>
+               </div>
+                <div class="nav">
+                    <button class="navButton" id="mesurementAnalysis"><a href="http://localhost/Tech_Care/view/html/analyse_des_mesures.php">Analyse des résultats</a></button>
                 </div>
                 <div class="nav">
                     <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
                     <div class="dropDownMenu dropAdmin">
-                        <a class="downMenu" href="../../model/updateUserStatus.php">Gérer les utilisateurs</a>
-                        <a class="downMenu" href="../html/FAQ_Salem.php">Gérer la FAQ</a>
-                        <a class="downMenu" href="../html/Forum.php">Gérer le forum</a>
+                        <a class="downMenu" href="http://localhost/Tech_Care/model/updateUserStatus.php">Gérer les utilisateurs</a>
+                        <a class="downMenu" href="http://localhost/Tech_Care/view/html/FAQ_display.php">Gérer la FAQ</a>
+                        <!--<a class="downMenu" href="http://localhost/Tech_Care/view/html/Forum.php">Gérer le forum</a>-->
                     </div>
                 </div>
                     </section>
     <section>
         <button class="option" ><a>Options</a></button>
         <div class="dropDownMenu dropOption">
-            <a class="downMenu" href="../../test/editProfile.php">Profil</a>
-            <a class="downMenu" href="../../controller/deconnexion.php">Se déconnecter</a>
+            <a class="downMenu" href="http://localhost/Tech_Care/controller/editProfile.php">Profil</a>
+            <a class="downMenu" href="http://localhost/Tech_Care/controller/deconnexion.php">Se déconnecter</a>
         </div>
     </section>';
         }
@@ -159,25 +169,32 @@
             echo '
 <section class="navButtonContainer">
                 <div class="nav">
-                    <button class="navButton" id="takeMeasures"><a href="../html/measuring_home.php">Prendre des mesures</a></button>
+                    <button class="navButton" id="afterCo"><a href="http://localhost/Tech_Care/view/html/doYouWant.php">Tableau de bord</a></button>
+               </div>
+                <div class="nav">
+                    <button class="navButton" id="takeMeasures"><a href="http://localhost/Tech_Care/view/html/measuring_home.php">Prendre des mesures</a></button>
                    </div>
                 <div class="nav">
-                    <button class="navButton" id="mesurementAnalysis"><a href="../html/Analyse_des_mesures.php">Analyse des résultats</a></button>
+                    <button class="navButton" id="mesurementAnalysis"><a href="http://localhost/Tech_Care/view/html/Analyse_des_mesures.php">Analyse des résultats</a></button>
                 </div>
                     </section>
     <section>
         <button class="option" ><a>Options</a></button>
         <div class="dropDownMenu dropOption">
-            <a class="downMenu" href="../../test/editProfile.php">Profil</a>
-            <a class="downMenu" href="../../controller/deconnexion.php">Se déconnecter</a>
+            <a class="downMenu" href="http://localhost/Tech_Care/controller/editProfile.php">Profil</a>
+            <a class="downMenu" href="http://localhost/Tech_Care/view/controller/deconnexion.php">Se déconnecter</a>
         </div>
     </section>';
         } else {
-            echo'
-             <ul class="menu">
-                <li class="nav-item"><a class="nav-link" href="../../controller/register.php">S\'inscrire</a></li>
-                <li class="nav-item"><a class="nav-link" href="../../test/sign_in.php">Se connecter</a></li>
-            </ul>
+            echo '
+            <div class="navRight"> 
+                <div class="nav">
+                    <button class="navButton" id="takeMeasures"><a href="http://localhost/Tech_Care/controller/register.php">S\'inscrire</a></button>
+                   </div>
+                <div class="nav">
+                    <button class="navButton" id="mesurementAnalysis"><a href="http://localhost/Tech_Care/Controller/sign_in.php">Se connecter</a></button>
+                </div>
+            </div>
             ';
         }
         ?>

@@ -13,7 +13,7 @@ if (isset($_POST['questions']) AND isset($_POST['réponses']) AND isset($_GET[$n
 {
     $requete=$bdd->prepare("UPDATE faq SET questions=?, réponses=? WHERE idQuestion=?");
     $requete->execute(array($_POST['questions'], $_POST['réponses'], $_GET[$numero]));
-    header("Location: FAQ_Salem.php");
+    header("Location: FAQ_display.php");
     ?>
 <?php
 }

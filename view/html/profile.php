@@ -1,6 +1,6 @@
 <?php
     require '../../model/connect.php';
-    include '../../test/function.php';
+    include '../../fonctions/function_profile.php';
     $profil = donner($bdd,$_SESSION['email']);
 ?>
 
@@ -33,11 +33,12 @@ include($IPATH . "header.php"); ?>
             </ul>
 
             <div class="multipleChoice">
-            <a href="../../test/editProfile.php">Editer son profil</a> &emsp;
-            <a href="../../test/password.php">Modifier le mot de passe</a> &emsp;
+            <a href="../../controller/editProfile.php">Editer son profil</a> &emsp;
+            <a href="../../controller/password.php">Modifier le mot de passe</a> &emsp;
             <?php
             if($profil['profession'] == "Médecin"&& $profil['status'] == "utilisateur"){
-                echo '<p>Vous etes médecin? Devenais gestionnaire <a href=" ">ici</a></p>&emsp;';
+                echo '<p>Vous êtes médecin? Devenez gestionnaire <a href="../../controller/mail.php">ici</a></p>&emsp;';
+                //TODO : faire une page mail pour demande level up de statut
             }
             if($_SESSION['mailVerification'] = false){
                 echo '<p>Confirmer votre email <a href="../../controller/registerVerification.php">ici</a></p>';

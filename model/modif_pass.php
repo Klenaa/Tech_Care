@@ -1,6 +1,6 @@
 <?php
-require '../model/connect.php';
-include 'function.php';
+require 'connect.php';
+include '../fonctions/function_profile.php';
 
 if(isset($_GET['mail']) && isset($_GET['pass'])) {
     $_GET['mail'] = htmlspecialchars($_GET['mail']);
@@ -15,6 +15,6 @@ if(isset($_GET['mail']) && isset($_GET['pass'])) {
 }
 
 if(isset($_POST['annuler'])){
-    header("Location: password.php");
+    header("Location: ../controller/password.php");
     exit;
 }

@@ -1,6 +1,6 @@
 <?php
 require 'connect.php';
-include ('../controller/register_functions.php');
+include('../controller/register_functions.php');
 //Confirmation du code de vérification
 
 //Création variable erreur

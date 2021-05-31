@@ -1,5 +1,12 @@
 <?php
-require '../model/connect.php';
+
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=db_eddy;port=3307;', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+    die('Erreur : ' . $e->getMessage());
+}
 include('../view/html/gest_user_data_post.php');
 ?>
 
@@ -32,7 +39,6 @@ if(isset($_POST['gender']) && !empty($_POST['gender'])){
 
         } else {
             $sql .= " AND gender = 'homme' " ;
-
         }
 
     } else if ($_POST['genre'] == "femme") {

@@ -1,6 +1,5 @@
 <?php
-session_start();
-include('../model/connect.php');
+include('connect.php');
 
 ?>
 

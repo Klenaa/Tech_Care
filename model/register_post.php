@@ -1,6 +1,6 @@
 <?php
     require 'connect.php';
-    include('../controller/register_functions.php');
+    include('../fonctions/register_functions.php');
 
 if(isset($_POST['register'])){
     //MDP différents

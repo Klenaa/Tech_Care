@@ -28,7 +28,7 @@
     ?>
     <div class="container">
 
-        <a href="../../test/editProfile.php">
+        <a href="http://localhost/Tech_Care/view/html/profile.php">
             <article class="elements">
                 <h2>Compléter son profil</h2>
             </article>
@@ -37,7 +37,7 @@
             </div>
         </a>
 
-        <a href="#">
+        <a href="http://localhost/Tech_Care/view/html/measuring_home.php">
             <article class="elements">
             <h2>Prendre ses mesures</h2>
             </article>
@@ -45,7 +45,7 @@
                 <img class="iconmg" src="../images/img/heart.png">
             </div>
         </a>
-        <a href="#">
+        <a href="http://localhost/Tech_Care/view/html/Analyse_des_mesures.php">
             <article class="elements">
                 <h2>Historique des mesures</h2>
             </article>

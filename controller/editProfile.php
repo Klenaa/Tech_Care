@@ -1,6 +1,6 @@
 <?php
     require '../model/connect.php';
-    include 'function.php';
+    include('../fonctions/function_profile.php');
     $profil = donner($bdd,$_SESSION['email']);
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
         <h1>Modifier le Profil</h1>
         <div class="separator"></div>
         <broly>
-            <form method="post" action="edit.php">
+            <form method="post" action="../model/edit.php">
                 <div class="contenant">
                     <!--Information obligatoires à l'inscription-->
                     <label for="gender">Genre</label>

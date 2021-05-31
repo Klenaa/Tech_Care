@@ -1,6 +1,6 @@
 <?php
 require '../model/connect.php';
-include('register_functions.php');
+include('../fonctions/register_functions.php');
 ?>
 
 <!DOCTYPE html>

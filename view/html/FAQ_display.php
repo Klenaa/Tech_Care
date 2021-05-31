@@ -1,5 +1,5 @@
 <?php
-    //require '../test_register_connexion/connect.php';//
+    //require '../test_register_connexion/connect.php';
 try
 {
     $bdd = new PDO('mysql:host=localhost:3307;dbname=db;charset=utf8', 'root', 'root');
@@ -15,10 +15,13 @@ catch(Exception $e)
 <html lang="en">
 
 <head>
-    <?php include("style.php"); ?>
+    <link rel="stylesheet" href="../css/FAQ_Salem.css"/>
     <meta charset="utf-8">
     <title>FAQ</title>
 </head>
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "header.php"); ?>
 <body>
 <div class="box">
 
@@ -36,10 +39,7 @@ catch(Exception $e)
 
     <?php
     if ($_SESSION['status']=='administrateur'){
-
     }
-
-
     ?>
     <div class="container">
         <div class="accordion">
@@ -59,9 +59,8 @@ catch(Exception $e)
 
                 if (isset($_POST[$id])) {
                     $bdd->prepare('DELETE FROM faq WHERE idQuestion=?')->execute(array($rowQuestion['idQuestion']));
-                    header("Location: FAQ_Salem.php");
+                    header("Location: FAQ_display.php");
                     exit;
-
                 }
             }
             ?>
@@ -73,11 +72,12 @@ catch(Exception $e)
         {
             die('Erreur : '.$e->getMessage());
         }
-
         ?>
-
     </div>
 </body>
+<?php
+$IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
+include($IPATH . "footer.php"); ?>
 
 
 

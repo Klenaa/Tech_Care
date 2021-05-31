@@ -1,6 +1,6 @@
 <?php
-require '../model/connect.php';
-include 'function.php';
+require 'connect.php';
+include '../fonctions/function_profile.php';
 
 if (isset($_POST['modification'])){
     $rep = updateUserInfo($bdd,$_POST['userName'], $_POST['userSurname'], $_POST['birthday'], $_POST['gender'], $_POST['address'], $_POST['postalCode'], $_POST['city'], $_POST['country'], $_POST['profession'], $_SESSION['email']);
@@ -19,7 +19,7 @@ if (isset($_POST['modification'])){
     exit;
 }
 if(isset($_POST['annuler'])){
-    header("Location: editProfile.php");
+    header("Location: http://localhost/Tech_Care/view/html/profile.php");
     exit;
 }
 

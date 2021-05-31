@@ -18,7 +18,8 @@ catch(Exception $e)
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include("../view/css/styleFAQ_add.php"); ?>
+    <link rel="stylesheet" href="../view/css/mail.css"/>
+
     <meta charset="utf-8"/>
     <link rel="stylesheet" href=""/>
     <title>FAQ : Ajouter une question</title>
@@ -41,9 +42,7 @@ include($IPATH . "header.php"); ?>
 
         <input type="submit" value="Ajouter" name="AddQuestion">
     </form>
-
 </div>
-
 </body>
 <?php
 $IPATH = $_SERVER["DOCUMENT_ROOT"] . '/Tech_Care/view/header_footer/';
