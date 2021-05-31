@@ -11,7 +11,7 @@ if(isset($_POST['modifier'])) {
     }elseif($hash == sha1($_POST['newPass'])){
         echo '<script language="JavaScript"> alert ("Votre nouveau mot de passe ne peut pas être identique à l\'ancien. Veuillez choisir un autre mot de passe.") </script>';
     }else{
-        header('Location: ../model/modif_pass.php');
+        header('Location: ../model/modif_pass.php?mail=' . $profil['email'] . '&pass=' . sha1($_POST['pass']));
     }
 }
 
@@ -40,10 +40,10 @@ include($IPATH . "header.php"); ?>
             <input type="password" id="pass1" name="oldPass" placeholder="Ancien mot de passe" required><br>
 
             <label for="pass1">Nouveau mot de passe</label>
-            <input type="password" id="pass" name="newPass" maxlength="50" placeholder="Nouveau mot de passe" required><br>
+            <input type="password" id="pass" name="newPass" maxlength="50" placeholder="1 chiffre, 1 Majuscule, 1 minuscule, 1 caractère spécial, 8 caractères min" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!.%*?&]{8,}$" required><br>
 
             <label for="pass2">Confirmer votre mot de passe</label>
-            <input type="password" id="pass2" name="confPass" maxlength="50" placeholder="Confirmation mot de passe" required><br>
+            <input type="password" id="pass2" name="confPass" maxlength="50" placeholder="1 chiffre, 1 Majuscule, 1 minuscule, 1 caractère spécial, 8 caractères min" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!.%*?&]{8,}$" required><br>
 
             <div class="multipleChoice">
                 <button type="submit" id="modifier" name="modifier" maxlength="50" onclick="return Validate()">Modifier</button>  &ensp;
