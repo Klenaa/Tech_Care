@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -125,6 +125,10 @@ include($IPATH . "header.php"); ?>
                         <li>
                             <input type="radio" id="cadre" name="work" value="cadre">
                             <label for="cadre">Cadre</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="autre" name="work" value="autre">
+                            <label for="autre">Autres</label>
                         </li>
                     </ul>
                 </section>

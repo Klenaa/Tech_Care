@@ -195,6 +195,16 @@ if(isset($_POST['profession']) && !empty($_POST['profession'])) {
 
         }
     }
+    if (($_POST['work']) == "autre") {
+
+        if ($sql == "SELECT * FROM users INNER JOIN measure ON users.email = measure.email WHERE " || $sql == "SELECT * FROM users WHERE ") {
+            $sql .= "profession != 'Cadre' AND profession != 'Avocat' AND profession != 'Ingénieur' AND profession != 'Manager' AND profession != 'Etudiant' AND profession != 'Médecin'";
+
+        } else {
+            $sql .= " AND profession != 'Cadre' AND profession != 'Avocat' AND profession != 'Ingénieur' AND profession != 'Manager' AND profession != 'Etudiant' AND profession != 'Médecin'";
+
+        }
+    }
 
 }
 $allUsers  = $bdd->query($sql);
