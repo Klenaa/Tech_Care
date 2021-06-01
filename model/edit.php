@@ -14,7 +14,6 @@ if (isset($_POST['modification'])){
     $_SESSION['city'] = $_POST['city'];
     $_SESSION['country'] = $_POST['country'];
     $_SESSION['profession'] = $_POST['profession'];
-    $_SESSION['status'] = $_POST['status'];
     header("Location: ../view/html/profile.php");
     exit;
 }

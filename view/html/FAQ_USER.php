@@ -30,23 +30,16 @@ include($IPATH . "header.php"); ?>
 
             <section1>
                 <div class="container">
-                    <?php
-                    if($_SESSION['status'] == 'administrateur'){
-                        ?>
-                        <h1>Ajouter une question</h1>
-                        <form method="post" action="../model/FAQ_add_post.php">
-                    <?php
-                    }
-                    ?>
-
                     <div class="accordion">
                         <?php
                         while ($donnees = $reponse->fetch())
-                        {echo '<div class="accordion-item" id="' .$donnees['idQuestion']. '">
-                  '.'<a class="accordion-link" href="#' .$donnees['idQuestion']. '">' . htmlspecialchars($donnees['questions']) . '</a>';
+                        {
+                            echo '
+                       <div class="accordion-item " id="' . $donnees['idQuestion'] . '">'
+                                . '<a class="accordion-link" href="#' . $donnees['idQuestion'] . '"> ' . htmlspecialchars($donnees['questions']) . '</a>';;
 
-                            ;echo '<div class="answer"> <p> ' . htmlspecialchars($donnees['réponses']) .
-                            '</p> </div> </div> ';
+                            echo '<div class="answer"> <p> ' . htmlspecialchars($donnees['réponses']) . '</p> </div> </div> ';
+
                         }
                         ?>
                     </div> </div> </section1>

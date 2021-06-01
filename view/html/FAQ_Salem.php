@@ -1,5 +1,5 @@
 <?php
-    //require '../test_register_connexion/connect.php';
+    //require '../../model/connect.php';
 try
 {
     $bdd = new PDO('mysql:host=localhost:3307;dbname=db;charset=utf8', 'root', 'root');
@@ -33,16 +33,39 @@ include($IPATH . "header.php"); ?>
 
             $reponse = $bdd->query('SELECT * FROM faq');
 
+            if ($_SESSION['status']=='administrateur'){
+            }
             ?>
-            <div class="lemsa" align="center" ><a href="../../controller/FAQ_add.php" style="text-decoration:none">Ajouter</a> des questions ? </div>
-<section1>
 
-    <?php
-    if ($_SESSION['status']=='administrateur'){
-    }
-    ?>
+            <div class="lemsa" align="center" ><a href="../../controller/FAQ_add.php" style="text-decoration:none">Ajouter</a> des questions ? </div>
+
+            <?php
+
+            ?>
+<section1>
     <div class="container">
         <div class="accordion">
+            <?php
+            foreach ($reponse as $indexQuestion=>$rowQuestion){
+                $id='Supprimer'.$indexQuestion;
+
+
+                echo '<div class="accordion-item " id="' . $rowQuestion['idQuestion'] . '">';
+                echo '<a class="accordion-link" href="#' . $rowQuestion['idQuestion'] . '"> ' . htmlspecialchars($rowQuestion['questions']) . '</a>';
+
+
+
+            }
+            ?>
+
+
+
+
+
+
+
+
+
             <?php
             foreach ($reponse as $indexQuestion=>$rowQuestion) {
                 $id='Supprimer'.$indexQuestion;
@@ -53,19 +76,21 @@ include($IPATH . "header.php"); ?>
 
 
                 echo '<div class="answer"> <p> ' . htmlspecialchars($rowQuestion['réponses']) .
-                    '<div class="lemsa1"><br><br><a href="../../controller/FAQ_Modifer.php" style="text-decoration:none">Modifier</a></button></br>
-                    <button class= "lemsa2" type="submit" name=' .$id.' style="text-decoration: none" onclick="onDelete()">Supprimer </button> 
+                    '<div class="lemsa1"><br><br><!--<a href="../../controller/FAQ_Modifer.php" style="text-decoration:none">Modifier</a></button></br>-->
+                    <button class= "lemsa2" type="submit" name='.$id.' style="text-decoration: none">Supprimer </button> 
                     </div></p> </div> </div>';
 
                 if (isset($_POST[$id])) {
                     $bdd->prepare('DELETE FROM faq WHERE idQuestion=?')->execute(array($rowQuestion['idQuestion']));
-                    header("Location: FAQ_display.php");
+                    header("Location: FAQ_Salem.php");
                     exit;
                 }
             }
             ?>
 
-        </div> </div> </section1>
+        </div>
+    </div>
+</section1>
             <?php
         }
         catch (Exception $e)

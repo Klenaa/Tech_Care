@@ -19,6 +19,10 @@ include($IPATH . "header.php"); ?>
     </div>
     <br>
     <form method="post">
+        <div class="searchBox">
+            <input class="searchInput"type="search" name="name" placeholder="Rechercher un utilisateur par son nom ou son prénom">
+        </div>
+
         <br><br>
         <div id="rechercher">
             <div id="criteria">

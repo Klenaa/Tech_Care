@@ -1,18 +1,26 @@
-body {
-    font-family: Helvetica, Verdana, sans-serif;
-    color :#1E4D6E;
+
+
+/*OVERALL*/
+body, html {
+    height: 100%;
 }
 
-h2 {
+main{
+    font-family: "Helvetica", "Verdana", "sans serif";
+}
+
+h2{
 
     color :#1E4D6E;
+    padding: none;
+    margin: none;
     text-transform:uppercase;
 }
 
 h3 {
     color :#1F7DBF;
     text-align: center;
-
+    text-transform:uppercase;
 }
 
 h4 {
@@ -20,7 +28,8 @@ h4 {
     text-transform:uppercase;
 }
 
-p {
+
+p{
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -30,20 +39,27 @@ p {
     float :none;
 }
 
-li {
+li{
     list-style-type: none;
 }
 
-.mini-text {
+/* TITRE*/
+.mini-text{
     color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     padding: 20px 20px;
+
+    /*
+    background-image: url(images/sky\ blue.jpg);
+    background-size: cover;
+    margin: 4% 0%;
+    height: 15vh;*/
 }
 
-.separator {
+.separator{
     float: none;
     margin-left: auto;
     margin-right: auto;
@@ -52,6 +68,59 @@ li {
     width: 100px;
     background-color:#1F7DBF;
 }
+
+
+
+/*RECHERCHER*/
+#raccourci{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+.searchBox {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: -50px;
+    justify-content: right;
+    align-items: center;
+    transform: translate(-50%,50%);
+    background: #F2F2F8;
+    height: 45px;
+    border-radius: 40px;
+    padding: 10px;
+
+
+}
+
+
+
+
+
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: black;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 400px;
+
+}
+
+
+
+
+
+
 
 /*Check box*/
 #criteria ul{
@@ -63,9 +132,13 @@ li {
 
 /*MENU DEROULANT*/
 
+
 .criteria-section {
+
     margin: 0 10%;
     outline: none;
+
+
 }
 
 
@@ -87,6 +160,7 @@ li {
 
 }
 
+
 /* Style des label */
 .criteria-section .label-criteria{
     cursor: pointer;
@@ -106,6 +180,8 @@ li {
 .criteria-section label::selection, .criteria-section label:hover{
     background: none;
 }
+
+
 
 /* Style du label si le checkbox est coché */
 .criteria-section input[type=checkbox]:checked~label{
@@ -148,7 +224,7 @@ li {
     display: flex;
     justify-content: center;
 }
-#bouton {
+#bouton{
     padding: 15px 25px;
     width: 250px;
     border-radius: 5px;
@@ -158,7 +234,10 @@ li {
     background-color: #3c9bd1;
     outline:none;
     cursor:pointer;
+
 }
+
+
 
 td {
     background-color: #ffffff;
@@ -194,7 +273,3 @@ th{
     padding: 20px 0;
     color: #1E4D6E;
 }
-
-
-
-

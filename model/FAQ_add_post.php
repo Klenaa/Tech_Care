@@ -7,7 +7,7 @@ if(isset($_POST['AddQuestion'])) //Si on a cliqué sur le bouton d'ajout de ques
 {
 
     addFAQ($bdd, $_POST['questions'], $_POST['réponses']);
-    header('Location: ../view/html/FAQ_display.php');
+    header('Location: ../view/html/FAQ_Salem.php');
 }
 
 

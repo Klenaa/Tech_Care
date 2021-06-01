@@ -152,7 +152,7 @@
                     <button class="navButton backOfficeAdministrator"><a href="">Backoffice administrateur</a></button>
                     <div class="dropDownMenu dropAdmin">
                         <a class="downMenu" href="http://localhost/Tech_Care/model/updateUserStatus.php">Gérer les utilisateurs</a>
-                        <a class="downMenu" href="http://localhost/Tech_Care/view/html/FAQ_display.php">Gérer la FAQ</a>
+                        <a class="downMenu" href="http://localhost/Tech_Care/view/html/FAQ_Salem.php">Gérer la FAQ</a>
                         <!--<a class="downMenu" href="http://localhost/Tech_Care/view/html/Forum.php">Gérer le forum</a>-->
                     </div>
                 </div>
