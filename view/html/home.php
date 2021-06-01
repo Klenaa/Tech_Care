@@ -4,7 +4,6 @@ if($_SESSION['langue'] == ""){
     $_SESSION['langue'] = 'français';
 }
 
-echo $_SESSION['langue'];
 ?>
 <!DOCTYPE html>
 <html>

@@ -17,7 +17,7 @@ include($IPATH . "header.php"); ?>
 
 <body class="corps">
     <section class="measures">
-        <h1>Mesure de référence</h1>
+        <h1><?php dateMeasure($bdd) ?></h1>
         <?php
             dispData($bdd);
         ?>

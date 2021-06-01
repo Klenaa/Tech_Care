@@ -30,15 +30,37 @@ include($IPATH . "header.php"); ?>
 
             <section1>
                 <div class="container">
+                    <?php
+
+                    if ($_SESSION['status']=='administrateur'){
+                        echo '<div class="lemsa" align="center" ><a href="../../controller/FAQ_add.php" style="text-decoration:none">Ajouter</a> des questions ? </div>';
+
+
+                    }
+                    ?>
+
+
                     <div class="accordion">
                         <?php
-                        while ($donnees = $reponse->fetch())
-                        {
-                            echo '
-                       <div class="accordion-item " id="' . $donnees['idQuestion'] . '">'
-                                . '<a class="accordion-link" href="#' . $donnees['idQuestion'] . '"> ' . htmlspecialchars($donnees['questions']) . '</a>';;
+                        foreach ($reponse as $indexQuestion=>$rowQuestion){
 
-                            echo '<div class="answer"> <p> ' . htmlspecialchars($donnees['réponses']) . '</p> </div> </div> ';
+                            echo '
+                       <div class="accordion-item " id="' . $rowQuestion['idQuestion'] . '">'
+                                . '<a class="accordion-link" href="#' . $rowQuestion['idQuestion'] . '"> ' . htmlspecialchars($rowQuestion['questions']) . '</a>';;
+
+                            echo '<div class="answer"> <p> ' . htmlspecialchars($rowQuestion['réponses']) . '</p> </div> </div> ';
+                            if($_SESSION['status'] == 'administrateur'){
+                                $id='Supprimer'.$indexQuestion;
+
+                                echo '<form method="post"><br><br><button class= "lemsa2" type="submit" name="'.$id.'" style="text-decoration: none">Supprimer </button></form>';
+
+
+                                if(isset($_POST[$id])) {
+                                    $bdd->prepare('DELETE FROM faq WHERE idQuestion=?')->execute(array($rowQuestion['idQuestion']));
+                                    //header("Location: FAQ_Salem.php");
+                                    exit;
+                                }
+                            }
 
                         }
                         ?>

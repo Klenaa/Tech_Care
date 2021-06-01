@@ -1,6 +1,27 @@
 <?php
-require ('../model/connect.php');
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=db;port=3307;', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+    die('Erreur : ' . $e->getMessage());
+}
 
+function selectUnit($measure) {
+    if ($measure == "température") {
+        return "°C";
+    } else if($measure == "reproduction_teinte_colorée") {
+        return "/100";
+    } else if($measure == "reconnaissance_tonalité") {
+        return "/100";
+    } else if($measure == "temps_reaction_lumière") {
+        return "ms";
+    } else if($measure == "temps_reaction_son") {
+        return "ms";
+    } else {
+        return "bpm";
+    }
+}
 
 function measureSelectionAuto($bdd, $newDate) {
 
@@ -22,7 +43,7 @@ function measureSelectionAuto($bdd, $newDate) {
                 ?></h3>
             <form action="Analyse_des_mesures.php?id=<?php echo $donnees['refMeasure']; ?>" method="POST" style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly">
                 <p> <?php echo $donnees['result'] ?> </p>
-                <button style="height: 20px; margin-left: 50px" type="submit" name="  " value="<?php $donnees['refMeasure'] ?>">Voir</button>
+                <button style="height: 20px; margin-left: 50px" type="submit" name="  " value="<?php $donnees['refMeasure']?>">Voir</button>
             </form>
         </div>
         <?php
@@ -31,11 +52,35 @@ function measureSelectionAuto($bdd, $newDate) {
     $req->closeCursor();
 }
 
+function dateMeasure ($bdd) {
+    $refMeasure = getId();
+    $reqResult = $bdd->prepare('SELECT t.date measureDate, t.isreference
+                FROM measure m
+                LEFT JOIN test t 
+                ON m.refMeasure = t.refMeasure
+                WHERE m.refMeasure = ?'
+    );
+    try {
+        $reqResult->execute(array($refMeasure));
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+        while ($donnees = $reqResult->fetch()) {
+            if ($donnees['isreference'] == 1) {
+                $datemeasure = "Mesure de référence";
+            } else {
+                $measureDate = $donnees['measureDate'];
+                $datemeasure = "Mesure du " . date("j", strtotime("$measureDate")) . " " . date("F", strtotime("$measureDate")) . " " . date("Y", strtotime("$measureDate"));
+            }
+        }
+    echo $datemeasure;
+}
+
 function getId() {
     if ($_GET['id']) {
         return $_GET['id'];
     } else {
-        return 70;
+        return 10;
     }
 }
 
@@ -59,7 +104,7 @@ function dispData($bdd) {
     <table class="resultTable">
         <thead>
         <tr>
-            <td>Reconnaissance tonalité</td>
+            <td>Reconnaissance tonalité </td>
             <td>Reproduction teinte <br> colorée</td>
             <td>Rythme Cardiaque</td>
             <td>Temperature</td>
@@ -72,7 +117,7 @@ function dispData($bdd) {
         <?php
         while ($donnees = $reqResult->fetch()) {
             ?>
-            <td><?php echo $donnees['measureResult']; ?></td>
+            <td><?php echo $donnees['measureResult'] . " " .selectUnit($donnees['sensor']);?></td>
             <?php
         }
         ?>
@@ -80,7 +125,7 @@ function dispData($bdd) {
         </tbody>
     </table>
     <?php
-            $reqResult->closeCursor();
+    $reqResult->closeCursor();
 }
 
 
