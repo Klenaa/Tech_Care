@@ -1,9 +1,9 @@
 <?php
 require '../model/connect.php';
 include ('../fonctions/function_profile.php');
-echo 'fbfb';
+
 $profil = donner($bdd,$_SESSION['email']);
-echo '2';
+
 if(isset($_POST['modifier'])) {
     $hash = sha1($_POST['oldPass']);
     if ($hash != $profil['pass']) {
@@ -11,11 +11,10 @@ if(isset($_POST['modifier'])) {
     }elseif($hash == sha1($_POST['newPass'])){
         echo '<script language="JavaScript"> alert ("Votre nouveau mot de passe ne peut pas être identique à l\'ancien. Veuillez choisir un autre mot de passe.") </script>';
     }else{
-        header('Location: ../model/modif_pass.php?mail=' . $profil['email'] . '&pass=' . sha1($_POST['pass']));
+        header('Location: ../model/modif_pass.php?mail=' . $profil['email'] . '&pass=' . $_POST['newPass']);
     }
 }
 
-echo "bfff";
 ?>
 
 <!DOCTYPE html>
