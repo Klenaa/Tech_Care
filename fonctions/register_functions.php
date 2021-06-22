@@ -53,7 +53,6 @@ catch(Exception $e)
         else {
             echo '<br> Ce mail est déjà enregistré. ' . $emailCount .' email : ' . $emailToCheck;
             return 1;
-
         }
     }
     //RETURN AN ARRAY OF PROFESSION FROM BDD
